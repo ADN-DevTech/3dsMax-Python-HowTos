@@ -17,15 +17,20 @@ practice to package 3ds Max python tools with pip, we provide all our examples i
 
 ### Packages that are not examples but that are provided in this repo
 
-[menuhook](menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
+- [menuhook](menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
 as a way of attaching python functions to 3ds Max menu items. The menuhook package is used by 
 most of the other samples.
 
 
 ## Python Examples
 
-
 How To?
 
 - Develop a Transform Lock Script [transformlock](transformlock/README.md)
 - Remove all materials [removeallmaterials](removeallmaterials/README.md)
+- Quickly rename selected objects [renameselected](renameselected/README.md)
+
+
+## Extra Goodies
+
+- [create.sh](create.sh) will generate an empty pip package in the current working directory.
