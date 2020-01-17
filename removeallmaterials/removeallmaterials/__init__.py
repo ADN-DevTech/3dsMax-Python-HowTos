@@ -1,5 +1,5 @@
 """
-    removeallmaterials example: lock all transforms on the selection.
+    removeallmaterials example: remove all materials from the scene
 """
 import menuhook
 from pymxs import runtime as rt
@@ -11,7 +11,7 @@ def remove_all_materials():
 
 def startup():
     """
-    Hook the transform lock function to a menu item.
+    Hook the funtion to a menu item.
     """
     menuhook.register(
         "howtos",

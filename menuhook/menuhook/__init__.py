@@ -57,12 +57,7 @@ def add_macro(action, category, text, tooltip, fcn):
     Add a macro.
     """
     key = get_action_key(action, category)
-    if key not in macros:
-        macros[key] = fcn
-    elif not macros[key] is fcn:
-        # raise some kind of exception
-        # things are just contradicting
-        raise NameError
+    macros[key] = fcn
     # note: it is harmless to do this if it's already defined:
     mxs = "( python.execute \"import menuhook\\nmenuhook.execute_macro(\\\"{}\\\", \\\"{}\\\")\")"
     rt.macros.new(
