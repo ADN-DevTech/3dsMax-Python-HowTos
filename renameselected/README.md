@@ -1,4 +1,7 @@
 # HowTo: renameselected
+
+![Dialog](doc/Dialog.png)
+
 Goals:
 - learn how to create a dialog with PySide2
 - learn how to hook a python function to a 3ds Max ui element
