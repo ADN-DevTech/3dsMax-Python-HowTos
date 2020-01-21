@@ -61,7 +61,7 @@ import menuhook
 from pymxs import runtime as rt
 
 def $samplename():
-    '''Remove all materials from the scene'''
+    '''Do ...'''
     Pass
 
 def startup():
@@ -69,8 +69,8 @@ def startup():
     Hook the funtion to a menu item.
     """
     menuhook.register(
-        "howtos",
         "$samplename",
+        "howtos",
         $samplename,
         menu="&Scripting",
         text="$samplename sample",

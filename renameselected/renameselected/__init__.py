@@ -20,8 +20,8 @@ def startup():
     Hook the funtion to a menu item.
     """
     menuhook.register(
-        "howtos",
         "renameselected",
+        "howtos",
         showdialog,
         menu="&Scripting",
         text="renameselected sample",

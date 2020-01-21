@@ -14,8 +14,8 @@ def startup():
     Hook the funtion to a menu item.
     """
     menuhook.register(
-        "howtos",
         "removeallmaterials",
+        "howtos",
         remove_all_materials,
         menu="&Scripting",
         text="Remove all materials from the scene",
