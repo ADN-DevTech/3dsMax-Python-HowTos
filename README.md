@@ -30,6 +30,9 @@ How To?
 - Remove all materials [removeallmaterials](removeallmaterials/README.md)
 - Quickly rename selected objects [renameselected](renameselected/README.md)
 
+## Python Examples that don't come from maxscript howtos
+
+- Update a progressbar from a python thread [threadprogressbar](threadprogressbar/README.md)
 
 ## Extra Goodies
 
