@@ -3,11 +3,14 @@
 set -e
 script=$(dirname $(readlink -f "$0"))
 
-if [ $# -ne 1 ]
+if [ $# -lt 1 ]
 then
     echo "please provide the name of the sample to create"
     exit 1
 fi
+
+samplename=$1
+sampledescr=${2:-$samplename sample}
 
 if [ -e "$samplename" ]
 then
@@ -15,7 +18,6 @@ then
     exit 1
 fi
 
-samplename=$1
 
 mkdir -p "$samplename/$samplename"
 
@@ -25,6 +27,8 @@ EOF
 
 cat >"$samplename/README.md" <<EOF
 # HowTo: $samplename
+
+$sampledescr
 EOF
 
 cat >"$samplename/setup.py" <<EOF
@@ -38,7 +42,7 @@ setuptools.setup(
     version="0.0.1",
     author="Autodesk Dude",
     author_email="some.dude@autodesk.com",
-    description="A sample 3ds Max Python Package",
+    description="$sampledescr",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://git.autodesk.com/windish/maxpythontutorials",
@@ -55,14 +59,14 @@ EOF
 
 cat >>$samplename/$samplename/__init__.py <<EOF
 """
-    $samplename example
+    $samplename example: $sampledescr
 """
 import menuhook
 from pymxs import runtime as rt
 
 def $samplename():
-    '''Do ...'''
-    Pass
+    '''$sampledescr'''
+    print("$sampledescr")
 
 def startup():
     """
@@ -73,6 +77,6 @@ def startup():
         "howtos",
         $samplename,
         menu="&Scripting",
-        text="$samplename sample",
-        tooltip="$samplename sample")
+        text="$sampledescr",
+        tooltip="$sampledescr")
 EOF
