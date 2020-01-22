@@ -29,6 +29,7 @@ How To?
 - Develop a Transform Lock Script [transformlock](transformlock/README.md)
 - Remove all materials [removeallmaterials](removeallmaterials/README.md)
 - Quickly rename selected objects [renameselected](renameselected/README.md)
+- Output Object Data to File [speedsheet](speedsheet/README.md)
 
 ## Python Examples that don't come from maxscript howtos
 
