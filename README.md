@@ -30,6 +30,7 @@ How To?
 - Remove all materials [removeallmaterials](removeallmaterials/README.md)
 - Quickly rename selected objects [renameselected](renameselected/README.md)
 - Output Object Data to File [speedsheet](speedsheet/README.md)
+- Create a quick video preview [quickpreview](quickpreview/README.md)
 
 ## Python Examples that don't come from maxscript howtos
 
