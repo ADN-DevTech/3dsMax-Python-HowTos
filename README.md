@@ -23,8 +23,10 @@ most of the other samples.
 
 
 ## Python Examples
+The examples below are translations of [MAXSCript Samples](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-25C9AD58-3665-471E-8B4B-54A094C1D5C9) that
+can be found in the 3ds Max online documentation.
 
-How To?
+*How To?*
 
 - Develop a Transform Lock Script [transformlock](transformlock/README.md)
 - Remove all materials [removeallmaterials](removeallmaterials/README.md)

@@ -1,5 +1,8 @@
 # HowTo: removeallmaterials
-Goals:
+[Original MaxScript Tutorial](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-BB996DFB-0367-4DFF-A1CC-50BEB3A97757)
+[Source Code](removeallmaterials/__init__.py)
+
+*Goals:* 
 - learn how to call a function in pymxs
 - learn how to hook a python function to a 3ds Max ui element
 

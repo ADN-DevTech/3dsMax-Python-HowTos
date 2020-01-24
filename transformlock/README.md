@@ -1,5 +1,9 @@
 # HowTo: transformlock
-Goals:
+
+[Original MaxScript Tutorial](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-8EB13535-72B4-439C-94D3-E93434BA163B)
+[Source Code](transformlock/__init__.py) 
+
+*Goals:* 
 - learn how to call a function in pymxs
 - learn how to hook a python function to a 3ds Max ui element
 

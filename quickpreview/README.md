@@ -2,7 +2,10 @@
 
 ![Preview](doc/Preview.png)
 
-Goals:
+[Original MaxScript Tutorial](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-333382D0-57AF-4797-98F2-C2BE09442607)
+[Source Code](quickpreview/__init__.py) 
+
+*Goals:* 
 - learn to record preview frames of an animation
 
 ## Explanations
