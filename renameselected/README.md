@@ -2,7 +2,10 @@
 
 ![Dialog](doc/Dialog.png)
 
-Goals:
+[Original MaxScript Tutorial](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-5986CAD3-BB68-47BC-B4B2-EF84C4659271)
+[Source Code](renameselected/__init__.py)
+
+*Goals:* 
 - learn how to create a dialog with PySide2
 - learn how to hook a python function to a 3ds Max ui element
 

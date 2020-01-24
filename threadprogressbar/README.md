@@ -2,10 +2,10 @@
 
 ![Dialog](doc/Progress.png)
 
-Goal:
+*Goal:*
 - learn how to update a progress bar from a worker thread
 
-Non Goal:
+*Non Goal:*
 - explaining how to connect a python function to a menu item (this is done
 in other samples like [removeallmaterials](removeallmaterials/README.md))
 

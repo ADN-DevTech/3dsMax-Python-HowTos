@@ -2,7 +2,10 @@
 
 ![Speedsheet](doc/Speedsheet.png)
 
-Goals:
+[Original MaxScript Tutorial](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-2DB3A775-776F-4D63-BDFB-D99523ECB69D)
+[Source Code](speedsheet/__init__.py)
+
+*Goals:* 
 - open a file selection dialog in 3ds Max
 - use file io in python
 - use pymxs.attime, pymxs.runtime.selection, pymxs.runtime.animationRange

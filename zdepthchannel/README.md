@@ -2,6 +2,9 @@
 
 ![ZDpeth](doc/ZDepth.png)
 
+[Original MaxScript Tutorial](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-3667A33C-E3E4-4F39-A480-3713240838F1)
+[Source Code](zdepthchannel/__init__.py)
+
 The 3ds Max default scanline renderer generates a multitude of additional data
 channels providing information about colors, texture coordinates, normals,
 transparency, velocity, coverage etc. All of these channels can be accessed for
@@ -11,7 +14,7 @@ The following simple script will render an image including Z-buffer depth info
 and convert it into what is known as a "voxel landscape" using the depth data
 to generate geometry representing the single image pixels.
 
-Goals:
+*Goals:* 
 - learn to access the z-buffer
 
 ## Explanations
