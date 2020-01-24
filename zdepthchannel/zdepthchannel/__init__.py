@@ -1,0 +1,41 @@
+"""
+    zdepthchannel example: Access the Z-Depth Channel
+"""
+import re
+import menuhook
+from pymxs import runtime as rt
+
+def zdepthchannel():
+    '''Access the Z-Depth Channel'''
+    voxelbox = re.compile("^VoxelBox")
+    for tbd in filter(lambda o: voxelbox.match(o.name), list(rt.objects)):
+        rt.delete(tbd)
+
+    zdepth_name = rt.Name("zdepth")
+    rbmp = rt.render(outputsize=rt.Point2(32, 32), channels=[zdepth_name], vfb=False)
+    z_d = rt.getChannelAsMask(rbmp, zdepth_name)
+    rt.progressStart("Rendering Voxels...")
+    for y in range(1, rbmp.height):
+        print("y =", y)
+        rt.progressupdate(100.0 * y / rbmp.height)
+        pixel_line = rt.getPixels(rbmp, rt.Point2(0, y-1), rbmp.width)
+        z_line = rt.getPixels(z_d, rt.Point2(0, y-1), rbmp.width)
+        for x in range(1, rbmp.width):
+            print("x =", x, z_line[x].value)
+            b = rt.box(width=10, length=10, height=(z_line[x].value/2))
+            b.pos = rt.Point3(x*10, -y*10, 0)
+            b.wirecolor = pixel_line[x]
+            b.name = rt.uniqueName("VoxelBox")
+    rt.progressEnd()
+
+def startup():
+    """
+    Hook the funtion to a menu item.
+    """
+    menuhook.register(
+        "zdepthchannel",
+        "howtos",
+        zdepthchannel,
+        menu="&Scripting",
+        text="Access the Z-Depth Channel",
+        tooltip="Access the Z-Depth Channel")
