@@ -97,7 +97,7 @@ def startup():
         "howtos",
         "renameselected",
         showdialog,
-        menu="&Scripting",
+        menu=[ "&Scripting", "Python3 Development", "How To"],
         text="renameselected sample",
         tooltip="renameselected sample")
 ```

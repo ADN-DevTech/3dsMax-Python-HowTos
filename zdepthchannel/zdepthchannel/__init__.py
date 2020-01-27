@@ -36,6 +36,6 @@ def startup():
         "zdepthchannel",
         "howtos",
         zdepthchannel,
-        menu="&Scripting",
+        menu=[ "&Scripting", "Python3 Development", "How To"],
         text="Access the Z-Depth Channel",
         tooltip="Access the Z-Depth Channel")

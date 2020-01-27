@@ -27,6 +27,6 @@ def startup():
         "quickpreview",
         "howtos",
         quickpreview,
-        menu="&Scripting",
+        menu=[ "&Scripting", "Python3 Development", "How To"],
         text="Create a quick preview",
         tooltip="Create a quick preview")

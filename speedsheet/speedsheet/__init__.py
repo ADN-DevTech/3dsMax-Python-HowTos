@@ -37,6 +37,6 @@ def startup():
         "speedsheet",
         "howtos",
         speedsheet,
-        menu="&Scripting",
+        menu=[ "&Scripting", "Python3 Development", "How To"],
         text="Output Object Data to File",
         tooltip="Output Object Data to File")
