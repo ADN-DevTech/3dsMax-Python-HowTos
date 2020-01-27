@@ -67,12 +67,34 @@ def add_macro(action, category, text, tooltip, fcn):
         text,
         mxs.format(action, category))
 
+def deep_menu(menu):
+    """
+        Finds or create a deep menu where to put our item.
+        like deep_menu(["&Scripting", "Python Developer", "HowTos"]) would make sure
+        there is a "Python Developer -> HowTos" sub menu item under scripting
+    """
+    found = rt.menuman.findMenu(menu[-1]) 
+    name = menu[-1]
+    if found is not None:
+        return found
+    if len(menu) == 1:
+        inmenu = rt.menuman.getMainMenuBar()
+    else:
+        inmenu = deep_menu(menu[0:-1])
+    submenu = rt.menuman.createMenu(name)
+    submenuitem = rt.menuman.createSubMenuItem(name, submenu)
+    index = inmenu.numItems() - 1
+    inmenu.addItem(submenuitem, index)
+    return submenu
+
 def add_menu_item(menu, action, category):
     """
     Add a menu item for an action.
     The menu item will be re added even if it is already there.
     """
-    targetmenu = rt.menuman.findmenu(menu)
+    if not isinstance(menu, list):
+        menu = [menu]
+    targetmenu = deep_menu(menu)
     if targetmenu:
         newaction = rt.menuman.createActionItem(action, category)
         if newaction:

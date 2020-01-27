@@ -26,7 +26,8 @@ menuhook.register(
     fcn,
     # the menu for this action. if None is provided the action
     # will not be added to a menu, only created as an action.
-    menu="&Scripting",
+    # this can be deeply nested.
+    menu=["&Scripting", "Samples"],
     # the menu text. if None is provided, the action name will be used
     text"the text for the menu item", 
     # the menu tool tip. if None is provided, the action name will be used

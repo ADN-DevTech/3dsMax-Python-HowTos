@@ -64,7 +64,7 @@ def startup():
         "howtos",
         "transformlock",
         fcn,
-        menu="&Scripting",
+        menu=[ "&Scripting", "Python3 Development", "How To"],
         menutext"Lock transformations for the selection",
         tooltip="Lock transformations for the selection")
 ```

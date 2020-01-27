@@ -18,6 +18,6 @@ def startup():
         "threadprogressbar",
         "howtos",
         threadprogressbar,
-        menu="&Scripting",
+        menu=[ "&Scripting", "Python3 Development", "Sample"],
         text="Update a progress bar from a thread",
         tooltip="Update a progress bar from a thread")
