@@ -45,6 +45,12 @@ the python version in the best python way known to us. An example of this is tha
 
 - Update a progressbar from a python thread [threadprogressbar](threadprogressbar/README.md)
 
+## 3dsMax startup entry point
+
+[pystartup](pystartup/README.md) provides the maxscript code that, when copied in 3ds Max's
+startup directory, will automatically launch pip packages with the 3dsMax startup
+entry point.
+
 ## Extra Goodies
 
 - [create.sh](create.sh) will generate an empty pip package in the current working directory.
