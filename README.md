@@ -10,6 +10,22 @@ and shareable more easily. As soon as something has dependencies on external pac
 more than one python file, pip packages become very convenient. Because we think it is a good
 practice to package 3ds Max python tools with pip, we provide all our examples in this form.
 
+## Installing 
+
+The [install.sh](install.sh) script can be used from bash
+to install the samples in 3ds Max.
+
+This operation will add a python3 scripting menu to 3ds Max:
+
+![Integration](Integration.png)
+
+The examples and some development goodies will be made available from there.
+
+The installation does the following:
+- it installs pip in your max installation if it's not already there
+- it installs pystartup.ms that enables auto start pip packages
+- it installs all the samples in --user and -e mode with pip
+
 ## Packages that are not examples but that are provided in this repo
 
 - [menuhook](menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
@@ -24,8 +40,9 @@ VSCode debugging interface) during the startup of max and make it accept remote 
 This may slow down the startup of 3ds Max quite a bit and is meant as a developer-only tool.
 
 
-## Python Examples
-The examples below are translations of [MAXScript Samples](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-25C9AD58-3665-471E-8B4B-54A094C1D5C9) that
+## Python How Tos
+
+The samples below are translations of [MAXScript How Tos](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-25C9AD58-3665-471E-8B4B-54A094C1D5C9) that
 can be found in the 3ds Max online documentation.
 
 The conversion from MaxScript to Python could have been more mechanical but we chose to implement
@@ -54,3 +71,4 @@ entry point.
 ## Extra Goodies
 
 - [create.sh](create.sh) will generate an empty pip package in the current working directory.
+- [install.sh](install.sh) will install pip, install pystartup and pip install all the samples

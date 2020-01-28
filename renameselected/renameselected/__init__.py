@@ -23,6 +23,6 @@ def startup():
         "renameselected",
         "howtos",
         showdialog,
-        menu="&Scripting",
-        text="renameselected sample",
+        menu=[ "&Scripting", "Python3 Development", "How To"],
+        text="Rename all elements in selection",
         tooltip="renameselected sample")
