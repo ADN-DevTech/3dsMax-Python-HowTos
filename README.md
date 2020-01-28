@@ -1,5 +1,7 @@
 # How To - Practical Examples For Python
 
+![Splash](Splash.png)
+
 This repo contains various python programming samples.
 
 All the examples in the tutorials are implemented as pip packages. This is a bit heavy for
