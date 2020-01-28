@@ -7,6 +7,8 @@ from pymxs import runtime as rt
 
 def zdepthchannel():
     '''Access the Z-Depth Channel'''
+    prev_renderer = rt.renderers.current
+    rt.renderers.current = rt.Default_Scanline_Renderer()
     voxelbox = re.compile("^VoxelBox")
     for tbd in filter(lambda o: voxelbox.match(o.name), list(rt.objects)):
         rt.delete(tbd)
@@ -27,6 +29,7 @@ def zdepthchannel():
             b.wirecolor = pixel_line[x]
             b.name = rt.uniqueName("VoxelBox")
     rt.progressEnd()
+    rt.renderers.current = prev_renderer
 
 def startup():
     """
