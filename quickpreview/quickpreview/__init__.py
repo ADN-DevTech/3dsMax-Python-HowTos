@@ -1,8 +1,8 @@
 """
     quickpreview example: Create a quick preview
 """
-import menuhook
 from os import path
+import menuhook
 from pymxs import runtime as rt
 
 def quickpreview():
@@ -15,7 +15,7 @@ def quickpreview():
         dib = rt.gw.getViewportDib()
         rt.copy(dib, anim_bmp)
         rt.save(anim_bmp)
-    rt.close(anim_bmp) 
+    rt.close(anim_bmp)
     rt.gc()
     rt.ramplayer(preview_name, "")
 
@@ -27,6 +27,6 @@ def startup():
         "quickpreview",
         "howtos",
         quickpreview,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
+        menu=["&Scripting", "Python3 Development", "How To"],
         text="Create a quick preview",
         tooltip="Create a quick preview")

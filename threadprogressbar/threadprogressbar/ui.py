@@ -1,18 +1,26 @@
 """
     PySide2 dialog that launches a worker and monitors its progress.
 """
+#pylint: disable=no-name-in-module
+#pylint: disable=too-few-public-methods
+import time
 from PySide2.QtWidgets import QWidget, QDialog, QLabel, QProgressBar, QVBoxLayout, QPushButton
 from PySide2.QtCore import QThread, Signal
-import time
 from pymxs import runtime as rt
 
-MINRANGE=1
-MAXRANGE=100
+MINRANGE = 1
+MAXRANGE = 100
 
 class Worker(QThread):
+    """
+    Worker thread
+    """
     progress = Signal(int)
     aborted = False
     def __init__(self):
+        """
+        Construct the worker
+        """
         QThread.__init__(self)
 
     def run(self):
@@ -47,10 +55,10 @@ class PyMaxDialog(QDialog):
         main_layout.addWidget(label)
 
         # progress bar
-        pb = QProgressBar()
-        pb.minimum = MINRANGE
-        pb.maximum = MAXRANGE
-        main_layout.addWidget(pb)
+        progb = QProgressBar()
+        progb.minimum = MINRANGE
+        progb.maximum = MAXRANGE
+        main_layout.addWidget(progb)
 
         # abort button
         btn = QPushButton("abort")
@@ -61,7 +69,7 @@ class PyMaxDialog(QDialog):
 
         # start the worker
         self.worker = Worker()
-        self.worker.progress.connect(pb.setValue)
+        self.worker.progress.connect(progb.setValue)
         self.worker.start()
 
         # connect abort button

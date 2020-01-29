@@ -10,6 +10,7 @@ REMACRO = re.compile('^[0-9]+ +"([^"]*)" +"([^"]*)"', re.M)
 
 # this is to avoid macros to be ditched while reloading
 # with reloadmod
+#pylint: disable=E0602
 if not hasattr(sys.modules[__name__], 'macros'):
     sys.modules[__name__].macros = {}
 
@@ -77,7 +78,7 @@ def deep_menu(menu):
         like deep_menu(["&Scripting", "Python Developer", "HowTos"]) would make sure
         there is a "Python Developer -> HowTos" sub menu item under scripting
     """
-    found = rt.menuman.findMenu(menu[-1]) 
+    found = rt.menuman.findMenu(menu[-1])
     name = menu[-1]
     if found is not None:
         return found
@@ -105,6 +106,7 @@ def add_menu_item(menu, action, category):
             targetmenu.addItem(newaction, -1)
             rt.menuman.updateMenuBar()
 
+#pylint: disable=too-many-arguments
 def register(action, category, fcn, menu=None, text=None, tooltip=None):
     """
     Appends a menu item to one of the menus of the main menubar.
@@ -120,3 +122,4 @@ def register(action, category, fcn, menu=None, text=None, tooltip=None):
     add_macro(action, category, text or action, tooltip or action, fcn)
     if not defined and not menu is None:
         add_menu_item(menu, action, category)
+#pylint: enable=too-many-arguments

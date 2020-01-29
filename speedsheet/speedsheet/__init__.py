@@ -8,14 +8,14 @@ from pymxs import runtime as rt
 def speedsheet():
     '''Output Object Data To File'''
     output_name = rt.getSaveFileName(
-            caption="SpeedSheet File", 
-            types="SpeedSheet (*.ssh)|*.ssh|All Files (*.*)|*.*|")
-    if output_name != None:
+        caption="SpeedSheet File",
+        types="SpeedSheet (*.ssh)|*.ssh|All Files (*.*)|*.*|")
+    if output_name is not None:
         with open(output_name, "w+") as output_file:
             with pymxs.attime(rt.animationRange.start):
                 output_file.write(
-                        "Object(s): {}\n".format(
-                            ", ".join(map(lambda x: x.name, list(rt.selection)))))
+                    "Object(s): {}\n".format(
+                        ", ".join(map(lambda x: x.name, list(rt.selection)))))
             average_speed = 0
             for t in range(int(rt.animationRange.start), int(rt.animationRange.end)):
                 with pymxs.attime(t):
@@ -37,6 +37,6 @@ def startup():
         "speedsheet",
         "howtos",
         speedsheet,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
+        menu=["&Scripting", "Python3 Development", "How To"],
         text="Output Object Data to File",
         tooltip="Output Object Data to File")

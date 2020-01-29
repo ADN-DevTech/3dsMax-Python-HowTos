@@ -3,7 +3,7 @@
 """
 import menuhook
 from pymxs import runtime as rt
-from threadprogressbar import ui as ui
+from threadprogressbar import ui
 
 def threadprogressbar():
     '''Update a progress bar from a thread'''
@@ -18,6 +18,6 @@ def startup():
         "threadprogressbar",
         "howtos",
         threadprogressbar,
-        menu=[ "&Scripting", "Python3 Development", "Other Samples"],
+        menu=["&Scripting", "Python3 Development", "Other Samples"],
         text="Update a progress bar from a thread",
         tooltip="Update a progress bar from a thread")
