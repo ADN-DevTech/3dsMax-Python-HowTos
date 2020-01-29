@@ -7,7 +7,11 @@ import re
 from pymxs import runtime as rt
 
 REMACRO = re.compile('^[0-9]+ +"([^"]*)" +"([^"]*)"', re.M)
-macros = {}
+
+# this is to avoid macros to be ditched while reloading
+# with reloadmod
+if not hasattr(sys.modules[__name__], 'macros'):
+    sys.modules[__name__].macros = {}
 
 def eprint(*args):
     """
