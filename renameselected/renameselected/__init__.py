@@ -3,7 +3,7 @@
 """
 import menuhook
 from pymxs import runtime as rt
-from renameselected import ui as ui
+from renameselected import ui
 
 def renameselected(text):
     '''Rename all elements in selection'''
@@ -12,6 +12,9 @@ def renameselected(text):
             i.name = rt.uniquename(text)
 
 def showdialog():
+    """
+    Show the rename dialog.
+    """
     dialog = ui.PyMaxDialog(renameselected)
     dialog.show()
 
@@ -23,6 +26,6 @@ def startup():
         "renameselected",
         "howtos",
         showdialog,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
+        menu=["&Scripting", "Python3 Development", "How To"],
         text="Rename all elements in selection",
         tooltip="renameselected sample")

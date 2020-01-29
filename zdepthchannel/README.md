@@ -121,21 +121,21 @@ This way we mirror the vertical coordinate to get a valid representation of the
 bitmap in the viewport.
 
 ```python
-            b = rt.box(width=10, length=10, height=(z_line[x].value/2))
-            b.pos = rt.Point3(x*10, -y*10, 0)
+            box = rt.box(width=10, length=10, height=(z_line[x].value/2))
+            box.pos = rt.Point3(x*10, -y*10, 0)
 ```
 
 Using the RGB color of the rendered pixel, we assign a new wireframe color to
 the new box.
 
 ```python
-            b.wirecolor = pixel_line[x]
+            box.wirecolor = pixel_line[x]
 ```
 
 We also set its box's name to a unique name with the base "VoxelBox"
 
 ```python
-            b.name = rt.uniqueName("VoxelBox")
+            box.name = rt.uniqueName("VoxelBox")
 ```
 
 After the loops are over, we can end the progress display.

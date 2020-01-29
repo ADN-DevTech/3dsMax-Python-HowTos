@@ -24,10 +24,10 @@ def zdepthchannel():
         z_line = rt.getPixels(z_d, rt.Point2(0, y-1), rbmp.width)
         for x in range(1, rbmp.width):
             print("x =", x, z_line[x].value)
-            b = rt.box(width=10, length=10, height=(z_line[x].value/2))
-            b.pos = rt.Point3(x*10, -y*10, 0)
-            b.wirecolor = pixel_line[x]
-            b.name = rt.uniqueName("VoxelBox")
+            box = rt.box(width=10, length=10, height=(z_line[x].value/2))
+            box.pos = rt.Point3(x*10, -y*10, 0)
+            box.wirecolor = pixel_line[x]
+            box.name = rt.uniqueName("VoxelBox")
     rt.progressEnd()
     rt.renderers.current = prev_renderer
 
@@ -39,6 +39,6 @@ def startup():
         "zdepthchannel",
         "howtos",
         zdepthchannel,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
+        menu=["&Scripting", "Python3 Development", "How To"],
         text="Access the Z-Depth Channel",
         tooltip="Access the Z-Depth Channel")

@@ -17,6 +17,6 @@ def startup():
         "removeallmaterials",
         "howtos",
         remove_all_materials,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
+        menu=["&Scripting", "Python3 Development", "How To"],
         text="Remove all materials from the scene",
         tooltip="Remove all materials from the scene")

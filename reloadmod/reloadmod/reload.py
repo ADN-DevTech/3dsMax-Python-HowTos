@@ -1,32 +1,37 @@
+"""
+    Reload multiple modules using importlib.
+"""
 import sys
 import importlib
 import inspect
 import pymxs
 
-FORCE_SKIP = [ ]
+FORCE_SKIP = []
 
 def non_builtin():
     """Return a set of all modules names that are not builtins and not
     importlib related."""
     skip = set(
         # filter out the builtins that should not be reloaded anyway
-        list(sys.builtin_module_names) + 
+        list(sys.builtin_module_names) +
         # filter out importlib that if reloaded breaks the whole thing
         list(filter(lambda k: k.find("importlib") >= 0, sys.modules.keys())) +
         FORCE_SKIP)
     return set(filter(lambda k: not (k in skip) and not is_builtin(k), sys.modules.keys()))
 
+#pylint: disable=broad-except
 def reload_many(keys):
     """Reload multiple packages by name"""
     for k in keys:
         try:
             importlib.invalidate_caches()
             importlib.reload(sys.modules[k])
-            print("module {} reloaded".format(k));
+            print("module {} reloaded".format(k))
         except NotImplementedError:
             print("     *module {} could not be reloaded because Not Implemented".format(k))
-        except Exception as e:
-            print("     *module {} could not be reloaded because {}".format(k, str(e)))
+        except Exception as ex:
+            print("     *module {} could not be reloaded because {}".format(k, str(ex)))
+#pylint: enable=broad-except
 
 def is_builtin(key):
     """Test builtin using inspect (some modules not seen
@@ -45,15 +50,15 @@ def module_path(key):
 
 def prefixed_by(apath, some_paths):
     """Check if a path is a a subpath of one of the provided paths"""
-    return len([ p for p in some_paths if (apath.find(p) == 0)]) > 0
+    return len([p for p in some_paths if apath.find(p) == 0]) > 0
 
 def filter_out_paths(keys, fullpaths):
     """Filter out paths prefixed by some path"""
-    return set([k for k in keys if not prefixed_by(module_path(k), fullpaths)])
+    return {k for k in keys if not prefixed_by(module_path(k), fullpaths)}
 
 def filter_out_string(keys, string):
     """Filter out paths that contain a specific string"""
-    return set([k for k in keys if module_path(k).find(string) < 0])
+    return {k for k in keys if module_path(k).find(string) < 0}
 
 def show_location(title, keys):
     """Show the location of a set of packages"""
@@ -67,4 +72,4 @@ def non_max():
 
 def dev_only():
     """Return a set of packages that are not dev related"""
-    return filter_out_string(non_max(), "site-packages") 
+    return filter_out_string(non_max(), "site-packages")
