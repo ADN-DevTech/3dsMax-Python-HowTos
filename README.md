@@ -72,3 +72,5 @@ entry point.
 
 - [create.sh](create.sh) will generate an empty pip package in the current working directory.
 - [install.sh](install.sh) will install pip, install pystartup and pip install all the samples
+- [checks.sh](checks.sh) runs pylint on the code (and any other desired checks)
+- [makepreview.sh](makepreview.sh) regenerates the Splash.png for the repo
