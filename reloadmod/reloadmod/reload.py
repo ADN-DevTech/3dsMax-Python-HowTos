@@ -3,7 +3,7 @@ import importlib
 import inspect
 import pymxs
 
-FORCE_SKIP = []
+FORCE_SKIP = [ ]
 
 def non_builtin():
     """Return a set of all modules names that are not builtins and not
@@ -61,6 +61,10 @@ def show_location(title, keys):
     for k in keys:
         print("{} loaded from {}".format(k, module_path(k)))
 
-NON_BUILTIN = non_builtin()
-NON_MAX = filter_out_paths(NON_BUILTIN, [pymxs.runtime.getdir(pymxs.runtime.name("maxroot"))])
-DEV_ONLY = filter_out_string(NON_MAX, "site-packages") 
+def non_max():
+    """Return a set of packages that are not max related"""
+    return filter_out_paths(non_builtin(), [pymxs.runtime.getdir(pymxs.runtime.name("maxroot"))])
+
+def dev_only():
+    """Return a set of packages that are not dev related"""
+    return filter_out_string(non_max(), "site-packages") 

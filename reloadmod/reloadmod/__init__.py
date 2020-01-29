@@ -3,7 +3,7 @@ from pymxs import runtime as rt
 from reloadmod import reload
 
 def python_reload():
-    reload.reload_many(reload.DEV_ONLY)
+    reload.reload_many(reload.dev_only())
 
 def startup():
     """

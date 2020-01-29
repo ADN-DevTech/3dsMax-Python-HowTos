@@ -4,6 +4,7 @@
 from PySide2.QtWidgets import QWidget, QDialog, QLabel, QProgressBar, QVBoxLayout, QPushButton
 from PySide2.QtCore import QThread, Signal
 import time
+from pymxs import runtime as rt
 
 MINRANGE=1
 MAXRANGE=100
