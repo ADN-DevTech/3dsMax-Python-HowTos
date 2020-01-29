@@ -10,7 +10,7 @@ def startup():
     Hook the funtion to a menu item.
     """
     menuhook.register(
-        "Reload Python Modules",
+        "reloadmod",
         "python3devtools",
         python_reload,
         menu=[ "&Scripting", "Python3 Development"],
