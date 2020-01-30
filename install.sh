@@ -8,7 +8,7 @@ exiterr() {
     exit 1
 }
 
-# make sure we have max in the current path
+# make sure we have 3ds Max in the current path
 if [ ! -f ./3dsmax.exe ] 
 then
     exiterr "This script must run in a 3ds Max installation"

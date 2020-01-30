@@ -33,7 +33,7 @@ threadprogressbar.startup()
 
 If we install this sample as a pip package it will be automatically
 started during the startup of 3ds Max (because it defines a startup
-entry point for max).
+entry point for 3ds Max).
 
 ## Understanding the code
 

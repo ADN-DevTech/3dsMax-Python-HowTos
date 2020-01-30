@@ -22,7 +22,7 @@ This operation will add a python3 scripting menu to 3ds Max:
 The examples and some development goodies will be made available from there.
 
 The installation does the following:
-- it installs pip in your max installation if it's not already there
+- it installs pip in your 3ds Max installation if it's not already there
 - it installs pystartup.ms that enables auto start pip packages
 - it installs all the samples in --user and -e mode with pip
 
@@ -36,7 +36,7 @@ most of the other samples.
 operation
 
 - [mxvscode](mxvcscode/README.md) is a small tool that will automatically import ptvsd (the
-VSCode debugging interface) during the startup of max and make it accept remote connections.
+VSCode debugging interface) during the startup of 3ds Max and make it accept remote connections.
 This may slow down the startup of 3ds Max quite a bit and is meant as a developer-only tool.
 
 
@@ -72,5 +72,6 @@ entry point.
 
 - [create.sh](create.sh) will generate an empty pip package in the current working directory.
 - [install.sh](install.sh) will install pip, install pystartup and pip install all the samples
-- [checks.sh](checks.sh) runs pylint on the code (and any other desired checks)
+- [checks.sh](checks.sh) runs pylint on the code, validates that 3ds Max is named properly,
+validates that code blocks in markdown always specify the programming language
 - [makepreview.sh](makepreview.sh) regenerates the Splash.png for the repo

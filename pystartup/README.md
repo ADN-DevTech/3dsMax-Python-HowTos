@@ -1,6 +1,6 @@
 # pystartup
 
-`pystartup.ms` is a MAXScript file that adds to max the ability to startup
+`pystartup.ms` is a MAXScript file that adds to 3ds Max the ability to startup
 pip packages when they are present in the python environment.
 
 
@@ -16,7 +16,7 @@ implement the 3dsMax startup entry point.
 This is done by adding a line like this in the setup.py file of
 a pip package:
 
-```
+```python
     entry_points={'3dsMax': 'startup=yourpackagename:startup'},
 ```
 

@@ -5,7 +5,7 @@ to a 3ds Max menu item.
 
 ## Example
 
-When a component is loaded, it can add itself to a max menu by doing this:
+When a component is loaded, it can add itself to a 3ds Max menu by doing this:
 
 ```python
 import menuhook
@@ -35,10 +35,10 @@ menuhook.register(
 ```
 
 - The menu item will only be added once for this (action, category) in
-a given max installation (if the action is already present, the menu item
+a given 3ds Max installation (if the action is already present, the menu item
 will not be created)
 
-- If during the startup of max the python module is not loaded (but was
+- If during the startup of 3ds Max the python module is not loaded (but was
 loaded in a previous run), the menu item will still be there. When
 invoking it the user will be notified that a python module required to
 implement the function was not loaded.
@@ -61,10 +61,10 @@ not behave as expected.
 
 
 *Q:* My python component is in a virtual env that I only use for launching
-max for special tasks (e.g. I have a special configuration of 3ds Max for
+3ds Max for special tasks (e.g. I have a special configuration of 3ds Max for
 software development that includes tools that are not used for content
 creation... I do this to reduce the clutter for my users) but I still see
-its menu items when launching max outside this virtual environment. Worse,
+its menu items when launching 3ds Max outside this virtual environment. Worse,
 when I do this the menu items don't work but display a message that something
 is missing.
 
@@ -80,7 +80,7 @@ change in the future.
 that have been created. So the [macros](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-3DC75DDE-E4BC-4033-ABA9-A42063036CB9) 
 that we create are permanent
 but if we don't load the python packages that implement them during
-an execution of max they become dangling. We are able to detect that
+an execution of 3ds Max they become dangling. We are able to detect that
 and notify the users. 
 
 

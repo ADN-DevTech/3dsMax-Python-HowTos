@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Hugo Windisch",
     author_email="hugo.windisch@autodesk.com",
-    description="Let the VS Code debugger attach to max",
+    description="Let the VS Code debugger attach to 3ds Max",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://git.autodesk.com/windish/maxpythontutorials",

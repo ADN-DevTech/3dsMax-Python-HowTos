@@ -24,7 +24,7 @@ transformlock.startup()
 
 If we install this sample as a pip package it will be automatically
 started during the startup of 3ds Max (because it defines a startup
-entry point for max).
+entry point for 3ds Max).
 
 ## Understanding the code
 
@@ -55,7 +55,7 @@ We then define the startup function. This function will be called by the 3ds Max
 entry point (if this project is installed as a pip package). We can also call it
 manually (in the listener window) if we prefer.
 
-```
+```python
 def startup():
     """
     Hook the transform lock function to a menu item.
