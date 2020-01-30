@@ -7,7 +7,7 @@
 
 *Non Goal:*
 - explaining how to connect a python function to a menu item (this is done
-in other samples like [removeallmaterials](removeallmaterials/README.md))
+in other samples like [removeallmaterials](/removeallmaterials/README.md))
 
 ## Explanations
 
