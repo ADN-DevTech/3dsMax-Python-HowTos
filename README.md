@@ -35,7 +35,7 @@ most of the other samples.
 - [realoadmod](reloadmod/README.md) is small tool that will reload all development modules in one
 operation
 
-- [mxvscode](mxvcscode/README.md) is a small tool that will automatically import ptvsd (the
+- [mxvscode](mxvscode/README.md) is a small tool that will automatically import ptvsd (the
 VSCode debugging interface) during the startup of 3ds Max and make it accept remote connections.
 This may slow down the startup of 3ds Max quite a bit and is meant as a developer-only tool.
 
@@ -73,5 +73,6 @@ entry point.
 - [create.sh](create.sh) will generate an empty pip package in the current working directory.
 - [install.sh](install.sh) will install pip, install pystartup and pip install all the samples
 - [checks.sh](checks.sh) runs pylint on the code, validates that 3ds Max is named properly,
-validates that code blocks in markdown always specify the programming language
+validates that code blocks in markdown always specify the programming language, checks that
+all links are valid in all markdown files of the repo
 - [makepreview.sh](makepreview.sh) regenerates the Splash.png for the repo
