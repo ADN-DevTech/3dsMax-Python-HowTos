@@ -76,7 +76,7 @@ def startup():
         "$samplename",
         "howtos",
         $samplename,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
+        menu=["&Scripting", "Python3 Development", "How To"],
         text="$sampledescr",
         tooltip="$sampledescr")
 EOF

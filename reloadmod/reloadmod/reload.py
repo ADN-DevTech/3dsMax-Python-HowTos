@@ -67,7 +67,7 @@ def show_location(title, keys):
         print("{} loaded from {}".format(k, module_path(k)))
 
 def non_max():
-    """Return a set of packages that are not max related"""
+    """Return a set of packages that are not 3ds Max related"""
     return filter_out_paths(non_builtin(), [pymxs.runtime.getdir(pymxs.runtime.name("maxroot"))])
 
 def dev_only():

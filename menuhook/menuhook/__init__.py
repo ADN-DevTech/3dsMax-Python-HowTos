@@ -22,7 +22,7 @@ def eprint(*args):
 
 def macro_defined(action, category):
     """
-    Search in max by a very tortuous method if a given macro
+    Search in 3ds Max by a very tortuous method if a given macro
     exists already.
     """
     mss = rt.stringStream("")
@@ -111,7 +111,7 @@ def register(action, category, fcn, menu=None, text=None, tooltip=None):
     """
     Appends a menu item to one of the menus of the main menubar.
     If the action already exists, the menu is not added but the
-    action is made available for this run of max.
+    action is made available for this run of 3ds Max.
 
     This is an integrated way of:
         - creating a macro

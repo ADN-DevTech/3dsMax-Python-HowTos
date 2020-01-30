@@ -4,7 +4,7 @@
 import ptvsd
 def startup():
     """
-        Allow the remote vscode debugger to attach to the max python
+        Allow the remote vscode debugger to attach to the 3ds Max python
         interpreter
     """
     print("""mxvscode startup enabling vscode debugging
