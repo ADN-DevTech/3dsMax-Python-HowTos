@@ -10,7 +10,7 @@ and shareable more easily. As soon as something has dependencies on external pac
 more than one python file, pip packages become very convenient. Because we think it is a good
 practice to package 3ds Max python tools with pip, we provide all our examples in this form.
 
-## Installing 
+## Installing
 
 The [install.sh](install.sh) script can be used from bash
 to install the samples in 3ds Max.
@@ -62,6 +62,7 @@ the python version in the best python way known to us. An example of this is tha
 
 - Update a progressbar from a python thread [threadprogressbar](threadprogressbar/README.md)
 - Create a single instance modal dialog [singleinstancedlg](singleinstancedlg/README.md)
+- Add menu items to open documentation pages in the web browser [inbrowserhelp](inbrowserhelp/README.md)
 
 ## 3dsMax startup entry point
 
