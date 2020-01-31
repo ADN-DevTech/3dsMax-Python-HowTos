@@ -61,6 +61,7 @@ the python version in the best python way known to us. An example of this is tha
 ## Python Examples that don't come from maxscript howtos
 
 - Update a progressbar from a python thread [threadprogressbar](threadprogressbar/README.md)
+- Create a single instance modal dialog [singleinstancedlg](singleinstancedlg/README.md)
 
 ## 3dsMax startup entry point
 

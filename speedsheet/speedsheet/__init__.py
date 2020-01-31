@@ -31,7 +31,7 @@ def speedsheet():
 
 def startup():
     """
-    Hook the funtion to a menu item.
+    Hook the function to a menu item.
     """
     menuhook.register(
         "speedsheet",
