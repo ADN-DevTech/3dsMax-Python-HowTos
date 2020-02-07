@@ -25,9 +25,9 @@ def startup():
     """
     for topic in TOPICS:
         menuhook.register(
-            "inbrowserhelp_{}".format(topic[0]),
+            f"inbrowserhelp_{topic[0]}",
             "howtos",
-            lambda topic=topic: webbrowser.open("https://{}".format(topic[2])),
+            lambda topic=topic: webbrowser.open(f"https://{topic[2]}"),
             MENU_LOCATION,
             text=topic[1],
             tooltip=topic[1])

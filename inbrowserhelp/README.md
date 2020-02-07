@@ -52,13 +52,13 @@ topic to create a menu item:
 ```python
     for topic in TOPICS:
         menuhook.register(
-            "inbrowserhelp_{}".format(topic[0]),
+            f"inbrowserhelp_{topic[0]}",
             "howtos",
-            lambda topic=topic: webbrowser.open("https://{}".format(topic[2])),
+            lambda topic=topic: webbrowser.open(f"https://{topic[2]}",
             MENU_LOCATION,
             text=topic[1],
             tooltip=topic[1])
 ```
 
-Opening a topic simply consists in calling `webbrowser.open("https://{}".format(topic[2]))`
+Opening a topic simply consists in calling `webbrowser.open(f"https://{topic[2]}")`
 when the menu item is activated.

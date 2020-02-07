@@ -26,11 +26,11 @@ def reload_many(keys):
         try:
             importlib.invalidate_caches()
             importlib.reload(sys.modules[k])
-            print("module {} reloaded".format(k))
+            print(f"module {k} reloaded")
         except NotImplementedError:
-            print("     *module {} could not be reloaded because Not Implemented".format(k))
+            print(f"     *module {k} could not be reloaded because Not Implemented")
         except Exception as ex:
-            print("     *module {} could not be reloaded because {}".format(k, str(ex)))
+            print(f"     *module {k} could not be reloaded because {str(ex)}")
 #pylint: enable=broad-except
 
 def is_builtin(key):
@@ -64,7 +64,7 @@ def show_location(title, keys):
     """Show the location of a set of packages"""
     print(title)
     for k in keys:
-        print("{} loaded from {}".format(k, module_path(k)))
+        print(f"{k} loaded from {module_path(k)}")
 
 def non_max():
     """Return a set of packages that are not 3ds Max related"""

@@ -115,7 +115,7 @@ The macro has an action and a category (that identifies it). It is done by this 
         action,
         tooltip,
         text,
-        mxs.format(action, category))
+        mxs)
 ```
 
 When this (category, action) exists, we can use `rt.menuman`, the [menu manager](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-258F6015-6B45-4A87-A7F5-BB091A2AE065)
