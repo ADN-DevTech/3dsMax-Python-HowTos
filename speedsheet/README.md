@@ -67,9 +67,9 @@ construction in MAXScript):
 
 ```python
             with pymxs.attime(rt.animationRange.start):
+                objdump = ", ".join(map(lambda x: x.name, list(rt.selection)))
                 output_file.write(
-                        "Object(s): {}\n".format(
-                            ", ".join(map(lambda x: x.name, list(rt.selection)))))
+                    f"Object(s): {objdump}\n")
 ```
 
 The `map(lambda x: x.name, list(rt.selection))` construct converts the `rt.selection`
@@ -99,7 +99,7 @@ From this it computes the speed at that time and writes it to the file:
 ```python
                 frame_speed = rt.distance(current_pos, last_pos) * rt.FrameRate
                 average_speed += frame_speed
-                output_file.write("Frame {}: {}\n".format(t, frame_speed))
+                output_file.write(f"Frame {t}: {frame_speed}\n")
 ```
 
 When the loop terminates, the average speed of the animation is also logged
@@ -107,7 +107,7 @@ to the file:
 
 ```python
             average_speed /= float(rt.animationRange.end - rt.animationRange.start)
-            output_file.write("Average Speed: {}\n".format(average_speed))
+            output_file.write(f"Average Speed: {average_speed}\n")
 ```
 
 After the end of the `with open(` block the file is closed automcatically.

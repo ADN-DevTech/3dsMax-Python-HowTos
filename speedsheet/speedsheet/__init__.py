@@ -13,9 +13,9 @@ def speedsheet():
     if output_name is not None:
         with open(output_name, "w+") as output_file:
             with pymxs.attime(rt.animationRange.start):
+                objdump = ", ".join(map(lambda x: x.name, list(rt.selection)))
                 output_file.write(
-                    "Object(s): {}\n".format(
-                        ", ".join(map(lambda x: x.name, list(rt.selection)))))
+                    f"Object(s): {objdump}\n")
             average_speed = 0
             for t in range(int(rt.animationRange.start), int(rt.animationRange.end)):
                 with pymxs.attime(t):
@@ -24,9 +24,9 @@ def speedsheet():
                     last_pos = rt.selection.center
                 frame_speed = rt.distance(current_pos, last_pos) * rt.FrameRate
                 average_speed += frame_speed
-                output_file.write("Frame {}: {}\n".format(t, frame_speed))
+                output_file.write(f"Frame {t}: {frame_speed}\n")
             average_speed /= float(rt.animationRange.end - rt.animationRange.start)
-            output_file.write("Average Speed: {}\n".format(average_speed))
+            output_file.write(f"Average Speed: {average_speed}\n")
         rt.edit(output_name)
 
 def startup():

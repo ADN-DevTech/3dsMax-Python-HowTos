@@ -52,10 +52,7 @@ def execute_macro(action, category):
     if key in macros:
         macros[key]()
     else:
-        eprint(
-            "The macro {} {} is not available.".format(
-                action,
-                category))
+        eprint(f"The macro {action} {category} is not available.")
 
 def add_macro(action, category, text, tooltip, fcn):
     """
@@ -64,13 +61,15 @@ def add_macro(action, category, text, tooltip, fcn):
     key = get_action_key(action, category)
     macros[key] = fcn
     # note: it is harmless to do this if it's already defined:
-    mxs = "( python.execute \"import menuhook\\nmenuhook.execute_macro(\\\"{}\\\", \\\"{}\\\")\")"
+    #pylint: disable=line-too-long
+    mxs = f"( python.execute \"import menuhook\\nmenuhook.execute_macro(\\\"{action}\\\", \\\"{category}\\\")\")"
+    #pylint: enable=line-too-long
     rt.macros.new(
         category,
         action,
         tooltip,
         text,
-        mxs.format(action, category))
+        mxs)
 
 def deep_menu(menu):
     """

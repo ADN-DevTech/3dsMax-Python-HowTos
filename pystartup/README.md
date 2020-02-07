@@ -73,7 +73,7 @@ def _python_startup():
                 fcn = entrypt.load()
                 fcn()
             except:
-                print('skipped package startup for {}, startup not working'.format(dist))
+                print(f'skipped package startup for {dist}, startup not working')
 _python_startup()
 del _python_startup
 ```
@@ -108,5 +108,5 @@ And if this works, loads and executes the entry point:
                 fcn = entrypt.load()
                 fcn()
             except:
-                print('skipped package startup for {}, startup not working'.format(dist))
+                print(f'skipped package startup for {dist}, startup not working')
 ```
