@@ -1,6 +1,6 @@
 # menuhook
 
-This package provides a convenient way to hook a python function
+This package provides a convenient way to hook a Python function
 to a 3ds Max menu item.
 
 ## Example
@@ -38,9 +38,9 @@ menuhook.register(
 a given 3ds Max installation (if the action is already present, the menu item
 will not be created)
 
-- If during the startup of 3ds Max the python module is not loaded (but was
+- If during the startup of 3ds Max the Python module is not loaded (but was
 loaded in a previous run), the menu item will still be there. When
-invoking it the user will be notified that a python module required to
+invoking it the user will be notified that a Python module required to
 implement the function was not loaded.
 
 - The user remains the owner of menus (as it is in the current 3ds Max
@@ -60,7 +60,7 @@ instead of the 3ds Max Menu Manager will be lost. In short: things will
 not behave as expected.
 
 
-*Q:* My python component is in a virtual env that I only use for launching
+*Q:* My Python component is in a virtual env that I only use for launching
 3ds Max for special tasks (e.g. I have a special configuration of 3ds Max for
 software development that includes tools that are not used for content
 creation... I do this to reduce the clutter for my users) but I still see
@@ -76,10 +76,10 @@ change in the future.
 
 *Q:* Doing this creates a 'macro' and this macro never goes away
 
-*A:* The python & maxscript apis currently do not allow to remove macros
+*A:* The Python & maxscript apis currently do not allow to remove macros
 that have been created. So the [macros](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-3DC75DDE-E4BC-4033-ABA9-A42063036CB9) 
 that we create are permanent
-but if we don't load the python packages that implement them during
+but if we don't load the Python packages that implement them during
 an execution of 3ds Max they become dangling. We are able to detect that
 and notify the users. 
 
@@ -102,7 +102,7 @@ Nevertheless the code is in [menuhook/__init__.py](menuhook/__init__.py) and doe
 from pymxs import runtime as rt
 ```
 
-To get access to the 3dsMax scripting library for python (pymxs).
+To get access to the 3dsMax scripting library for Python (pymxs).
 
 Then it uses `rt.macros` to access functions from the [macro scripts](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-3DC75DDE-E4BC-4033-ABA9-A42063036CB9).
 As it is now we have to create a macro for a function we want to hook to the menu.

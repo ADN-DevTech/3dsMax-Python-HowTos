@@ -5,11 +5,11 @@
 
 *Goals:* 
 - learn how to call a function in pymxs
-- learn how to hook a python function to a 3ds Max ui element
+- learn how to hook a Python function to a 3ds Max ui element
 
 ## Explanations
 
-The shows how to create a minimal python tool for 3ds Max. This tools adds a menu item
+The shows how to create a minimal Python tool for 3ds Max. This tools adds a menu item
 to the Scripting menu to lock all transformations on the selection.
 
 ## Using the tool
@@ -29,13 +29,13 @@ entry point for 3ds Max).
 ## Understanding the code
 
 We first import menuhook. This package provides an easy way to create a menu item
-for running a python function.
+for running a Python function.
 
 ```python
 import menuhook
 ```
 
-We also import pymxs. Pymxs lets python access the whole MAXScript scripting library.
+We also import pymxs. Pymxs lets Python access the whole MAXScript scripting library.
 
 ```python
 from pymxs import runtime as rt

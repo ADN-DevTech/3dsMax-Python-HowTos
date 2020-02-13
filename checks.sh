@@ -30,6 +30,8 @@ checkmarkdown() {
     # find references to max that are not 3ds Max
     git grep "[^a-zA-Z_]max[^a-zA-Z]" -- "*.py" "*.md" |
         sed "s/$/ uses max instead of 3ds Max/g"
+    git grep -n "[^a-zA-Z_\`.]python[^a-zA-Z_]" -- "*.md" | 
+        sed "s/$/: python should be spelled Python/g"
 }
 
 checkmdlinks() {

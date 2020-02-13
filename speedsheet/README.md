@@ -7,12 +7,12 @@
 
 *Goals:* 
 - open a file selection dialog in 3ds Max
-- use file io in python
+- use file io in Python
 - use pymxs.attime, pymxs.runtime.selection, pymxs.runtime.animationRange
 - open a text file in the 3ds Max text editor
 
 Non Goal:
-- explaining how to connect a python function to a menu item (this is done
+- explaining how to connect a Python function to a menu item (this is done
 in other samples like [removeallmaterials](/removeallmaterials/README.md))
 
 ## Explanations
@@ -20,8 +20,8 @@ in other samples like [removeallmaterials](/removeallmaterials/README.md))
 The following example will create a macroScript that will output the speed of the 
 current object selection on each frame and its average speed to a text file.
 
-A difference with the MAXScript version of the sample is that we use python 
-file io instead of pymxs file io in the python sample.
+A difference with the MAXScript version of the sample is that we use Python 
+file io instead of pymxs file io in the Python sample.
 
 ## Using the tool
 
@@ -51,7 +51,7 @@ file types, using `rt.getSaveFileName`:
             types="SpeedSheet (*.ssh)|*.ssh|All Files (*.*)|*.*|")
 ```
 
-It then opens the selected file for writing using the python `open` function.
+It then opens the selected file for writing using the Python `open` function.
 The file is opened in a `with` block: this guarantees that no matter what
 happens in the block, the file will be closed before exiting the block. This
 simplifies the code and makes it more robust at the same time.
