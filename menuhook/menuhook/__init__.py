@@ -1,5 +1,5 @@
 """
-    Utility for registering python actions in 3ds Max menus, in a way
+    Utility for registering Python actions in 3ds Max menus, in a way
     that is relatively harmonious with the menu manager.
 """
 import sys

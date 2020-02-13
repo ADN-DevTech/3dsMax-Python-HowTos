@@ -6,7 +6,7 @@
 - learn how to update a progress bar from a worker thread
 
 *Non Goal:*
-- explaining how to connect a python function to a menu item (this is done
+- explaining how to connect a Python function to a menu item (this is done
 in other samples like [removeallmaterials](/removeallmaterials/README.md))
 
 ## Explanations
@@ -17,7 +17,7 @@ the background and notifies the dialog of its progress. A progress bar
 shows the percentage of completion of the background job.
 
 Important remark: pymxs is not thread safe. Python threads cannot
-call into pymxs. It is possible for python threads to emit QT Signals
+call into pymxs. It is possible for Python threads to emit QT Signals
 that will be processed on the main thread, and this mechanism allows
 both UI and pymxs interatction during thread execution.
 

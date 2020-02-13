@@ -1,7 +1,7 @@
 # pystartup
 
 `pystartup.ms` is a MAXScript file that adds to 3ds Max the ability to startup
-pip packages when they are present in the python environment.
+pip packages when they are present in the Python environment.
 
 
 ## Installation
@@ -24,7 +24,7 @@ where `yourpackagename` is the name of the package (i.e. import
 yourpackagename works) and startup is an exported function of 
 yourpackagename that will be called during startup.
 
-Most if not all python samples in this repo implement this entry
+Most if not all Python samples in this repo implement this entry
 point. [transformlock's setup script](/transformlock/setup.py) can
 be taken as en example as well as [transformlock's \_\_init\_\_.py](/transformlock/transformlock/__init__.py).
 
@@ -32,7 +32,7 @@ be taken as en example as well as [transformlock's \_\_init\_\_.py](/transformlo
 ## The maxscript code
 
 The pystartup.ms code consists in a call to python.execute that runs
-a small python program.
+a small Python program.
 
 ```maxscript
 if isProperty python "execute" then (
@@ -40,7 +40,7 @@ if isProperty python "execute" then (
 	"    try:\n" +
     "        import pkg_resources\n" +
     "    except ImportError:\n" +
-    "        print('startup python modules require pip to be installed.')\n" +
+    "        print('startup Python modules require pip to be installed.')\n" +
     "        return\n" +	
     "    for dist in pkg_resources.working_set: \n" +
     "        entrypt = pkg_resources.get_entry_info(dist, '3dsMax', 'startup')\n" +
@@ -55,16 +55,16 @@ if isProperty python "execute" then (
 )
 ``` 
 
-## The python code
+## The Python code
 
-Here is the python code used for the entry points:
+Here is the Python code used for the entry points:
 
 ```python
 def _python_startup():
     try:
         import pkg_resources
     except ImportError:
-        print('startup python modules require pip to be installed.')
+        print('startup Python modules require pip to be installed.')
         return
     for dist in pkg_resources.working_set: 
         entrypt = pkg_resources.get_entry_info(dist, '3dsMax', 'startup')

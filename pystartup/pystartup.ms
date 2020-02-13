@@ -3,7 +3,7 @@ if isProperty python "execute" then (
 	"    try:\n" +
     "        import pkg_resources\n" +
     "    except ImportError:\n" +
-    "        print('startup python modules require pip to be installed.')\n" +
+    "        print('startup Python modules require pip to be installed.')\n" +
     "        return\n" +	
     "    for dist in pkg_resources.working_set: \n" +
     "        entrypt = pkg_resources.get_entry_info(dist, '3dsMax', 'startup')\n" +

@@ -1,12 +1,12 @@
 # HowTo: inbrowserhelp
 
-This sample shows how to open a page in the webbrowser from python
+This sample shows how to open a page in the webbrowser from Python
 
 ## Explanations
 
 The example creates a submenu in the Scripting -> Python3 Development menu,
 called Browse Documentation. Each menu item in this menu opens the platform
-browser in a location that may be useful to python developers.
+browser in a location that may be useful to Python developers.
 
 # Understanding the code
 

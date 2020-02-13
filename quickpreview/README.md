@@ -40,7 +40,7 @@ entry point for 3ds Max).
 
 We use `rt.getDir(rt.Name("preview"))` to find the default directory
 for previews ([3ds Max System Directories](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-F7577416-051E-478C-BB5D-81243BAAC8EC#GUID-F7577416-051E-478C-BB5D-81243BAAC8EC)).
-We concatenate "quickpreview.avi" using the standard python `path.join` function.
+We concatenate "quickpreview.avi" using the standard Python `path.join` function.
 
 ```python
     preview_name = path.join(rt.getDir(rt.Name("preview")), "quickpreview.avi")
