@@ -13,6 +13,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://git.autodesk.com/windish/maxpythontutorials",
     packages=setuptools.find_packages(),
+    install_requires=[
+        'ptvsd'
+    ],
     entry_points={'3dsMax': 'startup=mxvscode:startup'},
     classifiers=[
         "Programming Language :: Python :: 3",

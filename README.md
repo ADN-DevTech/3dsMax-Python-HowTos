@@ -12,9 +12,6 @@ practice to package 3ds Max Python tools with pip, we provide all our examples i
 
 ## Installing
 
-The [install.sh](install.sh) script can be used from bash
-to install the samples in 3ds Max.
-
 This operation will add a Python3 scripting menu to 3ds Max:
 
 ![Integration](Integration.png)
@@ -25,6 +22,27 @@ The installation does the following:
 - it installs pip in your 3ds Max installation if it's not already there
 - it installs pystartup.ms that enables auto start pip packages
 - it installs all the samples in --user and -e mode with pip
+
+### Option A: Install Everthing Locally (--user)
+
+Installation needs to be done from a gitbash prompt.
+
+The [install.sh](install.sh) script can be used from bash
+to install the samples in 3ds Max. The script needs to be ran from a
+3ds Max installation directory.
+
+### Option B: Install the howtos in a virtual environment
+
+Installation needs to be done from a gitbash prompt.
+
+Another option is to run [installstartup.sh](/installstartup.sh) from the
+3ds Max installation directory. This will only install pip (if not already
+there) and [pystartup.ms](/pystartup/pystartup.ms) ([details here](/pystartup/README.md)) in 3ds Max.
+
+Then, from the same gitbash prompt, the [installhowtos.sh](/installhowtos.sh)
+script can be used to install the HowTos in a virtual environment. First `cd`
+to the directory of the virtual env and then (without activating the env) simply
+run [installhowtos.sh](/installhowtos.sh) from that directory.
 
 ## Packages that are not examples but that are provided in this repo
 
@@ -74,6 +92,8 @@ entry point.
 
 - [create.sh](create.sh) will generate an empty pip package in the current working directory.
 - [install.sh](install.sh) will install pip, install pystartup and pip install all the samples
+- [installstartup.sh](installstartup.sh) will install pip and pystartup and nothing more
+- [installhowtos.sh](installhowtos.sh) will install only the howtos (works in a virtual env)
 - [checks.sh](checks.sh) runs pylint on the code, validates that 3ds Max is named properly,
 validates that code blocks in markdown always specify the programming language, checks that
 all links are valid in all markdown files of the repo
