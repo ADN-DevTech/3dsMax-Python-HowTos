@@ -89,10 +89,12 @@ will change from 1 to the height of the bitmap.
 The progressupdate method requires a percentage value. We divide the current
 bitmap line number y by the total number of lines rbmp.height . This yields a
 result between 0.0 and 1.0, multiplied by 100.0 it returns a percentage between
-0.0 and 100.0.
+0.0 and 100.0. To react to the Cancel button, we exit the loop if
+progressUpdate returns a False value.
 
 ```python
-        rt.progressupdate(100.0 * y / rbmp.height)
+        if not rt.progressupdate(100.0 * y / rbmp.height):
+            break
 ```
 
 Now we read a whole line of pixels from both the RGBA bitmap and its z-buffer.

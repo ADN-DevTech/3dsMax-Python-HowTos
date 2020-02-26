@@ -19,7 +19,8 @@ def zdepthchannel():
     rt.progressStart("Rendering Voxels...")
     for y in range(1, rbmp.height):
         print("y =", y)
-        rt.progressupdate(100.0 * y / rbmp.height)
+        if not rt.progressupdate(100.0 * y / rbmp.height):
+            break
         pixel_line = rt.getPixels(rbmp, rt.Point2(0, y-1), rbmp.width)
         z_line = rt.getPixels(z_d, rt.Point2(0, y-1), rbmp.width)
         for x in range(1, rbmp.width):
