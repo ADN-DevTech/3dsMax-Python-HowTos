@@ -15,5 +15,3 @@ installpip
 echo "Install pystartup"
 installpystartup
 
-echo "install python packages"
-installpythonpackages
