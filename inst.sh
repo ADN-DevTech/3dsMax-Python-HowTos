@@ -1,7 +1,12 @@
 set -e
 script=$(dirname $(readlink -f "$0"))
 installdir=$(pwd)
-startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
+if grep -i "installedBuild=1" "$installdir/installSettings.ini"
+then
+    startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
+else
+    startuppath="$installdir/scripts/startup"
+fi
 exiterr() { 
     echo "$@" 1>&2 
     exit 1
