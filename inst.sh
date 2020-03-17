@@ -35,11 +35,21 @@ installpystartup() {
 }
 
 
-# install all python packages in the repo with the -e option
+# install all Python packages in the repo with the -e option
 installpythonpackages() {
     for f in $(find "$script" -name "setup.py")
     do
         local package=$(dirname "$f")
         "$installdir/Python37/python.exe" -m pip install --user -e "$package"
+    done
+}
+
+# uninstall all Python packages in the repo
+uninstallpythonpackages() {
+    for f in $(find "$script" -name "setup.py")
+    do
+        local package=$(basename "$(dirname "$f")")
+        local pname="$package-autodesk"
+        "$installdir/Python37/python.exe" -m pip uninstall -y "$pname"
     done
 }
