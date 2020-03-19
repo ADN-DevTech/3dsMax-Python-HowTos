@@ -33,20 +33,22 @@ you will be able to update your local version and re-run the installation script
 
 ```bash
 # from the directory where you want the sample
-git clone https://git.autodesk.com/windish/pythonhowtos.git
+git clone https://github.com/ADN-DevTech/3dsMax-Python-HowTos.git
 ```
 
-Also note that *all installation steps decribed here also use gitbash*.
+Also note that *all installation steps decribed here also use git bash* (it is
+possible to use another client for git but all installation scripts in
+this repo use bash).
 
 ### Option A: Install Everthing Locally in One Step (--user)
-(Note: the steps described here need to be done from a gitbash prompt)
+> Note: the steps described here need to be done from a git bash prompt
 
 The [install.sh](install.sh) script can be used from bash
 to install the samples in 3ds Max. The script needs to be run from a
 3ds Max installation directory.
 
 ### Option B: Install Everything Locally in Two Steps (--user)
-(Note: the steps described here need to be done from a gitbash prompt)
+> Note: the steps described here need to be done from a git bash prompt
 
 It is possible to break up the installation in two steps.
 
@@ -70,7 +72,7 @@ This script needs to run in the 3ds Max installation directory.
 The steps needed to uninstall the HowTos can be found in [uninstall.md](uninstall.md).
 
 ### Option C: Install the howtos in a virtual environment
-(Note: the steps described here need to be done from a gitbash prompt)
+> Note: the steps described here need to be done from a git bash prompt
 
 This last option requires three steps.
 
@@ -82,10 +84,9 @@ you may want to have a virtual environment for Python development).
 installation directory to install pip if it is missing and pystartup.
 
 - The second step consists in installing virtualenv with pip and creating a
-virtual environement. These steps are desribed in the [3ds Max documentation](http://help-staging.autodesk.com/view/MAXDEV/2021/ENU/?guid=virtual_env).
-
+virtual environment. These steps are described in the [3ds Max documentation](http://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_python_3_support_virtual_env_html).
 - The last step consists in installing the HowTos in the virtual environment.
-From the same gitbash prompt, the [installhowtos.sh](/installhowtos.sh)
+From the same git bash prompt, the [installhowtos.sh](/installhowtos.sh)
 script can be used to install the HowTos in a virtual environment. First `cd`
 to the directory of the virtual env and then (without activating the env) simply
 run [installhowtos.sh](/installhowtos.sh) from that directory.
@@ -130,7 +131,7 @@ the Python version in the best Python way known to us. An example of this is tha
 
 ## 3dsMax startup entry point
 
-[pystartup](pystartup/README.md) provides the maxscript code that, when copied in 3ds Max's
+[pystartup](pystartup/README.md) provides the maxscript code that, when copied to 3ds Max's
 startup directory, will automatically launch pip packages with the 3dsMax startup
 entry point.
 

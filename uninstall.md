@@ -5,15 +5,15 @@ to uninstall everything are explained here.
 
 ## Removing pystartup.ms
 
-After the installation, pystartup.ms will be copied in:
+After the installation, pystartup.ms will be copied to:
 
 "$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
 
 It can simply be removed from there.
 
-Note: pystartup.ms finds the pip packages
-in the Python environment. If they expose a 3dsMax startup entry point
-the entry point is called during the 3ds Max startup.
+> Note: pystartup.ms finds the pip packages
+> in the Python environment. If they expose a 3dsMax startup entry point
+> the entry point is called during the 3ds Max startup.
 
 By removing this file none of the HowTo packages will be started
 automatically when 3ds Max starts.
@@ -23,23 +23,24 @@ automatically when 3ds Max starts.
 The installation script also install pip in user mode.
 
 You can also remove pip (although this is not really recommended).
-To remove it, from the maxinstallationfolder/Python37:
+To remove it: 
 
 ```bash
+# current directory needs to be maxinstallationfolder/Python37:
 ./python.exe -m pip uninstall pip
 ```
 
 ## Removing the individual HowTos
 
-The HowTos can be uninstalled individually by doing, from
-the maxinstallationfolder/Python37:
+The HowTos can be uninstalled individually by calling:
 
 ```bash
+# current directory needs to be maxinstallationfolder/Python37:
 ./python.exe -m pip uninstall reloadmod-autodesk
 ```
 
-Note that the full package name should be the name of the
-package directory followed by `-autodesk`.
+> Note that the full package name should be the name of the
+> package directory followed by `-autodesk`.
 
 ## Uninstalling all the HowTos at Once
 
@@ -51,5 +52,5 @@ to uninstall all the howtos at once. This will automatically call
 
 Menu items and action items added to 3ds Max are permanent. 
 Cleaning up the menu items needs to be done manually from the
-user interface.
+user interface (Customize > Customize User Interface > Menus).
 
