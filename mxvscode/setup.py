@@ -6,21 +6,13 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="mxvscode-autodesk",
     version="0.0.1",
-    author="Hugo Windisch",
-    author_email="hugo.windisch@autodesk.com",
     description="Let the VS Code debugger attach to 3ds Max",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://git.autodesk.com/windish/maxpythontutorials",
     packages=setuptools.find_packages(),
     install_requires=[
         'ptvsd'
     ],
     entry_points={'3dsMax': 'startup=mxvscode:startup'},
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "LICENSE :: OTHER/PROPRIETARY LICENSE",
-        "Operating System :: Microsoft :: Windows"
-    ],
-    python_requires='>=3.6'
+    python_requires='>=3.7'
 )

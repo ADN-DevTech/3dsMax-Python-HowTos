@@ -6,11 +6,11 @@ import menuhook
 
 TOPICS = [
     ("gettingstarted", "Getting Started With Python in 3ds Max",
-     "git.autodesk.com/windish/maxpythontutorials"),
+     "help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_tutorials_creating_the_dialog_html"),
     ("howtos", "Python HowTos Github Repo",
-     "git.autodesk.com/windish/pythonhowtos"),
+     "https://github.com/ADN-DevTech/3dsMax-Python-HowTos"),
     ("pymxs", "Pymxs Online Documentation",
-     "help-beta.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_using_pymxs_html"),
+     "help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_using_pymxs_html"),
     ("pyside2", "Qt for Python Documentation (PySide2)",
      "doc.qt.io/qtforpython/contents.html"),
     ("python", "Python 3.7 Documentation",
