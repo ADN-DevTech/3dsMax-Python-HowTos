@@ -9,7 +9,7 @@ then
     exiterr "This script must run in a 3ds Max installation directory."
 fi
 
-echo "install python packages"
+echo "Uninstall python packages"
 "$script"/uninstallhowtos.sh
 
 echo "Uninstall pip"
@@ -19,4 +19,4 @@ echo "Uninstall pip"
 )
 
 echo "Uninstall pystartup"
-rm "$startuppath/pystartup.sh"
+rm "$startuppath/pystartup.ms"

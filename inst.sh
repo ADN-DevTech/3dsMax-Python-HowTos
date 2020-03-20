@@ -1,10 +1,10 @@
 set -e
 script=$(dirname $(readlink -f "$0"))
 installdir=$(pwd)
-if grep -i "installedBuild=1" "$installdir/installSettings.ini"
+if grep -i "installedBuild=1" "$installdir/installSettings.ini" >/dev/null 2>&1
 then
     startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
-elif iconv -f UTF-16 -t UTF-8 <InstallSettings.ini | grep -i "installedBuild=1"
+elif iconv -f UTF-16 -t UTF-8 <InstallSettings.ini | grep -i "installedBuild=1" >/dev/null 2>&1
 then
     startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
 else
