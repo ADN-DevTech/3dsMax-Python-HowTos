@@ -1,14 +1,18 @@
 set -e
 script=$(dirname $(readlink -f "$0"))
 installdir=$(pwd)
-if grep -i "installedBuild=1" "$installdir/installSettings.ini"
+if grep -i "installedBuild=1" "$installdir/installSettings.ini" >/dev/null 2>&1
+then
+    startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
+elif iconv -f UTF-16 -t UTF-8 <InstallSettings.ini | grep -i "installedBuild=1" >/dev/null 2>&1
 then
     startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
 else
     startuppath="$installdir/scripts/startup"
 fi
-exiterr() { 
-    echo "$@" 1>&2 
+
+exiterr() {
+    echo "$@" 1>&2
     exit 1
 }
 
@@ -53,3 +57,4 @@ uninstallpythonpackages() {
         "$installdir/Python37/python.exe" -m pip uninstall -y "$pname"
     done
 }
+
