@@ -9,7 +9,7 @@ lint() {
     do
         local package=$(basename $(dirname "$f"))
         echo "$package" 
-        pylint "./$package/$package"
+        pylint3 "./$package/$package"
         # also prevent runtime.execute
         if grep -n -R -E "runtime\.execute\(|rt.execute\(" --include '*.py' "./$package/$package"
         then 

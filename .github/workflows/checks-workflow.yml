@@ -1,0 +1,15 @@
+name: Checks
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out a copy of your repository.
+      - uses: actions/checkout@v2
+      # This step references the directory that contains the action.
+      - name: RunChecks
+        # this is a mega hack, to be fixed
+        run: |
+            sudo apt-get install pylint3 dos2unix
+            chmod +x ./checks.sh
+            ./checks.sh
