@@ -3,7 +3,18 @@
 It is easy undo the work of the installation scripts. The steps needed
 to uninstall everything are explained here.
 
-## Removing pystartup.ms
+## uninstall.sh
+
+The `uninstall.sh` script will:
+
+- uninstall pip
+- uninstall the pip packages of the samples
+- remove pystartup.ms
+
+The menu items in 3ds Max will not be removed automatically (the steps
+needed to remove them are explained at the bottom of this page).
+
+## Removing pystartup.ms (manual uninstall)
 
 After the installation, pystartup.ms will be copied to:
 
@@ -18,7 +29,7 @@ It can simply be removed from there.
 By removing this file none of the HowTo packages will be started
 automatically when 3ds Max starts.
 
-## Removing pip
+## Removing pip (manual uninstall)
 
 The installation script also install pip in user mode.
 
@@ -30,7 +41,7 @@ To remove it:
 ./python.exe -m pip uninstall pip
 ```
 
-## Removing the individual HowTos
+## Removing the individual HowTos (manual uninstall)
 
 The HowTos can be uninstalled individually by calling:
 
@@ -42,7 +53,7 @@ The HowTos can be uninstalled individually by calling:
 > Note that the full package name should be the name of the
 > package directory followed by `-autodesk`.
 
-## Uninstalling all the HowTos at Once
+## Uninstalling all the HowTos at Once (manual uinstall)
 
 The [uninstallhowtos.sh](uninstallhowtos.sh) can be used
 to uninstall all the howtos at once. This will automatically call

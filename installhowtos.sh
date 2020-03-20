@@ -30,7 +30,7 @@ if [ -f "Scripts/activate.bat" ]
 then
     # this is a virtual env
     echo "install python packages in virtual env"
-    read -p "Is this what you want (Y/n)? " -n 1 -r
+    read -p "Is this what you want (Y/n)? " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         tmpfile=$(mktemp /tmp/XXXXXXX.bat)
@@ -42,7 +42,7 @@ elif [ -f ./3dsmax.exe ]
 then
     # this is the default installation
     echo "install python packages in your account with --user (not in a virtual env)"
-    read -p "Is this what you want (Y/n)? " -n 1 -r
+    read -p "Is this what you want (Y/n)? " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         installpythonpackages

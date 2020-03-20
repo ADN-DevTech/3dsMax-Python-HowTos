@@ -17,7 +17,7 @@ if [ -f "Scripts/activate.bat" ]
 then
     # this is a virtual env
     echo "unininstall python packages from virtual env"
-    read -p "Is this what you want (Y/n)? " -n 1 -r
+    read -p "Is this what you want (Y/n)? " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         tmpfile=$(mktemp /tmp/XXXXXXX.bat)
@@ -29,7 +29,7 @@ elif [ -f ./3dsmax.exe ]
 then
     # this is the default installation
     echo "uininstall python packages from your user account"
-    read -p "Is this what you want (Y/n)? " -n 1 -r
+    read -p "Is this what you want (Y/n)? " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         uninstallpythonpackages
