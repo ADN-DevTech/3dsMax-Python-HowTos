@@ -8,6 +8,9 @@ from pymxs import runtime as rt
 
 REMACRO = re.compile('^[0-9]+ +"([^"]*)" +"([^"]*)"', re.M)
 
+def function_without_docstring():
+    pass
+
 # this is to avoid macros to be ditched while reloading
 # with reloadmod
 #pylint: disable=E0602
