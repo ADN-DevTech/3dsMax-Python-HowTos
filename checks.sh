@@ -1,22 +1,33 @@
 #! /usr/bin/env bash
 set -e
 script=$(dirname $(readlink -f "$0"))
+packagedir="$script/src/packages" 
 workdir=$(pwd)
 IFS=$'\n'
+pl=pylint
 
+lintdir() {
+    comment="$1"
+    folder="$2"
+    echo "$comment"
+    $pl "$folder"
+    # also prevent runtime.execute
+    if grep -n -R -E "runtime\.execute\(|rt.execute\(" --include '*.py' "$folder"
+    then 
+        echo "pymxs.execute used"
+        exit 1
+    fi
+}
 lint() {
-    for f in $(find . -name "setup.py")
+    for f in $(find "$packagedir" -name "setup.py")
     do
         local package=$(basename $(dirname "$f"))
-        echo "$package" 
-        pylint3 "./$package/$package"
-        # also prevent runtime.execute
-        if grep -n -R -E "runtime\.execute\(|rt.execute\(" --include '*.py' "./$package/$package"
-        then 
-            echo "pymxs.execute used"
-            exit 1
-        fi
+        lintdir "$package" "$packagedir/$package/$package"
     done
+}
+
+lintsamples() {
+    lintdir "samples" "$script/src/samples"
 }
 
 checkmarkdown() {
@@ -73,5 +84,6 @@ checkmarkdownlinks() {
 
 
 lint
+lintsamples
 checkmarkdown
 checkmarkdownlinks

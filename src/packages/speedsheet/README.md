@@ -13,7 +13,7 @@
 
 Non Goal:
 - explaining how to connect a Python function to a menu item (this is done
-in other samples like [removeallmaterials](/removeallmaterials/README.md))
+in other samples like [removeallmaterials](/src/packages/removeallmaterials/README.md))
 
 ## Explanations
 

@@ -1,6 +1,7 @@
 set -e
 script=$(dirname $(readlink -f "$0"))
 installdir=$(pwd)
+packagedir="$script/src/packages" 
 
 if [ ! -f "$installdir/installSettings.ini" ]
 then 
@@ -39,13 +40,13 @@ installpip() {
 
 # install pystartup.ms
 installpystartup() {
-    cp "$script/pystartup/pystartup.ms" "$startuppath"
+    cp "$script/src/pystartup/pystartup.ms" "$startuppath"
 }
 
 
 # install all Python packages in the repo with the -e option
 installpythonpackages() {
-    for f in $(find "$script" -name "setup.py")
+    for f in $(find "$packagedir" -name "setup.py")
     do
         local package=$(dirname "$f")
         "$installdir/Python37/python.exe" -m pip install --user -e "$package"
@@ -54,7 +55,7 @@ installpythonpackages() {
 
 # uninstall all Python packages in the repo
 uninstallpythonpackages() {
-    for f in $(find "$script" -name "setup.py")
+    for f in $(find "$packagedir" -name "setup.py")
     do
         local package=$(basename "$(dirname "$f")")
         local pname="$package-autodesk"

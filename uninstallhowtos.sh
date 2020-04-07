@@ -6,7 +6,7 @@ source "$script/inst.sh"
 venvscript () {
     echo "cd Scripts"
     echo "call activate.bat"
-    for f in $(find "$script" -name "setup.py")
+    for f in $(find "$packagedir" -name "setup.py")
     do
         local package=$(basename "$(dirname "$f")")
         echo "pip.exe uninstall -y $package-autodesk"

@@ -25,8 +25,8 @@ yourpackagename works) and startup is an exported function of
 yourpackagename that will be called during startup.
 
 Most if not all Python samples in this repo implement this entry
-point. [transformlock's setup script](/transformlock/setup.py) can
-be taken as en example as well as [transformlock's \_\_init\_\_.py](/transformlock/transformlock/__init__.py).
+point. [transformlock's setup script](/src/packages/transformlock/setup.py) can
+be taken as en example as well as [transformlock's \_\_init\_\_.py](/src/packages/transformlock/transformlock/__init__.py).
 
 
 ## The maxscript code

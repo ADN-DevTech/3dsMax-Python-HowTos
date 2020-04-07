@@ -1,6 +1,6 @@
 # How To - Practical Examples For Python
 
-![Splash](Splash.png)
+![Splash](/doc/Splash.png)
 
 This repo contains various Python programming samples.
 
@@ -18,7 +18,7 @@ directory of samples and documentation for Python developers.
 This being said, it is also possible to install the samples in 3ds Max. This 
 will add a Python3 scripting menu to 3ds Max:
 
-![Integration](Integration.png)
+![Integration](/doc/Integration.png)
 
 The examples and some development goodies will be made available from there.
 
@@ -53,7 +53,7 @@ to install the samples in 3ds Max. The script needs to be run from a
 It is possible to break up the installation in two steps.
 
 - The [installstartup.sh](installstartup.sh) script can be used
-from bash to install pip and [pystartup.ms](/pystartup/pystartup.ms).
+from bash to install pip and [pystartup.ms](/src/pystartup/pystartup.ms).
 It needs to run in the 3ds Max installation directory.
 
 You may do only this step if you don't want the HowTos but you
@@ -69,7 +69,7 @@ This script needs to run in the 3ds Max installation directory.
 
 ## Uninstalling the HowTos
 
-The steps needed to uninstall the HowTos can be found in [uninstall.md](uninstall.md).
+The steps needed to uninstall the HowTos can be found in [uninstall.md](/doc/uninstall.md).
 
 ### Option C: Install the howtos in a virtual environment
 > Note: the steps described here need to be done from a git bash prompt
@@ -93,14 +93,14 @@ run [installhowtos.sh](/installhowtos.sh) from that directory.
 
 ## Packages that are not examples but that are provided in this repo
 
-- [menuhook](menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
+- [menuhook](/src/packages/menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
 as a way of attaching Python functions to 3ds Max menu items. The menuhook package is used by 
 most of the other samples.
 
-- [realoadmod](reloadmod/README.md) is small tool that will reload all development modules in one
+- [realoadmod](/src/packages/reloadmod/README.md) is small tool that will reload all development modules in one
 operation
 
-- [mxvscode](mxvscode/README.md) is a small tool that will automatically import ptvsd (the
+- [mxvscode](/src/packages/mxvscode/README.md) is a small tool that will automatically import ptvsd (the
 VSCode debugging interface) during the startup of 3ds Max and make it accept remote connections.
 This may slow down the startup of 3ds Max quite a bit and is meant as a developer-only tool.
 
@@ -116,22 +116,22 @@ the Python version in the best Python way known to us. An example of this is tha
 
 *How To?*
 
-- Develop a Transform Lock Script [transformlock](transformlock/README.md)
-- Remove all materials [removeallmaterials](removeallmaterials/README.md)
-- Quickly rename selected objects [renameselected](renameselected/README.md)
-- Output Object Data to File [speedsheet](speedsheet/README.md)
-- Create a quick video preview [quickpreview](quickpreview/README.md)
-- Access the Z-Depth Channel [zdepthchannel](zdepthchannel/README.md)
+- Develop a Transform Lock Script [transformlock](/src/packages/transformlock/README.md)
+- Remove all materials [removeallmaterials](/src/packages/removeallmaterials/README.md)
+- Quickly rename selected objects [renameselected](/src/packages/renameselected/README.md)
+- Output Object Data to File [speedsheet](/src/packages/speedsheet/README.md)
+- Create a quick video preview [quickpreview](/src/packages/quickpreview/README.md)
+- Access the Z-Depth Channel [zdepthchannel](/src/packages/zdepthchannel/README.md)
 
 ## Python Examples that don't come from maxscript howtos
 
-- Update a progressbar from a Python thread [threadprogressbar](threadprogressbar/README.md)
-- Create a single instance modal dialog [singleinstancedlg](singleinstancedlg/README.md)
-- Add menu items to open documentation pages in the web browser [inbrowserhelp](inbrowserhelp/README.md)
+- Update a progressbar from a Python thread [threadprogressbar](/src/packages/threadprogressbar/README.md)
+- Create a single instance modal dialog [singleinstancedlg](/src/packages/singleinstancedlg/README.md)
+- Add menu items to open documentation pages in the web browser [inbrowserhelp](/src/packages/inbrowserhelp/README.md)
 
 ## 3dsMax startup entry point
 
-[pystartup](pystartup/README.md) provides the maxscript code that, when copied to 3ds Max's
+[pystartup](/src/pystartup/README.md) provides the maxscript code that, when copied to 3ds Max's
 startup directory, will automatically launch pip packages with the 3dsMax startup
 entry point.
 
