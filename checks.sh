@@ -61,12 +61,12 @@ checkmdlinks() {
             fi
         elif [[ "$url" =~ ^/.* ]]
         then
-            if [ ! -f "$workdir$url" ]
+            if [ ! -e "$workdir$url" ]
             then
                 echo "$file$line: Broken absolute link: $url"
             fi
         else
-            if [ ! -f "$filedir/$url" ]
+            if [ ! -e "$filedir/$url" ]
             then
                 echo "$file:$line: Broken relative link: $url"
             fi

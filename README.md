@@ -18,20 +18,6 @@ directory of samples and documentation for Python developers.
 - Installing the HowTos will add menu items to 3ds Max, and is documented [here](doc/install.md)
 - After an update from github it is necessary to reinstall to get everything working as expected
 
-## Packages that are not examples but that are provided in this repo
-
-- [menuhook](/src/packages/menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
-as a way of attaching Python functions to 3ds Max menu items. The menuhook package is used by 
-most of the other samples.
-
-- [realoadmod](/src/packages/reloadmod/README.md) is small tool that will reload all development modules in one
-operation
-
-- [mxvscode](/src/packages/mxvscode/README.md) is a small tool that will automatically import ptvsd (the
-VSCode debugging interface) during the startup of 3ds Max and make it accept remote connections.
-This may slow down the startup of 3ds Max quite a bit and is meant as a developer-only tool.
-
-
 ## Python How Tos
 
 The samples below are translations of [MAXScript How Tos](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-25C9AD58-3665-471E-8B4B-54A094C1D5C9) that
@@ -56,11 +42,31 @@ the Python version in the best Python way known to us. An example of this is tha
 - Create a single instance modal dialog [singleinstancedlg](/src/packages/singleinstancedlg/README.md)
 - Add menu items to open documentation pages in the web browser [inbrowserhelp](/src/packages/inbrowserhelp/README.md)
 
+## Python Samples
+
+Python samples can be found in [src/samples](/src/samples). These samples may already be in your 3ds Max
+installation directories.
+
 ## 3dsMax startup entry point
 
 [pystartup](/src/pystartup/README.md) provides the maxscript code that, when copied to 3ds Max's
 startup directory, will automatically launch pip packages with the 3dsMax startup
 entry point.
+
+## Tools
+
+The following packages are not really examples but python tools.
+
+- [menuhook](/src/packages/menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
+as a way of attaching Python functions to 3ds Max menu items. The menuhook package is used by 
+most of the other samples.
+
+- [realoadmod](/src/packages/reloadmod/README.md) is small tool that will reload all development modules in one
+operation
+
+- [mxvscode](/src/packages/mxvscode/README.md) is a small tool that will automatically import ptvsd (the
+VSCode debugging interface) during the startup of 3ds Max and make it accept remote connections.
+This may slow down the startup of 3ds Max quite a bit and is meant as a developer-only tool.
 
 ## Extra Goodies
 
