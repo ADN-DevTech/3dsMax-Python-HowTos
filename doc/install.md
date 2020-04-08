@@ -1,7 +1,6 @@
 # Installation
 
-
-This being said, it is also possible to install the samples in 3ds Max. This 
+It is possible to install the samples in 3ds Max. This 
 will add a Python3 scripting menu to 3ds Max:
 
 ![Integration](/doc/Integration.png)
