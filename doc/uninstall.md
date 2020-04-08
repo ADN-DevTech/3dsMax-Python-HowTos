@@ -55,7 +55,7 @@ The HowTos can be uninstalled individually by calling:
 
 ## Uninstalling all the HowTos at Once (manual uinstall)
 
-The [uninstallhowtos.sh](uninstallhowtos.sh) can be used
+The [uninstallhowtos.sh](/uninstallhowtos.sh) can be used
 to uninstall all the howtos at once. This will automatically call
 `./python.exe -m pip uninstall` for all the HowTos packages.
 

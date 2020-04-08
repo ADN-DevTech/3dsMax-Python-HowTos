@@ -1,5 +1,5 @@
 """
-    Demonstrate saving a max file.
+    Demonstrate saving a 3ds Max file.
 """
 from os import path
 from pymxs import runtime as rt # pylint: disable=import-error
