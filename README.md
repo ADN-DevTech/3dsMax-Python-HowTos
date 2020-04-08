@@ -71,11 +71,11 @@ This may slow down the startup of 3ds Max quite a bit and is meant as a develope
 
 ## Extra Goodies
 
-- [create.sh](create.sh) will generate an empty pip package in the current working directory.
 - [install.sh](install.sh) will install pip, install pystartup and pip install all the samples
 - [uninstall.sh](uninstall.sh) will uninstall what was installed with install.sh
 - [installstartup.sh](installstartup.sh) will install pip and pystartup and nothing more
 - [installhowtos.sh](installhowtos.sh) will install only the howtos (works in a virtual env)
-- [checks.sh](checks.sh) runs pylint on the code, validates that 3ds Max is named properly,
+- [checks.sh](/scripts/checks.sh) runs pylint on the code, validates that 3ds Max is named properly,
 validates that code blocks in markdown always specify the programming language, checks that
 all links are valid in all markdown files of the repo
+- [create.sh](/scripts/create.sh) will generate an empty pip package in the current working directory.

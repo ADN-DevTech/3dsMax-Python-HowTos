@@ -54,7 +54,7 @@ This script needs to run in the 3ds Max installation directory.
 
 ## Uninstalling the HowTos
 
-The steps needed to uninstall the HowTos can be found in [uninstall.md](/uninstall.md).
+The steps needed to uninstall the HowTos can be found in [uninstall.md](/doc/uninstall.md).
 
 ### Option C: Install the howtos in a virtual environment
 > Note: the steps described here need to be done from a git bash prompt
