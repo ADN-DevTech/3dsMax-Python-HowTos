@@ -9,6 +9,8 @@ TOPICS = [
      "help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_tutorials_creating_the_dialog_html"),
     ("howtos", "Python HowTos Github Repo",
      "github.com/ADN-DevTech/3dsMax-Python-HowTos"),
+    ("samples", "Python samples (Github Repo)",
+     "github.com/ADN-DevTech/3dsMax-Python-HowTos/src/samples"),
     ("pymxs", "Pymxs Online Documentation",
      "help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_using_pymxs_html"),
     ("pyside2", "Qt for Python Documentation (PySide2)",
