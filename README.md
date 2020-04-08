@@ -16,7 +16,8 @@ It is not necessary to install the HowTos: the repo can simply be used as a pass
 directory of samples and documentation for Python developers.
 
 - Installing the HowTos will add menu items to 3ds Max, and is documented [here](doc/install.md)
-- After an update from github it is necessary to reinstall to get everything working as expected
+- After an update from github it is necessary to rerun install scripts to get everything 
+working as expected
 
 ## Python How Tos
 

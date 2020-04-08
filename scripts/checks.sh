@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -e
 script=$(dirname $(readlink -f "$0"))
-packagedir="$script/src/packages" 
+packagedir="$script/../src/packages" 
 workdir=$(pwd)
 IFS=$'\n'
 pl=pylint3
@@ -27,7 +27,7 @@ lint() {
 }
 
 lintsamples() {
-    lintdir "samples" "$script/src/samples"
+    lintdir "samples" "$script/../src/samples"
 }
 
 checkmarkdown() {
