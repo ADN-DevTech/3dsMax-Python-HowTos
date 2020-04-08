@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -e
 script=$(dirname $(readlink -f "$0"))
-source "$script/inst.sh"
+source "$script/scripts/inst.sh"
 
 venvscript () {
     echo "cd Scripts"
