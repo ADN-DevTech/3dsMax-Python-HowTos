@@ -2,7 +2,7 @@
 
 ![Dialog](doc/Dialog.png)
 
-[Original MaxScript Tutorial](https://help.autodesk.com/view/3DSMAX/2020/ENU/?guid=GUID-5986CAD3-BB68-47BC-B4B2-EF84C4659271)
+[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-5986CAD3-BB68-47BC-B4B2-EF84C4659271)
 [Source Code](renameselected/__init__.py)
 
 *Goals:* 
