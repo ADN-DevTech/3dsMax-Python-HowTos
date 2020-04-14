@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -e
 script=$(dirname $(readlink -f "$0"))
-source "$script/inst.sh"
+source "$script/scripts/inst.sh"
 
 # make sure cygpath is available
 if ! command -v cygpath >/dev/null 2>&1
@@ -18,7 +18,7 @@ fi
 venvscript () {
     echo "cd Scripts"
     echo "call activate.bat"
-    for f in $(find "$script" -name "setup.py")
+    for f in $(find "$packagedir" -name "setup.py")
     do
         local package=$(dirname "$f")
         echo "pip.exe install -e \"$(cygpath -d "$package")\""
