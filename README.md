@@ -1,8 +1,11 @@
-# How To - Practical Examples For Python
+# 3ds Max 2021 Python How Tos
+### Practical Python 3.7 Development Examples For 3ds Max
 
 ![Splash](/doc/Splash.png)
 
-This repo contains various Python programming samples.
+This repo contains various Python programming examples and tutorials targeting [3ds Max 2021](https://www.autodesk.ca/en/products/3ds-max/overview)'s 
+python 3.7 support (the samples are not meant to be used with the python 2.7 interpreter shipped
+in previous versions of 3ds Max).
 
 All the examples in the tutorials are implemented as pip packages. This is a bit heavy for
 small things (we provide a setup.py, a LICENSE and everything) but makes things installable
