@@ -4,7 +4,7 @@
 ![Splash](/doc/Splash.png)
 
 This repo contains various Python programming examples and tutorials targeting [3ds Max 2021](https://www.autodesk.ca/en/products/3ds-max/overview)'s 
-python 3.7 support (the samples are not meant to be used with the python 2.7 interpreter shipped
+Python 3.7 support (the samples are not meant to be used with the Python 2.7 interpreter shipped
 in previous versions of 3ds Max).
 
 All the examples in the tutorials are implemented as pip packages. This is a bit heavy for
@@ -59,7 +59,7 @@ entry point.
 
 ## Tools
 
-The following packages are not really examples but python tools.
+The following packages are not really examples but Python tools.
 
 - [menuhook](/src/packages/menuhook/README.md) is not meant to be an example (but is still interesting as such!) but
 as a way of attaching Python functions to 3ds Max menu items. The menuhook package is used by 
