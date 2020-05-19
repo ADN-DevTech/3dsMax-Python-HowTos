@@ -10,7 +10,7 @@ TOPICS = [
     ("howtos", "Python HowTos Github Repo",
      "github.com/ADN-DevTech/3dsMax-Python-HowTos"),
     ("samples", "Python samples (Github Repo)",
-     "github.com/ADN-DevTech/3dsMax-Python-HowTos/src/samples"),
+     "github.com/ADN-DevTech/3dsMax-Python-HowTos/tree/master/src/samples"),
     ("pymxs", "Pymxs Online Documentation",
      "help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_using_pymxs_html"),
     ("pyside2", "Qt for Python Documentation (PySide2)",
