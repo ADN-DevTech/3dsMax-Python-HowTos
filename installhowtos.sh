@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -e
-script=$(dirname $(readlink -f "$0"))
+script="$(dirname "$(readlink -f "$0")")"
 source "$script/scripts/inst.sh"
 
 # make sure cygpath is available
@@ -20,7 +20,7 @@ venvscript () {
     echo "call activate.bat"
     for f in $(find "$packagedir" -name "setup.py")
     do
-        local package=$(dirname "$f")
+        local package="$(dirname "$f")"
         echo "pip.exe install -e \"$(cygpath -d "$package")\""
     done
 }
@@ -33,7 +33,7 @@ then
     read -p "Is this what you want (Y/n)? " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        tmpfile=$(mktemp /tmp/XXXXXXX.bat)
+        tmpfile="$(mktemp /tmp/XXXXXXX.bat)"
         venvscript > "$tmpfile"
         cmd //C "$tmpfile"
         rm "$tmpfile"

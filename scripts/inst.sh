@@ -1,6 +1,6 @@
 set -e
-script=$(dirname $(readlink -f "$0"))
-installdir=$(pwd)
+script="$(dirname "$(readlink -f "$0")")"
+installdir="$(pwd)"
 packagedir="$script/src/packages" 
 
 if [ ! -f "$installdir/installSettings.ini" ]
@@ -32,7 +32,7 @@ installpip() {
     cd "$installdir/Python37"
     if ! ./python.exe -m pip -V
     then
-        local getpip=$(mktemp -d -t tbdXXXXXXXX)
+        local getpip="$(mktemp -d -t tbdXXXXXXXX)"
         curl "https://bootstrap.pypa.io/get-pip.py" > "$getpip/get-pip.py"
         ./python.exe "$getpip/get-pip.py" --user
     fi
@@ -48,7 +48,7 @@ installpystartup() {
 installpythonpackages() {
     for f in $(find "$packagedir" -name "setup.py")
     do
-        local package=$(dirname "$f")
+        local package="$(dirname "$f")"
         "$installdir/Python37/python.exe" -m pip install --user -e "$package"
     done
 }
@@ -57,7 +57,7 @@ installpythonpackages() {
 uninstallpythonpackages() {
     for f in $(find "$packagedir" -name "setup.py")
     do
-        local package=$(basename "$(dirname "$f")")
+        local package="$(basename "$(dirname "$f")")"
         local pname="$package-autodesk"
         "$installdir/Python37/python.exe" -m pip uninstall -y "$pname"
     done

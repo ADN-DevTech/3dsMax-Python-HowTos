@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -e
-script=$(dirname $(readlink -f "$0"))
+script="$(dirname "$(readlink -f "$0")")"
 source "$script/scripts/inst.sh" 
 
 # make sure we have 3ds Max in the current path
