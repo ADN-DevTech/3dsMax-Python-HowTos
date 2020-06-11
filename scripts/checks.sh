@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -e
-script=$(dirname $(readlink -f "$0"))
+script="$(dirname "$(readlink -f "$0")")"
 packagedir="$script/../src/packages" 
 workdir=$(pwd)
 IFS=$'\n'
@@ -21,7 +21,7 @@ lintdir() {
 lint() {
     for f in $(find "$packagedir" -name "setup.py")
     do
-        local package=$(basename $(dirname "$f"))
+        local package="$(basename "$(dirname "$f")")"
         lintdir "$package" "$packagedir/$package/$package"
     done
 }

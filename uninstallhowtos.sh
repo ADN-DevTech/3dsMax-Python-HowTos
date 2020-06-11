@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -e
-script=$(dirname $(readlink -f "$0"))
+script="$(dirname "$(readlink -f "$0")")"
 source "$script/scripts/inst.sh"
 
 venvscript () {
@@ -8,7 +8,7 @@ venvscript () {
     echo "call activate.bat"
     for f in $(find "$packagedir" -name "setup.py")
     do
-        local package=$(basename "$(dirname "$f")")
+        local package="$(basename "$(dirname "$f")")"
         echo "pip.exe uninstall -y $package-autodesk"
     done
 }
@@ -20,7 +20,7 @@ then
     read -p "Is this what you want (Y/n)? " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        tmpfile=$(mktemp /tmp/XXXXXXX.bat)
+        tmpfile="$(mktemp /tmp/XXXXXXX.bat)"
         venvscript > "$tmpfile"
         cmd //C "$tmpfile"
         rm "$tmpfile"

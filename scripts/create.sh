@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 # create a new pip package for a 3ds Max feature
 set -e
-script=$(dirname $(readlink -f "$0"))
+script="$(dirname "$(readlink -f "$0")")"
 
 if [ $# -lt 1 ]
 then
