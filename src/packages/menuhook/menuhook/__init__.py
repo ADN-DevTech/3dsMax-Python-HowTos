@@ -77,22 +77,24 @@ def deep_menu(menu):
         like deep_menu(["&Scripting", "Python Developer", "HowTos"]) would make sure
         there is a "Python Developer -> HowTos" sub menu item under scripting
     """
-    found = rt.menuman.findMenu(menu[-1])
+    submenu = rt.menuman.findMenu(menu[-1])
     name = menu[-1]
     if len(menu) == 1:
         inmenu = rt.menuman.getMainMenuBar()
     else:
         inmenu = deep_menu(menu[0:-1])
-    if found is not None:
+    if submenu is None:
+        submenu = rt.menuman.createMenu(name)
+    else:
         # Although the menu was found, it may be by itself and need to be added to
-        # it's parent's (inmenu's) items.
+        # its parent's (inmenu's) items.
         is_in_inmenu = False
         for item_index in range(1, inmenu.numItems() + 1):
-            if inmenu.getItem(item_index).getTitle() == found.getTitle():
+            if inmenu.getItem(item_index).getTitle() == submenu.getTitle():
                 is_in_inmenu = True
         if is_in_inmenu:
-            return found
-    submenu = found or rt.menuman.createMenu(name)
+            return submenu
+    print(f"adding menu {name} to {inmenu.getTitle()}")
     submenuitem = rt.menuman.createSubMenuItem(name, submenu)
     index = inmenu.numItems() - 1
     inmenu.addItem(submenuitem, index)
@@ -112,6 +114,7 @@ def add_menu_item(menu, action, category, text):
             for item_index in range(1, targetmenu.numItems() + 1):
                 if targetmenu.getItem(item_index).getTitle() == text:
                     return
+            print(f"adding menu item {text} to {targetmenu.getTitle()}")
             targetmenu.addItem(newaction, -1)
             rt.menuman.updateMenuBar()
 
