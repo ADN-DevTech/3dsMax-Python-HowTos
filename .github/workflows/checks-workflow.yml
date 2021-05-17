@@ -10,6 +10,6 @@ jobs:
       - name: RunChecks
         # this is a mega hack, to be fixed
         run: |
-            sudo apt-get install pylint3 dos2unix
+            sudo apt-get install pylint dos2unix
             chmod +x ./scripts/checks.sh
             ./scripts/checks.sh

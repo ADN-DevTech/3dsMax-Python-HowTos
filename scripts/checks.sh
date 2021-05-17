@@ -4,7 +4,7 @@ script="$(dirname "$(readlink -f "$0")")"
 packagedir="$script/../src/packages" 
 workdir=$(pwd)
 IFS=$'\n'
-pl=pylint3
+pl=pylint
 
 lintdir() {
     comment="$1"
