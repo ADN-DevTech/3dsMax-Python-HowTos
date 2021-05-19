@@ -3,15 +3,35 @@ script="$(dirname "$(readlink -f "$0")")"
 installdir="$(pwd)"
 packagedir="$script/src/packages" 
 
+# we need to know the max version. Normally this should be part of the current install dir
+# but it can be defined manually with the VERSION environment variable before calling
+# the scripts. If it is not it will be inferred from the installation directory
+dirversion=$(pwd | grep -o '20[0-9]\{2\}' || echo "")
+version=${VERSION:-$dirversion}
+if [ -z "$version" ]
+then
+    # Take the latest ADSK_3DSMAX_x64 dir
+    v=$(env | grep 'ADSK_3DSMAX_x64_20[0-9]\{2\}' | sed 's/=.*$//; s/^ADSK_3DSMAX_x64_//' | sort -n -r | head -n 1)
+    if (( "$v" > 2021 ))
+    then
+        version=$v
+    else
+        echo "3ds Max Version number could not be inferred from the installation directory"
+        echo "The VERSION env variable can be set before calling this script to define the 3ds Max Version (ex: VERSION=2022)" 
+        exit 1
+    fi
+fi
+
+localsettings="$HOME/AppData/Local/Autodesk/3dsMax"
 if [ ! -f "$installdir/installSettings.ini" ]
 then 
-    startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
+    startuppath="$localsettings/$version - 64bit/ENU/scripts/startup"
 elif grep -i "installedBuild=1" "$installdir/installSettings.ini" >/dev/null 2>&1
 then
-    startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
+    startuppath="$localsettings/$version - 64bit/ENU/scripts/startup"
 elif iconv -f UTF-16 -t UTF-8 <InstallSettings.ini | grep -i "installedBuild=1" >/dev/null 2>&1
 then
-    startuppath="$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
+    startuppath="$localsettings/$version - 64bit/ENU/scripts/startup"
 else
     startuppath="$installdir/scripts/startup"
 fi
@@ -30,11 +50,14 @@ fi
 # install pip
 installpip() {
     cd "$installdir/Python37"
-    if ! ./python.exe -m pip -V
+    if ! ./python.exe -m pip -V 2>/dev/null
     then
-        local getpip="$(mktemp -d -t tbdXXXXXXXX)"
-        curl "https://bootstrap.pypa.io/get-pip.py" > "$getpip/get-pip.py"
-        ./python.exe "$getpip/get-pip.py" --user
+        if ! ./python.exe -m ensurepip 2>/dev/null
+        then
+            local getpip="$(mktemp -d -t tbdXXXXXXXX)"
+            curl "https://bootstrap.pypa.io/get-pip.py" > "$getpip/get-pip.py"
+            ./python.exe "$getpip/get-pip.py" --user
+        fi
     fi
 }
 

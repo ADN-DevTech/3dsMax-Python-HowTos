@@ -2,6 +2,7 @@
 set -e
 script="$(dirname "$(readlink -f "$0")")"
 source "$script/scripts/inst.sh"
+echo "Installing for 3ds Max version: $version. If this is not correct please set the VERSION environment variable before runnning the script. (ex: VERSION=2022)"
 
 # make sure cygpath is available
 if ! command -v cygpath >/dev/null 2>&1
