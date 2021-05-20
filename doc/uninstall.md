@@ -18,7 +18,7 @@ needed to remove them are explained at the bottom of this page).
 
 After the installation, pystartup.ms will be copied to:
 
-"$HOME/AppData/Local/Autodesk/3dsMax/2021 - 64bit/ENU/scripts/startup"
+"$HOME/AppData/Local/Autodesk/3dsMax/2022 - 64bit/ENU/scripts/startup"
 
 It can simply be removed from there.
 
