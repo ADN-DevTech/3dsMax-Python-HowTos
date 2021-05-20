@@ -2,7 +2,7 @@
 
 ![Speedsheet](doc/Speedsheet.png)
 
-[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-2DB3A775-776F-4D63-BDFB-D99523ECB69D)
+[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-2DB3A775-776F-4D63-BDFB-D99523ECB69D)
 [Source Code](speedsheet/__init__.py)
 
 *Goals:* 
@@ -62,7 +62,7 @@ simplifies the code and makes it more robust at the same time.
 
 Next, the code produces a list of objects at the first frame
 of the animation. Everything inside the `with pymxs.attime(sometime)` block will
-happen at `sometime` in the time line (this is the same as the [at time](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-4E9CCD61-F575-42E1-8654-315DDF6C6A26#GUID-4E9CCD61-F575-42E1-8654-315DDF6C6A26)
+happen at `sometime` in the time line (this is the same as the [at time](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-4E9CCD61-F575-42E1-8654-315DDF6C6A26#GUID-4E9CCD61-F575-42E1-8654-315DDF6C6A26)
 construction in MAXScript):
 
 ```python

@@ -77,7 +77,7 @@ change in the future.
 *Q:* Doing this creates a 'macro' and this macro never goes away
 
 *A:* The Python & maxscript apis currently do not allow to remove macros
-that have been created. So the [macros](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-3DC75DDE-E4BC-4033-ABA9-A42063036CB9) 
+that have been created. So the [macros](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-3DC75DDE-E4BC-4033-ABA9-A42063036CB9) 
 that we create are permanent
 but if we don't load the Python packages that implement them during
 an execution of 3ds Max they become dangling. We are able to detect that
@@ -86,7 +86,7 @@ and notify the users.
 
 *Q:* Would it be possible to remove menu items (to make them not permanent)?
 
-*A:* The [menu manager](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-258F6015-6B45-4A87-A7F5-BB091A2AE065),
+*A:* The [menu manager](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-258F6015-6B45-4A87-A7F5-BB091A2AE065),
 provides a way to remove menu items. This could be used. But the solution
 would not be crash proof (it would be difficult to establish that the menu
 item has been removed for real, by using only what the menu manager provides).
@@ -104,7 +104,7 @@ from pymxs import runtime as rt
 
 To get access to the 3dsMax scripting library for Python (pymxs).
 
-Then it uses `rt.macros` to access functions from the [macro scripts](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-3DC75DDE-E4BC-4033-ABA9-A42063036CB9).
+Then it uses `rt.macros` to access functions from the [macro scripts](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-3DC75DDE-E4BC-4033-ABA9-A42063036CB9).
 As it is now we have to create a macro for a function we want to hook to the menu.
 
 The macro has an action and a category (that identifies it). It is done by this call:
@@ -118,7 +118,7 @@ The macro has an action and a category (that identifies it). It is done by this 
         mxs)
 ```
 
-When this (category, action) exists, we can use `rt.menuman`, the [menu manager](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-258F6015-6B45-4A87-A7F5-BB091A2AE065)
+When this (category, action) exists, we can use `rt.menuman`, the [menu manager](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-258F6015-6B45-4A87-A7F5-BB091A2AE065)
 to find the menu in which we want to add an item:
 
 ```python

@@ -2,7 +2,7 @@
 
 ![ZDpeth](doc/ZDepth.png)
 
-[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-3667A33C-E3E4-4F39-A480-3713240838F1)
+[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-3667A33C-E3E4-4F39-A480-3713240838F1)
 [Source Code](zdepthchannel/__init__.py)
 
 The 3ds Max default scanline renderer generates a multitude of additional data

@@ -1,6 +1,6 @@
 # HowTo: transformlock
 
-[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-8EB13535-72B4-439C-94D3-E93434BA163B)
+[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-8EB13535-72B4-439C-94D3-E93434BA163B)
 [Source Code](transformlock/__init__.py) 
 
 *Goals:* 
@@ -42,7 +42,7 @@ from pymxs import runtime as rt
 ```
 
 The core business logic of the program comes from the lock\_selection function. This uses
-the setTransformLockFlags of ([node common methods](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-D1D7EB56-A370-4B07-99B4-BC779FB87CAF#GUID-D1D7EB56-A370-4B07-99B4-BC779FB87CAF__SECTION_130281B392F64446B4AE8562EAD75531))
+the setTransformLockFlags of ([node common methods](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-D1D7EB56-A370-4B07-99B4-BC779FB87CAF#GUID-D1D7EB56-A370-4B07-99B4-BC779FB87CAF__SECTION_130281B392F64446B4AE8562EAD75531))
 to lock all (`rt.Name("all")` transforms on the whole selection (`rt.selection`)):
 
 ```python

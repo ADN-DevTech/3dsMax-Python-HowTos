@@ -3,7 +3,7 @@
 
 ![Splash](/doc/Splash.png)
 
-This repo contains various Python programming examples and tutorials targeting [3ds Max 2021](https://www.autodesk.ca/en/products/3ds-max/overview)'s 
+This repo contains various Python programming examples and tutorials targeting [3ds Max 2021 and 2022](https://www.autodesk.ca/en/products/3ds-max/overview)'s 
 Python 3.7 support (the samples are not meant to be used with the Python 2.7 interpreter shipped
 in previous versions of 3ds Max).
 
@@ -24,7 +24,7 @@ working as expected
 
 ## Python How Tos
 
-The samples below are translations of [MAXScript How Tos](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-25C9AD58-3665-471E-8B4B-54A094C1D5C9) that
+The samples below are translations of [MAXScript How Tos](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-25C9AD58-3665-471E-8B4B-54A094C1D5C9) that
 can be found in the 3ds Max online documentation.
 
 The conversion from MaxScript to Python could have been more mechanical but we chose to implement

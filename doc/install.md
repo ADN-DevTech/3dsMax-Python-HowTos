@@ -69,7 +69,7 @@ you may want to have a virtual environment for Python development).
 installation directory to install pip if it is missing and pystartup.
 
 - The second step consists in installing virtualenv with pip and creating a
-virtual environment. These steps are described in the [3ds Max documentation](http://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_python_3_support_virtual_env_html).
+virtual environment. These steps are described in the [3ds Max documentation](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=Max_Python_API_python_3_support_virtual_env_html).
 - The last step consists in installing the HowTos in the virtual environment.
 From the same git bash prompt, the [installhowtos.sh](/installhowtos.sh)
 script can be used to install the HowTos in a virtual environment. First `cd`
