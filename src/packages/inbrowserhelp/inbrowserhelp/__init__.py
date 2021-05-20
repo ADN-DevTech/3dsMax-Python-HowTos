@@ -3,16 +3,19 @@
 """
 import webbrowser
 import menuhook
+from pymxs import runtime as rt
+MAX_VERSION = rt.maxversion()[7]
+MAX_HELP = f"help.autodesk.com/view/MAXDEV/{MAX_VERSION}/ENU"
 
 TOPICS = [
     ("gettingstarted", "Getting Started With Python in 3ds Max",
-     "help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_tutorials_creating_the_dialog_html"),
+     f"{MAX_HELP}/?guid=Max_Python_API_tutorials_creating_the_dialog_html"),
     ("howtos", "Python HowTos Github Repo",
      "github.com/ADN-DevTech/3dsMax-Python-HowTos"),
     ("samples", "Python samples (Github Repo)",
      "github.com/ADN-DevTech/3dsMax-Python-HowTos/tree/master/src/samples"),
     ("pymxs", "Pymxs Online Documentation",
-     "help.autodesk.com/view/MAXDEV/2021/ENU/?guid=__developer_using_pymxs_html"),
+     f"{MAX_HELP}/?guid=Max_Python_API_using_pymxs_html"),
     ("pyside2", "Qt for Python Documentation (PySide2)",
      "doc.qt.io/qtforpython/contents.html"),
     ("python", "Python 3.7 Documentation",

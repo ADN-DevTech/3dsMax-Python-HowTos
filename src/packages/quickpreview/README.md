@@ -2,7 +2,7 @@
 
 ![Preview](doc/Preview.png)
 
-[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-333382D0-57AF-4797-98F2-C2BE09442607)
+[Original MaxScript Tutorial](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-333382D0-57AF-4797-98F2-C2BE09442607)
 [Source Code](quickpreview/__init__.py) 
 
 *Goals:* 
@@ -39,7 +39,7 @@ entry point for 3ds Max).
 ## Understanding the code
 
 We use `rt.getDir(rt.Name("preview"))` to find the default directory
-for previews ([3ds Max System Directories](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-F7577416-051E-478C-BB5D-81243BAAC8EC#GUID-F7577416-051E-478C-BB5D-81243BAAC8EC)).
+for previews ([3ds Max System Directories](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-F7577416-051E-478C-BB5D-81243BAAC8EC#GUID-F7577416-051E-478C-BB5D-81243BAAC8EC)).
 We concatenate "quickpreview.avi" using the standard Python `path.join` function.
 
 ```python
@@ -79,7 +79,7 @@ We then force a garbage collection:
     rt.gc()
 ```
 
-And launch the [RAMPlayer](https://help.autodesk.com/view/MAXDEV/2021/ENU/?guid=GUID-650BE5AA-1DFB-4847-99B2-777A281490F6#GUID-650BE5AA-1DFB-4847-99B2-777A281490F6) for our generated avi:
+And launch the [RAMPlayer](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-650BE5AA-1DFB-4847-99B2-777A281490F6#GUID-650BE5AA-1DFB-4847-99B2-777A281490F6) for our generated avi:
 
 ```python
     rt.ramplayer(preview_name, "")
