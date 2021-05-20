@@ -1,4 +1,4 @@
-# 3ds Max 2021 Python How Tos
+# 3ds Max 2021 and 2022 Python How Tos
 ### Practical Python 3.7 Development Examples For 3ds Max
 
 ![Splash](/doc/Splash.png)
