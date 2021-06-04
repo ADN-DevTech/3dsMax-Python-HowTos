@@ -23,6 +23,8 @@ def new_console(tabto = None, floating = False, dockingarea = QtCore.Qt.RightDoc
     """
     Create a new console and float it as a max widget
     tabto: name of a widget on top of which the console should be tabbed
+    floating: True to float the console, False to leave it docked
+    dockingarea: The docking area for docking the window (default = right)
     """
     main_window = GetQMaxMainWindow()
 
