@@ -7,7 +7,7 @@ from pyconsole import console
 def pyconsole():
     '''pyconsole sample'''
     # Create a console and float it
-    new_console = console.new_console(floating = True)
+    console.new_console(floating=True)
 
 def startup():
     """
@@ -22,4 +22,4 @@ def startup():
         tooltip="Python Console")
     # Create a python console in the command panel
     # automatically
-    console.new_console(tabto = "CommandPanel")
+    console.new_console(tabto="CommandPanel")

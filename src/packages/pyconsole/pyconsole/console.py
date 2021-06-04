@@ -1,7 +1,7 @@
 from qtmax import GetQMaxMainWindow
 from pyqtconsole.console import PythonConsole
 import pyqtconsole.highlighter as hl
-from PySide2.QtWidgets import QWidget, QDockWidget, 
+from PySide2.QtWidgets import QWidget, QDockWidget
 from PySide2 import QtCore
 
 # My personal choice of colors
