@@ -1,6 +1,6 @@
 # HowTo: pyconsole
 
-![Preview](doc/Preview.png)
+![Preview](doc/pyconsole.png)
 
 This example integrates the nice [pyqtconsole](https://github.com/marcus-oscarsson/pyqtconsole)
 as an alternative to the 3ds Max Listener. The console is automatically added 
@@ -71,11 +71,13 @@ of being docked. And then it is showed.
 Finally, the console is hooked to the qt event processing mechanism.
 This is pretty awesome, no 3dsMax specific code is needed!
 
-```
+```python
     # make the console do stuff
     console.eval_queued()
 ```
 
-The awesomeness here is really that pymxs (or any other 3ds Max specific
-thing) is not even needed!
+The awesomeness here (aside from the [pyqtconsole](https://github.com/marcus-oscarsson/pyqtconsole) that is great) 
+is really that pymxs (or any other 3ds Max specific thing) is not even needed!
+
+The python + Qt combo in 3ds Max is really fantastic!
 
