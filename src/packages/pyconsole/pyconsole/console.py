@@ -1,7 +1,7 @@
 from qtmax import GetQMaxMainWindow
 from pyqtconsole.console import PythonConsole
 import pyqtconsole.highlighter as hl
-from PySide2.QtWidgets import QMainWindow, QDockWidget, QToolButton, QToolBar, QAction
+from PySide2.QtWidgets import QWidget, QMainWindow, QDockWidget, QToolButton, QToolBar, QAction
 from PySide2 import QtCore
 
 # My personal choice of colors
@@ -19,10 +19,10 @@ HUGOS_THEME =  {
     'outprompt': hl.format('#d5d07b')
     }
 
-def new_console():
+def new_console(tabto = None, floating = False, dockingarea = QtCore.Qt.RightDockWidgetArea):
     """
-    Creates a new console and float it as a
-    max widget
+    Create a new console and float it as a max widget
+    tabto: name of a widget on top of which the console should be tabbed
     """
     main_window = GetQMaxMainWindow()
 
@@ -35,9 +35,13 @@ def new_console():
     dock_widget.setWidget(console)
     dock_widget.setObjectName("pyconsole")
     dock_widget.setWindowTitle("Python Console")
-    main_window.addDockWidget(QtCore.Qt.LeftDockWidgetArea, dock_widget)
-    dock_widget.setFloating(True)
+    main_window.addDockWidget(dockingarea, dock_widget)
+    if (not tabto is None):
+        tabw = main_window.findChild(QWidget, tabto)
+        main_window.tabifyDockWidget(tabw, dock_widget)
+    dock_widget.setFloating(floating)
     dock_widget.show()
 
     # make the console do stuff
     console.eval_queued()
+    return console

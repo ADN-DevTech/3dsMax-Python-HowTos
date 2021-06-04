@@ -12,7 +12,7 @@ setuptools.setup(
     url="https://git.autodesk.com/windish/maxpythontutorials",
     packages=setuptools.find_packages(),
     install_requires=[
-        'jedi==0.17.2'
+        'jedi==0.17.2',
         'pyqtconsole'
     ],
     entry_points={'3dsMax': 'startup=pyconsole:startup'},
