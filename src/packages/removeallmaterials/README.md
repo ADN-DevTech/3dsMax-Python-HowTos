@@ -9,7 +9,7 @@
 ## Explanations
 
 The shows how to create a minimal Python tool for 3ds Max. This tools adds a menu item
-to the Scripting menu to lock all transformations on the selection.
+to the Scripting menu to remove all materials from the scene. 
 
 ## Using the tool
 

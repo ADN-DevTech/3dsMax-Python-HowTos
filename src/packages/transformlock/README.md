@@ -61,11 +61,11 @@ def startup():
     Hook the transform lock function to a menu item.
     """
     menuhook.register(
-        "howtos",
         "transformlock",
-        fcn,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
-        menutext"Lock transformations for the selection",
+        "howtos",
+        lock_selection,
+        menu=["&Scripting", "Python3 Development", "How To"],
+        text="Lock transformations for the selection",
         tooltip="Lock transformations for the selection")
 ```
 
