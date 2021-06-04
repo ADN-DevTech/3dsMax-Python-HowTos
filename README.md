@@ -22,7 +22,17 @@ directory of samples and documentation for Python developers.
 - After an update from github it is necessary to rerun install scripts to get everything 
 working as expected
 
+
 ## Python How Tos
+
+### New content
+
+[pyconsole](/src/packages/pyconsole/README.md) demonstrates the integration of a
+nice python console to 3dsMax.
+
+![Console](/src/packages/pyconsole/doc/pyconsole.png)
+
+### Samples
 
 The samples below are translations of [MAXScript How Tos](https://help.autodesk.com/view/MAXDEV/2022/ENU/?guid=GUID-25C9AD58-3665-471E-8B4B-54A094C1D5C9) that
 can be found in the 3ds Max online documentation.
@@ -39,6 +49,7 @@ the Python version in the best Python way known to us. An example of this is tha
 - Output Object Data to File [speedsheet](/src/packages/speedsheet/README.md)
 - Create a quick video preview [quickpreview](/src/packages/quickpreview/README.md)
 - Access the Z-Depth Channel [zdepthchannel](/src/packages/zdepthchannel/README.md)
+- Integrate a Python Console [pyconsole](/src/packages/pyconsole/README.md)
 
 ## Python Examples that don't come from maxscript howtos
 
