@@ -2,6 +2,7 @@
     Instanciation of pyqtconsole as a dockable widget in 3ds Max
 """
 #pylint: disable=no-name-in-module
+#pylint: disable=import-error
 from qtmax import GetQMaxMainWindow
 from pyqtconsole.console import PythonConsole
 import pyqtconsole.highlighter as hl
