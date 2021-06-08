@@ -57,13 +57,13 @@ manually (in the listener window) if we prefer.
 ```python
 def startup():
     """
-    Hook the transform lock function to a menu item.
+    Hook the function to a menu item.
     """
     menuhook.register(
-        "howtos",
         "removeallmaterials",
+        "howtos",
         remove_all_materials,
-        menu=[ "&Scripting", "Python3 Development", "How To"],
+        menu=["&Scripting", "Python3 Development", "How To"],
         text="Remove all materials from the scene",
         tooltip="Remove all materials from the scene")
 ```
