@@ -27,10 +27,7 @@ working as expected
 
 ### New content
 
-[pyconsole](/src/packages/pyconsole/README.md) demonstrates the integration of a
-nice python console to 3dsMax.
-
-![Console](/src/packages/pyconsole/doc/pyconsole.png)
+[mxthread](/src/packages/mxthread/README.md) demonstrates a worker running code on the main thread.
 
 ### Samples
 
@@ -49,13 +46,14 @@ the Python version in the best Python way known to us. An example of this is tha
 - Output Object Data to File [speedsheet](/src/packages/speedsheet/README.md)
 - Create a quick video preview [quickpreview](/src/packages/quickpreview/README.md)
 - Access the Z-Depth Channel [zdepthchannel](/src/packages/zdepthchannel/README.md)
-- Integrate a Python Console [pyconsole](/src/packages/pyconsole/README.md)
 
 ## Python Examples that don't come from maxscript howtos
 
 - Update a progressbar from a Python thread [threadprogressbar](/src/packages/threadprogressbar/README.md)
 - Create a single instance modal dialog [singleinstancedlg](/src/packages/singleinstancedlg/README.md)
 - Add menu items to open documentation pages in the web browser [inbrowserhelp](/src/packages/inbrowserhelp/README.md)
+- Integrate a Python Console [pyconsole](/src/packages/pyconsole/README.md)
+- Run code on thre main thread [mxthread](/src/packages/mxthread/README.md)
 
 ## Python Samples
 
