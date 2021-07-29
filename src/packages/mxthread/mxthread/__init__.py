@@ -3,20 +3,21 @@
     the main thread of 3dsMax. The functions can throw exceptions and return values
     and this is propagated to the caller in the thread.
 """
-import sys                                                                  
-from PySide2.QtCore import QObject, Slot, Signal, QThread, QMutex, QWaitCondition, QTimer
-from PySide2.QtWidgets import QApplication
+import sys
 import os
 import functools
+from PySide2.QtCore import QObject, Slot, Signal, QThread, QMutex, QWaitCondition, QTimer
+from PySide2.QtWidgets import QApplication
+#pylint: disable=W0703,R0903,R0201
 
-class RunnableWaitablePayload(object):
+class RunnableWaitablePayload():
     """
     Wrap a function call as a payload that will be emitted
     to a slot owned by the main thread. The main thread will execute
-    the function call and package the return value in the payload. 
-    The payload also contains a wait condition that the main thread will 
-    signal when the payload was executed. The worker thread (that creates 
-    the payload) will wait for this wait condition and then retrieve the 
+    the function call and package the return value in the payload.
+    The payload also contains a wait condition that the main thread will
+    signal when the payload was executed. The worker thread (that creates
+    the payload) will wait for this wait condition and then retrieve the
     return value from the function.
     """
     def __init__(self, todo):
@@ -28,7 +29,7 @@ class RunnableWaitablePayload(object):
         self.todo = todo
         self.todo_exception = None
         self.todo_return_value = None
-        self.wc = QWaitCondition()
+        self.wcnd = QWaitCondition()
         self.mutex = QMutex()
 
     def wait_for_todo_function_to_complete_on_main_thread(self):
@@ -42,7 +43,7 @@ class RunnableWaitablePayload(object):
         RUNNABLE_PAYLOAD_SIGNAL.sig.emit(self)
         # while waiting the QWaitCondition unlocks the mutex
         # and relocks it when the wait completes
-        self.wc.wait(self.mutex)
+        self.wcnd.wait(self.mutex)
         self.mutex.unlock()
         # if the payload failed, propagate this to the thread
         if self.todo_exception:
@@ -58,9 +59,9 @@ class RunnableWaitablePayload(object):
         self.mutex.lock()
         try:
             self.todo_return_value = self.todo()
-        except Exception as e:
-            self.todo_exception = e
-        self.wc.wakeAll()
+        except Exception as exception:
+            self.todo_exception = exception
+        self.wcnd.wakeAll()
         self.mutex.unlock()
 
 class RunnableWaitablePayloadSignal(QObject):
@@ -68,13 +69,16 @@ class RunnableWaitablePayloadSignal(QObject):
     Creates a signal that can be used to send RunnableWaitablePyaloads to
     the main thread for execution.
     """
-    sig=Signal(RunnableWaitablePayload)
+    sig = Signal(RunnableWaitablePayload)
 
 # Create the Slots that will receive signals
 class PayloadSlot(QObject):
+    """
+    Slot for function submission on the main thread.
+    """
     def __init__(self):
         """
-        And object that owns a slot.
+        An object that owns a slot.
         This object's affinity is the main thread so that signals it receives
         will run on the main thread.
         """
@@ -83,6 +87,9 @@ class PayloadSlot(QObject):
 
     @Slot(RunnableWaitablePayload)
     def run(self, ttd):
+        """
+        Run the slot payload.
+        """
         ttd.run_todo_function()
 
 RUNNABLE_PAYLOAD_SLOT = PayloadSlot()
@@ -107,10 +114,10 @@ def on_main_thread(func):
     Decorate a function to make it always run on the main thread.
     """
     # preserve docstring of the wrapped function
-    @functools.wraps(func)    
+    @functools.wraps(func)
     def decorated(*args, **kwargs):
         return run_on_main_thread(lambda: func(*args, **kwargs))
-    return decorated 
+    return decorated
 
 @on_main_thread
 def main_thread_print(*args, **kwargs):
@@ -118,4 +125,3 @@ def main_thread_print(*args, **kwargs):
     Print on the main thread.
     """
     return print(*args, **kwargs)
-
