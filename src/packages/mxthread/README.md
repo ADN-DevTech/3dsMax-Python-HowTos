@@ -45,9 +45,14 @@ decorated function that prints on the main thread.
 The run function of the Worker (that is a QThread) is what the worker thread does: it essentially
 run stuff on the main thread.
 
+This sample can be saved in a "testmxthread.py" file and then run in 3dsMax.
+
+
 ```python
-from maxthread import on_main_thread, main_thread_print
+from mxthread import on_main_thread, main_thread_print
 from pymxs import runtime as rt
+from PySide2.QtCore import QThread
+
 
 class Worker(QThread):
     """
@@ -99,6 +104,8 @@ class Worker(QThread):
 
         # use a lambda instead
         on_main_thread(lambda : print("hello from lambda"))()
+            
+        main_thread_print(f"we are done, the sample ran correctly!")
 
 
 # Name the main thread
@@ -111,9 +118,23 @@ worker.start()
 # But to convince ourselves, we can print something here and the man thread
 # calls initiated by the worker will all happen after this
 print("--- Worker thread calls to the main thread will run after this")
+
 ```
 
-## How to use it
+Running this sample will display this:
+
+```
+--- Worker thread calls to the main thread will run after this
+hello from thread worker_thread
+resetting the max file
+creating 3 boxes on main thread
+our main thread function returned 3
+our main thread function raised:  division by zero
+hello from lambda
+we are done, the sample ran correctly!
+```
+
+## How to use mxthread
 
 To create a function that will be executed on the main thread (no matter what thread calls the function),
 the function needs to be decorated with `@on_main_thread`, as shown here:
