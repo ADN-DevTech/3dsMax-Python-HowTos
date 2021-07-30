@@ -49,7 +49,7 @@ This sample can be saved in a "testmxthread.py" file and then run in 3dsMax.
 
 
 ```python
-from mxthread import on_main_thread, main_thread_print
+from mxthread import on_main_thread, main_thread_print, run_on_main_thread
 from pymxs import runtime as rt
 from PySide2.QtCore import QThread
 
@@ -104,6 +104,11 @@ class Worker(QThread):
 
         # use a lambda instead
         on_main_thread(lambda : print("hello from lambda"))()
+
+        # call a function on the main thread without decorating it
+        def some_function(a, b):
+            print(f"a = {a} b = {b}")
+        run_on_main_thread(some_function, 1, 2)
             
         main_thread_print(f"we are done, the sample ran correctly!")
 
@@ -136,10 +141,11 @@ we are done, the sample ran correctly!
 
 ## How to use mxthread
 
+
 To create a function that will be executed on the main thread (no matter what thread calls the function),
 the function needs to be decorated with `@on_main_thread`, as shown here:
 
-```
+```python
 @on_main_thread
 def do_faulty_stuff():
     # we are on main thread so we can use print and it will work
@@ -150,6 +156,17 @@ def do_faulty_stuff():
 
 Decorated functions can return values and throw exceptions and in both cases this
 behaves normally from the thread that calls the function.
+
+### Not using decorators
+
+Alternately, you can simply call a function on the main threads:
+
+```python
+def some_function(a, b):
+    print(f"a = {a} b = {b}")
+
+run_on_main_thread(some_function, 1, 2)
+```
 
 ### gotcha
 
