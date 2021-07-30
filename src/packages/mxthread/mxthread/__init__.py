@@ -98,15 +98,15 @@ RUNNABLE_PAYLOAD_SLOT = PayloadSlot()
 RUNNABLE_PAYLOAD_SIGNAL = RunnableWaitablePayloadSignal()
 RUNNABLE_PAYLOAD_SIGNAL.sig.connect(RUNNABLE_PAYLOAD_SLOT.run)
 
-def run_on_main_thread(todo):
+def run_on_main_thread(todo, *args, **kwargs):
     """
     Run code on the main thread.
     Returns the return value of the todo code. If this is called
     from the main thread, todo is immediately called.
     """
     if QThread.currentThread() is QApplication.instance().thread():
-        return todo()
-    ttd = RunnableWaitablePayload(todo)
+        return todo(*args, **kwargs)
+    ttd = RunnableWaitablePayload(lambda: todo(*args, **kwargs))
     return ttd.wait_for_todo_function_to_complete_on_main_thread()
 
 def on_main_thread(func):
@@ -116,7 +116,7 @@ def on_main_thread(func):
     # preserve docstring of the wrapped function
     @functools.wraps(func)
     def decorated(*args, **kwargs):
-        return run_on_main_thread(lambda: func(*args, **kwargs))
+        return run_on_main_thread(func, *args, **kwargs)
     return decorated
 
 @on_main_thread
