@@ -14,7 +14,7 @@ echo "Uninstall python packages"
 
 echo "Uninstall pip"
 (
-    cd Python37
+    cd "$pythonpath"
     ./python.exe -m pip uninstall pip
 )
 
