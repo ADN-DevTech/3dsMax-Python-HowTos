@@ -36,6 +36,13 @@ else
     startuppath="$installdir/scripts/startup"
 fi
 
+if [ "$version" -le "2022" ]
+then
+    pythonpath="Python37"
+else
+    pythonpath="Python"
+fi
+
 exiterr() {
     echo "$@" 1>&2
     exit 1
@@ -49,7 +56,7 @@ fi
 
 # install pip
 installpip() {
-    cd "$installdir/Python37"
+    cd "$installdir/$pythonpath"
     if ! ./python.exe -m pip -V 2>/dev/null
     then
         if ! ./python.exe -m ensurepip 2>/dev/null
@@ -72,7 +79,7 @@ installpythonpackages() {
     for f in $(find "$packagedir" -name "setup.py")
     do
         local package="$(dirname "$f")"
-        "$installdir/Python37/python.exe" -m pip install --user -e "$package"
+        "$installdir/$pythonpath/python.exe" -m pip install --user -e "$package"
     done
 }
 
@@ -82,7 +89,7 @@ uninstallpythonpackages() {
     do
         local package="$(basename "$(dirname "$f")")"
         local pname="$package-autodesk"
-        "$installdir/Python37/python.exe" -m pip uninstall -y "$pname"
+        "$installdir/$pythonpath/python.exe" -m pip uninstall -y "$pname"
     done
 }
 
