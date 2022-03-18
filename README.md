@@ -27,7 +27,7 @@ working as expected
 
 ### New content
 
-[mxs2py](/src/packages/mxs2py/README.md) Automatically convert maxscript to python 
+- Use socketio from 3dsMax [socketioclient](/src/packages/socketio/README.md)
 
 ### Samples
 
