@@ -6,7 +6,7 @@ become possible in python:
 - The last line of all functions is converted to an expr
 - The last line of functions is converted to a return statement
 """
-# pylint: disable=invalid-name, line-too-long, too-many-lines, bad-continuation
+# pylint: disable=invalid-name, line-too-long, too-many-lines, bad-continuation, no-self-use
 from mxs2py import syntax
 from mxs2py.log import eprint
 

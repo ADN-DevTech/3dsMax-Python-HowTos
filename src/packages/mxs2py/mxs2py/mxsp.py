@@ -233,6 +233,7 @@ def array():
 
 @generate
 def bitarray():
+    # pylint: disable=unused-variable
     """parse a bitarray"""
     @generate
     def bitarray_number():
@@ -271,7 +272,7 @@ def bitarray():
 def path_name():
     """parse a pathname, the thing that starts with a $"""
     # the last part of this is a big hack of something that needs to be revisiter for sample 268
-    name_component=regex(r"'[^']*'|([A-Za-z0-9_\*\?\\]|(\.\.\.))*")
+    name_component = regex(r"'[^']*'|([A-Za-z0-9_\*\?\\]|(\.\.\.))*")
     yield string("$")
     components = yield sepBy(name_component, string("/"))
     pn = "$" + "/".join(components)
@@ -411,6 +412,7 @@ def function_call():
         return fargs
 
 
+    # pylint: disable=comparison-with-callable
     fname = yield property_ref < regex(r"(?!(\-| *- ))")
     yield singlelinespaces()
     fargs = yield no_parameters ^ parameters
@@ -575,7 +577,7 @@ def property_ref():
 
     @generate
     def accessor():
-        acc= yield (
+        acc = yield (
             member_accessor |
             index_accessor
             )
@@ -626,9 +628,9 @@ def operator():
             r"and(?![a-z0-9])|or(?![a-z0-9_])|as(?![a-z0-9_])|>=|<=|==|!=|[+*/<>\-^]",
             re.IGNORECASE).parsecmap(st(s.OPERATOR))
 
-def unaryoperator():
-    """parse unary operator"""
-    return regex(r"-|not(?![a-z0-9_])", re.IGNORECASE).parsecmap(st(s.UNARYOPERATOR))
+#def unaryoperator():
+#    """parse unary operator"""
+#    return regex(r"-|not(?![a-z0-9_])", re.IGNORECASE).parsecmap(st(s.UNARYOPERATOR))
 
 @generate
 def computation_operand():
@@ -1202,7 +1204,7 @@ def rcmenu_clause():
         local_decl ^
         function_def ^
         struct_def ^
-        rcmenu_item )
+        rcmenu_item)
     return clause
 
 
@@ -1304,7 +1306,7 @@ def macroscript_def():
     yield normalspaces()
     handlers = yield expr_seq ^ macroscript_clause
 
-    return s.Construct(s.MACROSCRIPT_DEF, vname,  vnop, handlers)
+    return s.Construct(s.MACROSCRIPT_DEF, vname, vnop, handlers)
 
 @generate
 def tool_clause():

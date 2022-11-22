@@ -5,7 +5,7 @@ is to leave the comments out of the syntax tree. Our first processing
 step consists in stripping out the comments but keeping the info or
 where they are in the original source file.
 """
-# pylint: disable=invalid-name, import-error
+# pylint: disable=invalid-name, import-error, undefined-variable
 from parsec import * # pylint: disable=wildcard-import, redefined-builtin, unused-wildcard-import, bad-continuation, undefined-variable
 
 SINGLE = "SINGLE"
