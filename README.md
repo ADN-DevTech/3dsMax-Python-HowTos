@@ -27,7 +27,7 @@ working as expected
 
 ### New content
 
-[mxthread](/src/packages/mxthread/README.md) demonstrates a worker running code on the main thread.
+[mxs2py](/src/packages/mxs2py/README.md) Automatically convert maxscript to python 
 
 ### Samples
 
@@ -54,6 +54,7 @@ the Python version in the best Python way known to us. An example of this is tha
 - Add menu items to open documentation pages in the web browser [inbrowserhelp](/src/packages/inbrowserhelp/README.md)
 - Integrate a Python Console [pyconsole](/src/packages/pyconsole/README.md)
 - Run code on thre main thread [mxthread](/src/packages/mxthread/README.md)
+- Automatically convert maxscript to python [mxs2py](/src/packages/mxs2py/README.md)
 
 ## Python Samples
 

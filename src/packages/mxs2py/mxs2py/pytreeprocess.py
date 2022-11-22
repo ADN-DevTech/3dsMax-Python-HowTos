@@ -117,8 +117,8 @@ def find_first_parent(selectors, tree_item):
             return subitem
     return None
 
-ANY_CONSTRUCT="_ANY_CONSTRUCT_"
-TOP_LEVEL="_TOP_LEVEL_"
+ANY_CONSTRUCT = "_ANY_CONSTRUCT_"
+TOP_LEVEL = "_TOP_LEVEL_"
 
 def find_by_layering(item, layers):
     """Find by layering"""
@@ -515,11 +515,11 @@ def declare_assigned_locals_as_nonlocal(topconstruct: syntax.Construct):
 #
 
 # this is a scope (pool of variable names)
-SCOPE_MXSGLOBAL=0
-SCOPE_GLOBAL=1
-SCOPE_FUNCTION=2
-SCOPE_STRUCT=3
-SCOPE_METHOD=4
+SCOPE_MXSGLOBAL = 0
+SCOPE_GLOBAL = 1
+SCOPE_FUNCTION = 2
+SCOPE_STRUCT = 3
+SCOPE_METHOD = 4
 
 # this is the decoration to put to a variable name
 RESOLUTION_RT = 0
@@ -1180,7 +1180,7 @@ def process_call_byref_assign(topconstruct):
             var_names.insert(0, assignment.construct.args[0])
             res_tuple = syntax.Construct(syntax.PY_TUPLE, var_names)
             # here we need to create a tuple
-            assignment.construct.args[0]=res_tuple
+            assignment.construct.args[0] = res_tuple
 
 def process_call_byref_noassign(topconstruct):
     """we are looking for assignations from byref calls that are at the toplevel of a program block"""

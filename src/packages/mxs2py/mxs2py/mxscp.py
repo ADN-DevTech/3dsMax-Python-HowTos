@@ -8,10 +8,10 @@ where they are in the original source file.
 # pylint: disable=invalid-name,import-error
 from parsec import * # pylint: disable=wildcard-import,redefined-builtin, unused-wildcard-import
 
-SINGLE="SINGLE"
-MULTI="MULTI"
-STRING="STRING"
-OTHER="OTHER"
+SINGLE = "SINGLE"
+MULTI = "MULTI"
+STRING = "STRING"
+OTHER = "OTHER"
 
 @mark
 @generate
@@ -71,8 +71,8 @@ def blank_comments(inp, comments):
 
     def blankline(line, number):
         for c in comments:
-            (fl,fc)=c[0]
-            (tl,tc)=c[2]
+            (fl,fc) = c[0]
+            (tl,tc) = c[2]
             if tl >= number >= fl:
                 f = fc if number == fl else 0
                 t = tc if number == tl else len(line)

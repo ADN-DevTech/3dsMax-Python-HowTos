@@ -236,9 +236,9 @@ class PythonFormatter():
     def out_computation(self, t):
         """output the computation construct"""
         # we want to flatten the computation
-        argops=t.args[0]
+        argops = t.args[0]
         flattened = [self.out_py(val) for val in argops]
-        joined=' '.join(flattened)
+        joined = ' '.join(flattened)
         return f"{joined}"
 
     def out_call(self, t):
@@ -249,8 +249,8 @@ class PythonFormatter():
             return t
         with self.nowarn():
             fname = self.out_py(t.args[0])
-            args=filter(lambda c: c.construct != s.NAMED_ARGUMENT, t.args[1])
-            kwargs=filter(lambda c: c.construct == s.NAMED_ARGUMENT, t.args[1])
+            args = filter(lambda c: c.construct != s.NAMED_ARGUMENT, t.args[1])
+            kwargs = filter(lambda c: c.construct == s.NAMED_ARGUMENT, t.args[1])
             arg = ', '.join(
                     list(map(self.out_py, map(strip_subprogram, args))) +
                     #list(map(self.out_py,args)) +
@@ -265,24 +265,24 @@ class PythonFormatter():
 
     def out_function_method(self, t, method=False):
         """output the function_method construct"""
-        fname=(t.args[0].args[0])
+        fname = (t.args[0].args[0])
         # set param names in the inner scope
         targs = list(map(self.out_py,t.args[1]))
         if method:
             targs = ["self"] + targs
-        fargs=', '.join(targs)
+        fargs = ', '.join(targs)
         inner = t.args[2]
 
         # if the body is a subprogram
         inner = self.strip_subprogram_wrapper(inner)
 
-        fbody=self.out_py(inner)
+        fbody = self.out_py(inner)
 
         bodylines = fbody.split("\n")
         if len(bodylines) == 0:
             bodylines = ["pass"]
         bodylines = map(lambda l: "    " + l, bodylines)
-        ifbody='\n'.join(bodylines)
+        ifbody = '\n'.join(bodylines)
         return f"def {fname}({fargs}):\n{ifbody}\n"
 
     def out_function_def(self, t):
@@ -300,23 +300,23 @@ class PythonFormatter():
 
     def out_point2(self, t):
         """output the point2 construct"""
-        v1=self.out_py(t.args[0])
-        v2=self.out_py(t.args[1])
+        v1 = self.out_py(t.args[0])
+        v2 = self.out_py(t.args[1])
         return f'rt.point2({v1}, {v2})'
 
     def out_point3(self, t):
         """output the point3 construct"""
-        v1=self.out_py(t.args[0])
-        v2=self.out_py(t.args[1])
-        v3=self.out_py(t.args[2])
+        v1 = self.out_py(t.args[0])
+        v2 = self.out_py(t.args[1])
+        v3 = self.out_py(t.args[2])
         return f'rt.point3({v1}, {v2}, {v3})'
 
     def out_point4(self, t):
         """output the point4 construct"""
-        v1=self.out_py(t.args[0])
-        v2=self.out_py(t.args[1])
-        v3=self.out_py(t.args[2])
-        v4=self.out_py(t.args[3])
+        v1 = self.out_py(t.args[0])
+        v2 = self.out_py(t.args[1])
+        v3 = self.out_py(t.args[2])
+        v4 = self.out_py(t.args[3])
         return f'rt.point4({v1}, {v2}, {v3}, {v4})'
 
     def out_array(self, t):
