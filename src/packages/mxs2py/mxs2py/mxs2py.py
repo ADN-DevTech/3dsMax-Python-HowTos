@@ -2,7 +2,7 @@
 """
 Program to transfom maxscript code to python code.
 """
-# pylint: disable=invalid-name,import-error
+# pylint: disable=invalid-name,import-error, bad-continuation
 import re
 import os
 import sys

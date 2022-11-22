@@ -1,7 +1,7 @@
 """
 Formats the processed syntax tree as python code.
 """
-# pylint: disable=invalid-name,import-error,too-many-lines,fixme,unused-argument
+# pylint: disable=invalid-name,import-error,too-many-lines,fixme,unused-argument, bad-continuation
 import keyword
 import functools
 import mxs2py.syntax as s

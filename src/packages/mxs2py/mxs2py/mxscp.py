@@ -6,7 +6,7 @@ step consists in stripping out the comments but keeping the info or
 where they are in the original source file.
 """
 # pylint: disable=invalid-name,import-error
-from parsec import * # pylint: disable=wildcard-import,redefined-builtin, unused-wildcard-import
+from parsec import * # pylint: disable=wildcard-import,redefined-builtin, unused-wildcard-import, bad-continuation
 
 SINGLE = "SINGLE"
 MULTI = "MULTI"

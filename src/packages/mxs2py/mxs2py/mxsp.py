@@ -8,7 +8,7 @@ tree.
 Then the tree could be use to translate maxscript
 to python or for other purposes
 """
-# pylint: disable=invalid-name,import-error, too-many-lines, unsupported-binary-operation, fixme
+# pylint: disable=invalid-name,import-error, too-many-lines, unsupported-binary-operation, fixme, bad-continuation, undefined-variable
 import sys
 from parsec import * # pylint: disable=wildcard-import,redefined-builtin, unused-wildcard-import
 import mxs2py.syntax as s
