@@ -32,16 +32,16 @@ def multicomment():
 def qstring():
     '''Parse quoted string.'''
     @generate
-    def normal():
+    def normals():
         body = yield regex(r'"([^"\\]|\\.)*"')
         return body
 
     @generate
-    def verbatim():
+    def verbatims():
         body = yield regex(r'@"[^"]*"')
         return body
 
-    body = yield verbatim | normal
+    body = yield verbatims | normals
 
     return (STRING, body)
 
