@@ -10,7 +10,7 @@ from mxs2py import mxscp
 from mxs2py import pytreeprocess
 from mxs2py.log import eprint
 
-SCOPE_PREFIX= {
+SCOPE_PREFIX = {
         pytreeprocess.RESOLUTION_RT: "rt.",
         pytreeprocess.RESOLUTION_SELF: "self.",
         pytreeprocess.RESOLUTION_NAKED: "",
@@ -121,7 +121,7 @@ class PythonFormatter():
         self.comments = comments
         self.cl = 0
         self.generation_comments = []
-        self.limitations = { }
+        self.limitations = {}
         self.disable_comments = 0
 
     def append_construct_comments(self, construct):
@@ -179,7 +179,7 @@ class PythonFormatter():
         lines = [f"* {k}: {v}" for k, v in thedict.items()]
         if len(lines) > 0:
             #pylint: disable=line-too-long
-            general_warning="The maxscript code contains constructs that are not handled properly by the translator: \n\n"
+            general_warning = "The maxscript code contains constructs that are not handled properly by the translator: \n\n"
             joined = "\n\n".join(lines)
             return f'\n\n"""\n{general_warning}\n\n{joined}\n"""'
         return ""

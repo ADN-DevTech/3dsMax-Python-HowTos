@@ -568,7 +568,7 @@ class Scope:
         self.dict = {}
         # loop scopes can have an outer scope (the function scope)
         self.outer = outer
-    def set(self, name:str):
+    def set(self, name: str):
         """Set a variable inside the scope"""
         self.dict[name] = True
 
@@ -643,7 +643,7 @@ class ScopeSet:
         if not hasattr(v, "resolution"):
             v.resolution = resolution
 
-    def resolve_to_scope(self, v: syntax.Construct, scope: Scope) -> None :
+    def resolve_to_scope(self, v: syntax.Construct, scope: Scope) -> None:
         """Resolve a variable to a scope
         (the resolution being naked, rt, self, etc...)"""
         if self.in_global_code():
