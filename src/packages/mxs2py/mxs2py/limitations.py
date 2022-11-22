@@ -4,6 +4,7 @@ When something is not fully implemented, or if the translator knows
 that it cannot deal with a situation it adds these explanations in the
 generated code.
 """
+# pylint: disable=bad-continuation
 
 L1 = "L1"
 L2 = "L2"

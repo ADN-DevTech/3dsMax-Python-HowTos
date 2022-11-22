@@ -1,7 +1,7 @@
 """
 Formats the processed syntax tree as python code.
 """
-# pylint: disable=invalid-name,import-error,too-many-lines,fixme,unused-argument, bad-continuation
+# pylint: disable=invalid-name, import-error, too-many-lines, fixme, unused-argument, bad-continuation, no-self-use
 import keyword
 import functools
 import mxs2py.syntax as s
@@ -17,7 +17,7 @@ SCOPE_PREFIX= {
         pytreeprocess.RESOLUTION_INVALID: "????????????????."
     }
 
-RESERVED_PYTHON_NAMES = keyword.kwlist + [ "str" ]
+RESERVED_PYTHON_NAMES = keyword.kwlist + ["str"]
 
 #pylint: disable=too-many-public-methods
 class PythonFormatter():
@@ -156,7 +156,7 @@ class PythonFormatter():
 
     def consume_generation_comments(self):
         """Consumes the accumulated code generation comments"""
-        for _,_,limit in self.generation_comments:
+        for _, _, limit in self.generation_comments:
             if limit is not None:
                 self.limitations[limit] = lim.LIMITATIONS[limit]
         def formatc(cmt):
@@ -176,7 +176,7 @@ class PythonFormatter():
         of the generated code)"""
         thedict = self.limitations
         self.limitations = {}
-        lines = [ f"* {k}: {v}" for k, v in thedict.items() ]
+        lines = [f"* {k}: {v}" for k, v in thedict.items()]
         if len(lines) > 0:
             #pylint: disable=line-too-long
             general_warning="The maxscript code contains constructs that are not handled properly by the translator: \n\n"
@@ -253,7 +253,7 @@ class PythonFormatter():
             kwargs = filter(lambda c: c.construct == s.NAMED_ARGUMENT, t.args[1])
             arg = ', '.join(
                     list(map(self.out_py, map(strip_subprogram, args))) +
-                    #list(map(self.out_py,args)) +
+                    #list(map(self.out_py, args)) +
                     list(map(self.out_py, kwargs))
                     )
         # --- if fname is free
@@ -267,7 +267,7 @@ class PythonFormatter():
         """output the function_method construct"""
         fname = (t.args[0].args[0])
         # set param names in the inner scope
-        targs = list(map(self.out_py,t.args[1]))
+        targs = list(map(self.out_py, t.args[1]))
         if method:
             targs = ["self"] + targs
         fargs = ', '.join(targs)
@@ -321,12 +321,12 @@ class PythonFormatter():
 
     def out_array(self, t):
         """output the array construct"""
-        values = ', '.join(map(self.out_py,t.args[0]))
+        values = ', '.join(map(self.out_py, t.args[0]))
         return f'rt.array({values})'
 
     def out_bitarray(self, t):
         """output the bitarray construct"""
-        values = ' + '.join(map(self.out_py,t.args[0]))
+        values = ' + '.join(map(self.out_py, t.args[0]))
         return f'rt.bitarray(*({values}))'
 
     def out_bitarray_range(self, t):
@@ -493,7 +493,7 @@ class PythonFormatter():
 
         amembers = list(filter(lambda x: x.construct == s.STRUCT_MEMBER_ASSIGN, members))
         omembers = list(filter(
-            lambda x: x.construct in [ s.STRUCT_MEMBER_METHOD, s.STRUCT_MEMBER_DATA ],
+            lambda x: x.construct in [s.STRUCT_MEMBER_METHOD, s.STRUCT_MEMBER_DATA],
             members))
         eventmembers = list(filter(lambda x: x.construct == s.ON_DO_HANDLER, members))
 

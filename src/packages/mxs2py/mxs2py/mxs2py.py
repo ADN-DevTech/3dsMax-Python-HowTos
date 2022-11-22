@@ -2,7 +2,7 @@
 """
 Program to transfom maxscript code to python code.
 """
-# pylint: disable=invalid-name,import-error, bad-continuation
+# pylint: disable=invalid-name, import-error, bad-continuation
 import re
 import os
 import sys
@@ -11,7 +11,7 @@ from mxs2py import mxsp
 from mxs2py import pyout
 from mxs2py import mxscp
 from mxs2py.log import eprint
-def preprocess(inputbuf:str, filename:str) -> str:
+def preprocess(inputbuf: str, filename: str) -> str:
     """
     Preprocess the inputbuf, replaceing \r\n by \n, etc.
     """
@@ -19,11 +19,11 @@ def preprocess(inputbuf:str, filename:str) -> str:
     # pretty bogus just strip out include directives (what we should do is read the
     # refernced file and insert it. Would not be more difficult but let's keep it simple for now)
     includeregex = re.compile(r'include +"([^"]*)"')
-    def expandmatch(mpath:str) -> str:
+    def expandmatch(mpath: str) -> str:
         # pylint: disable=invalid-name, line-too-long
         """Read file mpath, replacing \r\n by \n and \t by four spaces and returning the resulting buffer"""
         fn = mpath[1]
-        fullfn = os.path.join(dirname,fn)
+        fullfn = os.path.join(dirname, fn)
         with open(fullfn, encoding="utf-8") as f:
             buf = f.read().replace("\r\n", "\n").replace("\t", "    ")
             return (mpath[0], buf)

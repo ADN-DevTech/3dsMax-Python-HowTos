@@ -6,7 +6,7 @@ become possible in python:
 - The last line of all functions is converted to an expr
 - The last line of functions is converted to a return statement
 """
-# pylint: disable=invalid-name,line-too-long,too-many-lines, bad-continuation
+# pylint: disable=invalid-name, line-too-long, too-many-lines, bad-continuation
 from mxs2py import syntax
 from mxs2py.log import eprint
 
@@ -19,7 +19,7 @@ class TreeItem():
     """
     Iterated item in the syntax tree
     """
-    def __init__(self, construct, parent_item=None, arg_index=None, array_index = None):
+    def __init__(self, construct, parent_item=None, arg_index=None, array_index=None):
         self.construct = construct
         self.parent_item = parent_item
         self.arg_index = arg_index
@@ -97,17 +97,17 @@ def all(selectors, subitem): #pylint: disable=redefined-builtin
 
 def query(selectors, tree_item):
     """Query by selectors starting at tree_item"""
-    return [ subitem for subitem in iterate_item(tree_item)
+    return [subitem for subitem in iterate_item(tree_item)
         if all(selectors, subitem)]
 
 def query_bfs(selectors, tree_item):
     """Query by selectors starting at tree_item, bfs"""
-    return [ subitem for subitem in iterate_item_bfs(tree_item)
+    return [subitem for subitem in iterate_item_bfs(tree_item)
         if all(selectors, subitem)]
 
 def query_parent(selectors, tree_item):
     """Query by selectors, climbing int the parents"""
-    return [ subitem for subitem in iterate_parent(tree_item)
+    return [subitem for subitem in iterate_parent(tree_item)
         if all(selectors, subitem)]
 
 def find_first_parent(selectors, tree_item):
@@ -214,7 +214,7 @@ PYTHON_EXPR = [
             syntax.POINT2,
             syntax.POINT3,
             syntax.PROPERTY,
-            syntax.STRING ]
+            syntax.STRING]
 
 is_python_expr = filter_constructs(PYTHON_EXPR)
 
@@ -477,7 +477,7 @@ def declare_assigned_locals_as_nonlocal(topconstruct: syntax.Construct):
             return create_declaration(syntax.PY_NONLOCAL, propname)
 
     to_be_added = filter(
-            lambda x : x is not None,
+            lambda x: x is not None,
             map(declare_modifiable,
                 query([is_layering([syntax.ASSIGNMENT])], TreeItem(topconstruct))))
 
@@ -562,7 +562,7 @@ IN_FUNCTION_CODE_TO_RESOLUTION = {
 class Scope:
     #pylint: disable=too-few-public-methods
     """A scope that can contain multipe variable names"""
-    def __init__(self, stype=SCOPE_FUNCTION, outer = None):
+    def __init__(self, stype=SCOPE_FUNCTION, outer=None):
         """Init the scope"""
         self.stype = stype
         self.dict = {}
@@ -575,7 +575,7 @@ class Scope:
 class ScopeSet:
     #pylint: disable=too-many-public-methods
     """A scopeset that contains all the scopes that we track at a given moment"""
-    def __init__(self, gscope = None, lscope = None, sscope = None, mscope = None):
+    def __init__(self, gscope=None, lscope=None, sscope=None, mscope=None):
         if gscope is None:
             gscope = Scope(SCOPE_GLOBAL)
         self.gscope = gscope
@@ -584,10 +584,10 @@ class ScopeSet:
         self.mscope = mscope
         self.sscope = sscope
         # this is the list of names that when not scoped should always be rt
-        self.ALWAYS_RESOLVE_RT = [ "subobjectlevel" ]
+        self.ALWAYS_RESOLVE_RT = ["subobjectlevel"]
 
 
-    def get_scope(self, namec: syntax.Construct ):
+    def get_scope(self, namec: syntax.Construct):
         """Get the scope of a name construct"""
         if namec.construct != syntax.VAR_NAME:
             raise Exception(f"Invalid arg {namec.construct} {namec.args[0]}")
@@ -643,7 +643,7 @@ class ScopeSet:
         if not hasattr(v, "resolution"):
             v.resolution = resolution
 
-    def resolve_to_scope(self, v : syntax.Construct, scope: Scope) -> None :
+    def resolve_to_scope(self, v: syntax.Construct, scope: Scope) -> None :
         """Resolve a variable to a scope
         (the resolution being naked, rt, self, etc...)"""
         if self.in_global_code():

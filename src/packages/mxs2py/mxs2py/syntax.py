@@ -1,6 +1,7 @@
 """
 Definition of the various syntax constructs in the  syntax tree.
 """
+# pylint: disable=bad-continuation
 ARRAY = "ARRAY"
 ASSIGNMENT = "ASSIGNMENT"
 BITARRAY = "BITARRAY"
@@ -101,7 +102,7 @@ PY_NOVAR = "PY_NOVAR"
 
 # levels of comments
 COMMENT_WARNING = "WARNING"
-COMMENT_ERROR= "ERROR"
+COMMENT_ERROR = "ERROR"
 COMMENT_INFO = "INFO"
 
 
@@ -134,7 +135,7 @@ class Construct:
         """Convert to a string"""
         tab = "."
         def indent(lines):
-            return "\n".join(map (lambda toindent : tab + toindent, lines.split("\n")))
+            return "\n".join(map(lambda toindent: tab + toindent, lines.split("\n")))
 
         def stritem(i):
             if isinstance(i, list):

@@ -5,8 +5,8 @@ is to leave the comments out of the syntax tree. Our first processing
 step consists in stripping out the comments but keeping the info or
 where they are in the original source file.
 """
-# pylint: disable=invalid-name,import-error
-from parsec import * # pylint: disable=wildcard-import,redefined-builtin, unused-wildcard-import, bad-continuation
+# pylint: disable=invalid-name, import-error
+from parsec import * # pylint: disable=wildcard-import, redefined-builtin, unused-wildcard-import, bad-continuation, undefined-variable
 
 SINGLE = "SINGLE"
 MULTI = "MULTI"
@@ -24,7 +24,7 @@ def singlecomment():
 @generate
 def multicomment():
     """parse a multiline mxs comment"""
-    z = yield regex("/\\*.*?\\*/",re.MULTILINE | re.DOTALL)
+    z = yield regex("/\\*.*?\\*/", re.MULTILINE | re.DOTALL)
     return (MULTI, z[2:-2])
 
 @mark
@@ -71,12 +71,12 @@ def blank_comments(inp, comments):
 
     def blankline(line, number):
         for c in comments:
-            (fl,fc) = c[0]
-            (tl,tc) = c[2]
+            (fl, fc) = c[0]
+            (tl, tc) = c[2]
             if tl >= number >= fl:
                 f = fc if number == fl else 0
                 t = tc if number == tl else len(line)
                 line = line[0:f] + " " * (t-f) + line[t:]
         return line
 
-    return '\n'.join([blankline(l,i) for i,l in enumerate(lines)])
+    return '\n'.join([blankline(l, i) for i, l in enumerate(lines)])

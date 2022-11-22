@@ -8,9 +8,9 @@ tree.
 Then the tree could be use to translate maxscript
 to python or for other purposes
 """
-# pylint: disable=invalid-name,import-error, too-many-lines, unsupported-binary-operation, fixme, bad-continuation, undefined-variable
+# pylint: disable=invalid-name, import-error, too-many-lines, unsupported-binary-operation, fixme
 import sys
-from parsec import * # pylint: disable=wildcard-import,redefined-builtin, unused-wildcard-import
+from parsec import * # pylint: disable=wildcard-import, redefined-builtin, unused-wildcard-import
 import mxs2py.syntax as s
 
 sys.setrecursionlimit(2500)
@@ -95,7 +95,7 @@ def nonkwchar():
 
 def keyword(kw):
     """parse a keyword"""
-    return ends_with(regex(kw, re.IGNORECASE),nonkwchar())
+    return ends_with(regex(kw, re.IGNORECASE), nonkwchar())
 
 def on_value():
     """parse the mxs on"""
@@ -226,7 +226,7 @@ def array():
     yield normalspaces()
     yield string("(")
     yield normalspaces()
-    values = yield sepBy(expression,listsep())
+    values = yield sepBy(expression, listsep())
     yield normalspaces()
     yield rparen
     return s.Construct(s.ARRAY, values)
@@ -262,7 +262,7 @@ def bitarray():
     yield normalspaces()
     yield string("{")
     yield normalspaces()
-    values = yield sepBy(bitarray_range,listsep())
+    values = yield sepBy(bitarray_range, listsep())
     yield normalspaces()
     yield rbrace
     return s.Construct(s.BITARRAY, values)
