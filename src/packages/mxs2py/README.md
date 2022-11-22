@@ -1,5 +1,5 @@
 # mxs2py: a maxscript to python transpiler
-![splash](doc/mxs2y.png)
+![splash](doc/mxs2py.png)
 
 mxs2py takes a MAXScript program, parses it to a syntax tree, and then produces equivalent Python
 code from the syntax tree.
@@ -9,14 +9,14 @@ code from the syntax tree.
 Help python programmers make sense of maxscript samples by providing automatic translation
 to python.
 
-## State of the Project (= experimental, not supported)
+## State of the Project
 
-This is experimental work and provided only as a sample
+This is experimental work
 
 As things are:
 
 - most correct maxcript syntax will be parsed correctly
-- parsing errors are very poorly reported (trying to translate invalid maxscript code will not be a fun
+- parsing errors are poorly reported (trying to translate invalid maxscript code will not be a fun
 experience)
 - some maxscript constructs are still not supported by the code generator. Most of the time, when things
 cannot be translated to python, a warning is emitted in the generated code explaining why. 
@@ -24,10 +24,6 @@ cannot be translated to python, a warning is emitted in the generated code expla
 inexistant or limited 
 - some generated python constructions may be correct but awkward (because implementing it this way was
 easier)
-- I'm interested to see if this is useful to someone before investing more time into it
-
-
-But: the translator can be used in a lot of situations.
 
 ## Example
 
@@ -84,6 +80,7 @@ rt.progressend()
 ```
 
 Which works producing :
+
 ![ouput](doc/mxs2pyout.png)
 
 ## Under the hood
