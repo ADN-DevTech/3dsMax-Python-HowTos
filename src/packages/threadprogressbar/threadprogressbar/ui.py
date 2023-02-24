@@ -47,7 +47,7 @@ class PyMaxDialog(QDialog):
     Custom dialog attached to the 3ds Max main window
     """
     def __init__(self, parent=QWidget.find(rt.windows.getMAXHWND())):
-        super(PyMaxDialog, self).__init__(parent)
+        super().__init__(parent)
         self.setWindowTitle('Progress')
 
         main_layout = QVBoxLayout()

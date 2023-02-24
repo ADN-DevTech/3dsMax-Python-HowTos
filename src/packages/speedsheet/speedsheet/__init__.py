@@ -11,7 +11,7 @@ def speedsheet():
         caption="SpeedSheet File",
         types="SpeedSheet (*.ssh)|*.ssh|All Files (*.*)|*.*|")
     if output_name is not None:
-        with open(output_name, "w+") as output_file:
+        with open(output_name, "w+", encoding="utf-8") as output_file:
             with pymxs.attime(rt.animationRange.start):
                 objdump = ", ".join(map(lambda x: x.name, list(rt.selection)))
                 output_file.write(

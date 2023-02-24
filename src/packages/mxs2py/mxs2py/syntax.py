@@ -1,7 +1,6 @@
 """
 Definition of the various syntax constructs in the  syntax tree.
 """
-# pylint: disable=bad-continuation
 ARRAY = "ARRAY"
 ASSIGNMENT = "ASSIGNMENT"
 BITARRAY = "BITARRAY"

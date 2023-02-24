@@ -8,19 +8,19 @@ import shutil
 
 # Strings for the file content
 TEXT_STR = 'Text String: Hello!\n'
-UNI_TEXT_STR = u'Unicode String: 女時代'
+UNI_TEXT_STR = 'Unicode String: 女時代'
 
 # Get the current working folder
 CURRENT_DIR = os.getcwd()
 
 # Create Unicode directory name
-UNI_DIR = u'時'
+UNI_DIR = '時'
 
 # Set our user folder to the user temp folder
 TEMP_DIR = tempfile.gettempdir()
 
 # Create Unicode file name
-UNI_FILE = u'Pÿ x Mxs.txt'
+UNI_FILE = 'Pÿ x Mxs.txt'
 
 # Set our temp folder plus the Unicode directory
 FULL_PATH = TEMP_DIR + '\\' + UNI_DIR
