@@ -27,7 +27,7 @@ working as expected
 
 ### New content
 
-- Use socketio from 3dsMax [socketioclient](/src/packages/socketio/README.md)
+- Use socketio from 3dsMax [socketioclient](/src/packages/socketioclient/README.md)
 
 ### Samples
 

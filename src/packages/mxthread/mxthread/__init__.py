@@ -8,7 +8,7 @@ import os
 import functools
 from PySide2.QtCore import QObject, Slot, Signal, QThread, QMutex, QWaitCondition, QTimer
 from PySide2.QtWidgets import QApplication
-#pylint: disable=W0703,R0903
+#pylint: disable=W0703,R0903,useless-option-value,R0201
 
 class RunnableWaitablePayload():
     """
