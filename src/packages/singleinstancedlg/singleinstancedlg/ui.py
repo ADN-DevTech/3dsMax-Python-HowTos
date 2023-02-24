@@ -15,7 +15,7 @@ class PyMaxDialog(QDialog):
     """
     unique_name = __file__
     def __init__(self, parent):
-        super(PyMaxDialog, self).__init__(parent)
+        super().__init__(parent)
         self.setWindowTitle('Single Instance Dialog')
 
         # keep track of being unique

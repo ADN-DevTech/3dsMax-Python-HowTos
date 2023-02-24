@@ -25,7 +25,7 @@ def zdepthchannel():
         z_line = rt.getPixels(z_d, rt.Point2(0, y-1), rbmp.width)
         for x in range(1, rbmp.width):
             print("x =", x, z_line[x].value)
-            box = rt.box(width=10, length=10, height=(z_line[x].value/2))
+            box = rt.box(width=10, length=10, height=z_line[x].value/2)
             box.pos = rt.Point3(x*10, -y*10, 0)
             box.wirecolor = pixel_line[x]
             box.name = rt.uniqueName("VoxelBox")

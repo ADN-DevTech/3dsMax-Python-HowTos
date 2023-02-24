@@ -1,7 +1,7 @@
 """
 Formats the processed syntax tree as python code.
 """
-# pylint: disable=invalid-name, import-error, too-many-lines, fixme, unused-argument, bad-continuation, no-self-use
+# pylint: disable=invalid-name, import-error, too-many-lines, fixme, unused-argument
 import keyword
 import functools
 import mxs2py.syntax as s
@@ -265,7 +265,7 @@ class PythonFormatter():
 
     def out_function_method(self, t, method=False):
         """output the function_method construct"""
-        fname = (t.args[0].args[0])
+        fname = t.args[0].args[0]
         # set param names in the inner scope
         targs = list(map(self.out_py, t.args[1]))
         if method:

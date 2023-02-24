@@ -1,12 +1,13 @@
 """
 Demonstrate the use of of a socket.io client in 3dsMax
 """
+import threading
 import socketio
 import pymxs
-import threading
 import mxthread
 
 def connect_socketio():
+    """Fonnect the socket io client"""
     sio = socketio.Client()
 
     @sio.event
@@ -18,10 +19,11 @@ def connect_socketio():
         # 3dsMax's main thread to handle the event. Note that this will
         # deadlock if the main thread is blocked (we cannot execute something
         # on the main thread if the main thread is blocked).
-        mxthread.run_on_main_thread(print, f"connection established")
+        mxthread.run_on_main_thread(print, "connection established")
 
     @sio.on("chat message")
     def my_message(data):
+        """Handle a chat message"""
         mxthread.run_on_main_thread(print, f"message received {data}")
         # We could emit something here
         # sio.emit('my response', {'response': 'my response'})
@@ -31,11 +33,12 @@ def connect_socketio():
 
     @sio.event
     def disconnect():
-        mxthread.run_on_main_thread(print, f"disconnected from server")
+        """Handle a disconnection"""
+        mxthread.run_on_main_thread(print, "disconnected from server")
 
     sio.connect('http://localhost:3000')
     sio.wait()
-    mxthread.run_on_main_thread(print, f"no longer waiting")
+    mxthread.run_on_main_thread(print, "no longer waiting")
 
 x = threading.Thread(target=connect_socketio)
 x.start()
