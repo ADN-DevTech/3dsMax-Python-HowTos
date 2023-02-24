@@ -1045,9 +1045,9 @@ def out_py(constructs, comments, file_header="Auto translated maxscript", snippe
     """output the py construct"""
     # mutating, disgusting:
     pytreeprocess.preprocess(constructs)
-    eprint(" ------ transformed syntax tree ---")
-    eprint(constructs)
-    eprint(" ----------------------------------")
+    #eprint(" ------ transformed syntax tree ---")
+    #eprint(constructs)
+    #eprint(" ----------------------------------")
     cxt = PythonFormatter(comments)
     if snippet:
         return cxt.out_py(constructs) + "\n"

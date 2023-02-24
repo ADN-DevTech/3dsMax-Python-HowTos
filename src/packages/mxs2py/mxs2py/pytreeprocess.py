@@ -458,7 +458,6 @@ def declare_assigned_locals_as_nonlocal(topconstruct: syntax.Construct):
     """
     def declare_modifiable(item):
         def create_declaration(decl_construct, vname):
-            eprint(f" vname -------------------------- {vname.args[0]}")
             return syntax.Construct(
                 decl_construct,
                 vname.args[0])
@@ -747,7 +746,6 @@ def annotate_scopes(topconstruct):
     scopeset = global_scopeset
     for vn in iterate_item_bfs(TreeItem(topconstruct)):
         cn = vn.construct.construct
-        eprint(f"{cn} ")
         # set the default scopeset (inherited from parent item)
         if vn.parent_item is None:
             vn.scopeset = global_scopeset
@@ -1145,7 +1143,6 @@ def flatten_exprseq_outside_computation(topconstruct):
                 TreeItem(topconstruct))
             ):
         eseq = eseq_it.construct
-        print(f"%%%%%%%%%%%%%%% {eseq}")
         eseq_it.replace_construct(eseq.args[0])
 
 def declare_references(topconstruct):
@@ -1157,7 +1154,6 @@ def declare_references(topconstruct):
                 # this is a simple "name" thing. if it has been
                 # scoped as rt. then well we should instead declare it locally
                 varname = referenced.args[0]
-                print(varname)
                 if hasattr(varname, "mark_for_local_declaration"):
                     program = find_first_parent([is_program], vn)
                     snamec = syntax.Construct(syntax.VAR_NAME, varname.args[0])

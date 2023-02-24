@@ -38,22 +38,22 @@ def topy(inputstr, file_header=None, snippet=False):
     """
     Convert some mxs inputstr to py.
     """
-    eprint("------ input mxs program ----")
-    eprint(inputstr)
+    #eprint("------ input mxs program ----")
+    #eprint(inputstr)
     # we don't want to mix the comments whith the
     # syntax tree. So we parse the comments first,
     # and then the syntax tree, and keep locations
     # if we want to keep the comments when producing
     # the output we are able
-    eprint("------ parse comments -------")
+    #eprint("------ parse comments -------")
     comments = mxscp.anycomment.parse(inputstr)
-    eprint(comments)
-    eprint("------ replace comments with white space")
+    #eprint(comments)
+    #eprint("------ replace comments with white space")
     stripped = mxscp.blank_comments(inputstr, comments)
-    eprint(stripped)
-    eprint("------- parse tree ------")
+    #eprint(stripped)
+    #eprint("------- parse tree ------")
     parsed = mxsp.file.parse(stripped)
-    eprint(parsed[1])
+    #eprint(parsed[1])
     lines = stripped.split("\n")
     numlines = len(lines)
     output = pyout.out_py(parsed[1], comments, file_header, snippet)
@@ -68,9 +68,9 @@ def topy(inputstr, file_header=None, snippet=False):
         except ParseError as e:
             error = f"{error}\n\n{e}\n\nin:\n\n<pre>{toreparse}</pre>"
 
-    eprint("------- output ----------")
-    eprint(output)
-    eprint("------- done ----------")
+    #eprint("------- output ----------")
+    #eprint(output)
+    #eprint("------- done ----------")
     return (output, error)
 
 def main():
