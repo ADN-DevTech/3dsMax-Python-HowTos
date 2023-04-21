@@ -8,7 +8,7 @@ import mxs2py.syntax as s
 import mxs2py.limitations as lim
 from mxs2py import mxscp
 from mxs2py import pytreeprocess
-from mxs2py.log import eprint
+#from mxs2py.log import eprint
 
 SCOPE_PREFIX = {
         pytreeprocess.RESOLUTION_RT: "rt.",

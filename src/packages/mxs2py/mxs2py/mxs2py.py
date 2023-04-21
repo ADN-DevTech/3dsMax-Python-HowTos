@@ -10,7 +10,8 @@ from parsec import ParseError
 from mxs2py import mxsp
 from mxs2py import pyout
 from mxs2py import mxscp
-from mxs2py.log import eprint
+#from mxs2py.log import eprint
+
 def preprocess(inputbuf: str, filename: str) -> str:
     """
     Preprocess the inputbuf, replaceing \r\n by \n, etc.
