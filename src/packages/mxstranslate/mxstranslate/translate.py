@@ -8,7 +8,7 @@ from PySide2.QtGui import (QSyntaxHighlighter, QTextCharFormat,
         QFont, Qt, QBrush, QColor, QKeyEvent)
 from PySide2 import QtCore
 from PySide2.QtCore import QMimeData, QEvent
-from pygments.lexers import PythonLexer
+from pygments.lexers.python import PythonLexer
 from pygments.token import Token
 from mxs2py import topy
 from qtmax import GetQMaxMainWindow
