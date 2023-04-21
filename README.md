@@ -1,4 +1,4 @@
-# 3ds Max 2021 and 2022 Python How Tos
+# 3ds Max 2021, 2022, and 2023 Python How Tos
 ### Practical Python 3.7 Development Examples For 3ds Max
 
 ![Splash](/doc/Splash.png)
@@ -27,7 +27,7 @@ working as expected
 
 ### New content
 
-- Use socketio from 3dsMax [socketioclient](/src/packages/socketioclient/README.md)
+- Drop maxscript code on a rich text window to get a python translation [mxstranslate](/src/packages/mxstranslate/README.md) 
 
 ### Samples
 
@@ -55,6 +55,7 @@ the Python version in the best Python way known to us. An example of this is tha
 - Integrate a Python Console [pyconsole](/src/packages/pyconsole/README.md)
 - Run code on thre main thread [mxthread](/src/packages/mxthread/README.md)
 - Automatically convert maxscript to python [mxs2py](/src/packages/mxs2py/README.md)
+- Use socketio from 3dsMax [socketioclient](/src/packages/socketioclient/README.md)
 
 ## Python Samples
 
