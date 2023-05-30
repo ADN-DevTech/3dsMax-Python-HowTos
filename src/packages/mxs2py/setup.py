@@ -11,5 +11,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ADN-DevTech/3dsMax-Python-HowTos",
     packages=setuptools.find_packages(),
+    install_requires = [
+        'parsec==3.12'
+        ],
     python_requires='>=3.7'
 )
