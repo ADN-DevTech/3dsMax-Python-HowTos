@@ -11,7 +11,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
     install_requires=[
-        'ptvsd'
+        'debugpy'
     ],
     entry_points={'3dsMax': 'startup=mxvscode:startup'},
     python_requires='>=3.7'
