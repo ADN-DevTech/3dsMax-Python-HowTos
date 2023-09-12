@@ -79,7 +79,7 @@ most of the other samples.
 - [realoadmod](/src/packages/reloadmod/README.md) is small tool that will reload all development modules in one
 operation
 
-- [mxvscode](/src/packages/mxvscode/README.md) is a small tool that will automatically import ptvsd (the
+- [mxvscode](/src/packages/mxvscode/README.md) is a small tool that will automatically import debugpy (the
 VSCode debugging interface) during the startup of 3ds Max and make it accept remote connections.
 This may slow down the startup of 3ds Max quite a bit and is meant as a developer-only tool.
 
