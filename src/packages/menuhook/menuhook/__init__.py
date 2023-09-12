@@ -77,24 +77,33 @@ def deep_menu(menu):
         like deep_menu(["&Scripting", "Python Developer", "HowTos"]) would make sure
         there is a "Python Developer -> HowTos" sub menu item under scripting
     """
-    found = rt.menuman.findMenu(menu[-1])
+    submenu = rt.menuman.findMenu(menu[-1])
     name = menu[-1]
-    if found is not None:
-        return found
     if len(menu) == 1:
         inmenu = rt.menuman.getMainMenuBar()
     else:
         inmenu = deep_menu(menu[0:-1])
-    submenu = rt.menuman.createMenu(name)
+    if submenu is None:
+        submenu = rt.menuman.createMenu(name)
+    else:
+        # Although the menu was found, it may be by itself and need to be added to
+        # its parent's (inmenu's) items.
+        is_in_inmenu = False
+        for item_index in range(1, inmenu.numItems() + 1):
+            if inmenu.getItem(item_index).getTitle() == submenu.getTitle():
+                is_in_inmenu = True
+        if is_in_inmenu:
+            return submenu
+    print(f"adding menu {name} to {inmenu.getTitle()}")
     submenuitem = rt.menuman.createSubMenuItem(name, submenu)
     index = inmenu.numItems() - 1
     inmenu.addItem(submenuitem, index)
     return submenu
 
-def add_menu_item(menu, action, category):
+def add_menu_item(menu, action, category, text):
     """
     Add a menu item for an action.
-    The menu item will be re added even if it is already there.
+    If its text matches an existing menu item in menu then it won't be re-added.
     """
     if not isinstance(menu, list):
         menu = [menu]
@@ -102,6 +111,10 @@ def add_menu_item(menu, action, category):
     if targetmenu:
         newaction = rt.menuman.createActionItem(action, category)
         if newaction:
+            for item_index in range(1, targetmenu.numItems() + 1):
+                if targetmenu.getItem(item_index).getTitle() == text:
+                    return
+            print(f"adding menu item {text} to {targetmenu.getTitle()}")
             targetmenu.addItem(newaction, -1)
             rt.menuman.updateMenuBar()
 
@@ -117,8 +130,6 @@ def register(action, category, fcn, menu=None, text=None, tooltip=None):
         - assign the macro function if the macro is already there
         - create a menu item for the macro if it is not already there
     """
-    defined = macro_defined(action, category)
     add_macro(action, category, text or action, tooltip or action, fcn)
-    if not defined and not menu is None:
-        add_menu_item(menu, action, category)
+    add_menu_item(menu, action, category, text)
 #pylint: enable=too-many-arguments
