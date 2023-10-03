@@ -68,9 +68,14 @@ installpip() {
     fi
 }
 
-# install pystartup.ms
+# install pystartup.ms or adn-dectech-python-howtos (plugin package) for 2025
 installpystartup() {
-    cp "$script/src/pystartup/pystartup.ms" "$startuppath"
+    if [ "$version" -lt "2025" ]
+    then
+        cp "$script/src/pystartup/pystartup.ms" "$startuppath"
+    else
+        cp "$script/src/adn-devtech-python-howtos" "$ProgramData/Autodesk/ApplicationPlugins"
+    fi
 }
 
 

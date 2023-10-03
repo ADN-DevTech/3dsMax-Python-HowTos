@@ -18,4 +18,6 @@ def startup():
         lock_selection,
         menu=["&Scripting", "Python3 Development", "How To"],
         text="Lock transformations for the selection",
-        tooltip="Lock transformations for the selection")
+        tooltip="Lock transformations for the selection",
+        in2025_menuid=menuhook.HOW_TO,
+        id_2025="F9DA574D-185B-4C00-9C37-795B38719E78")

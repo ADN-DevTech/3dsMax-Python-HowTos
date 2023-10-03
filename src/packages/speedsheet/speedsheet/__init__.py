@@ -39,4 +39,6 @@ def startup():
         speedsheet,
         menu=["&Scripting", "Python3 Development", "How To"],
         text="Output Object Data to File",
-        tooltip="Output Object Data to File")
+        tooltip="Output Object Data to File",
+        in2025_menuid=menuhook.HOW_TO,
+        id_2025="FFA6888A-B27A-4FA9-BFED-86FD3683E6B6")

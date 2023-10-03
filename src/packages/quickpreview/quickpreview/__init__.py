@@ -29,4 +29,6 @@ def startup():
         quickpreview,
         menu=["&Scripting", "Python3 Development", "How To"],
         text="Create a quick preview",
-        tooltip="Create a quick preview")
+        tooltip="Create a quick preview",
+        in2025_menuid=menuhook.HOW_TO,
+        id_2025="E30C825C-E4CD-48FD-A1C7-A75A91B2E9C2")

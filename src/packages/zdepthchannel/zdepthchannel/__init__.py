@@ -42,4 +42,6 @@ def startup():
         zdepthchannel,
         menu=["&Scripting", "Python3 Development", "How To"],
         text="Access the Z-Depth Channel",
-        tooltip="Access the Z-Depth Channel")
+        tooltip="Access the Z-Depth Channel",
+        in2025_menuid=menuhook.HOW_TO,
+        id_2025="BC1B51C9-2F02-496D-B9ED-9A61022A569D")

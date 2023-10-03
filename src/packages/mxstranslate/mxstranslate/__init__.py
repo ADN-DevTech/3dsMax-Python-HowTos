@@ -20,4 +20,6 @@ def startup():
         mxstranslate,
         menu=["&Scripting", "Python3 Development", "How To"],
         text="Translation window for mxs code",
-        tooltip="Translation window for mxs code")
+        tooltip="Translation window for mxs code",
+        in2025_menuid=menuhook.HOW_TO,
+        id_2025="004BF4E1-4AB3-42B5-979A-28662B26533C")

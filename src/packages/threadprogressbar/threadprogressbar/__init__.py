@@ -20,4 +20,6 @@ def startup():
         threadprogressbar,
         menu=["&Scripting", "Python3 Development", "Other Samples"],
         text="Update a progress bar from a thread",
-        tooltip="Update a progress bar from a thread")
+        tooltip="Update a progress bar from a thread",
+        in2025_menuid=menuhook.OTHER_SAMPLES,
+        id_2025="AB072ECE-8665-4EC4-8D12-C0E76DA4C919")

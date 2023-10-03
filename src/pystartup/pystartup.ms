@@ -1,6 +1,6 @@
-if isProperty python "execute" then (
+if isProperty python "execute" && ((maxversion())[8]<2025) then (
     python.execute ("def _python_startup():\n" +
-	"    try:\n" +
+    "    try:\n" +
     "        import pkg_resources\n" +
     "    except ImportError:\n" +
     "        print('startup Python modules require pip to be installed.')\n" +

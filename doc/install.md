@@ -39,6 +39,9 @@ It is possible to break up the installation in two steps.
 
 - The [installstartup.sh](/installstartup.sh) script can be used
 from bash to install pip and [pystartup.ms](/src/pystartup/pystartup.ms).
+In 2025 and above, [adn-devtech-python-howtos](/src/adn-devtech-python-howtos) 
+is installed instead of pystartup.ms.
+
 It needs to run in the 3ds Max installation directory.
 
 You may do only this step if you don't want the HowTos but you

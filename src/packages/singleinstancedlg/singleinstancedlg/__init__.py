@@ -19,4 +19,6 @@ def startup():
         singleinstancedlg,
         menu=["&Scripting", "Python3 Development", "Other Samples"],
         text="Single instance modeless dialog",
-        tooltip="Single instance modeless dialog")
+        tooltip="Single instance modeless dialog",
+        in2025_menuid=menuhook.OTHER_SAMPLES,
+        id_2025="AF515BBA-E826-4DA8-B097-FA9A2C917A91")

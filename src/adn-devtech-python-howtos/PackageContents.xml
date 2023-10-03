@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage
+        SchemaVersion="1.0"
+        AutodeskProduct="3ds Max"
+        Name="ADNDevTechPythonHowTos"
+        Description=""
+        AppVersion="0.0.1"
+        ProductType="Application"
+        AppNameSpace="appstore.exchange.autodesk.com"
+        Author="Autodesk"
+        ProductCode="{31C5CD2E-F2A7-4716-9C50-B4CD11C1C568}"
+	UpgradeCode= "{14C34C70-07C7-4562-B3A8-5A8C4C95C97A}">
+  <CompanyDetails Name="Autodesk" Url="https://www.autodesk.com" />
+  <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2025" SeriesMax="2025" />
+  <Components Description="pre-start-up scripts parts">
+     <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2025" SeriesMax="2025" />
+     <ComponentEntry ModuleName="./scripts/pyStartup.py" />
+  </Components>
+</ApplicationPackage>

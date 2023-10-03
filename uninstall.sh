@@ -18,5 +18,7 @@ echo "Uninstall pip"
     ./python.exe -m pip uninstall pip
 )
 
-echo "Uninstall pystartup"
-rm "$startuppath/pystartup.ms"
+echo "Uninstall pystartup and adn-devtech-python-howtos"
+rm -f "$startuppath/pystartup.ms"
+rm -fr "$ProgramData/Autodesk/ApplicationPlugins/adn-devtech-python-howtos"
+

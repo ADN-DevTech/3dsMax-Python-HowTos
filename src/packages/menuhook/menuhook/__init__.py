@@ -105,8 +105,14 @@ def add_menu_item(menu, action, category):
             targetmenu.addItem(newaction, -1)
             rt.menuman.updateMenuBar()
 
+PYTHON_DEVELOPMENT =   "82490C17-D86E-40C5-B387-C2E63A64C74D"
+BROWSE_DOCUMENTATION = "DAF8D6C5-0C14-4A99-9370-8AA5329EA143"
+HOW_TO =               "FFBB0A45-5278-4572-8CD9-BB5B4D260153"
+OTHER_SAMPLES =        "CBB6F619-57B9-4C81-8135-41958BEF5BED"
+registered_items = []
+
 #pylint: disable=too-many-arguments
-def register(action, category, fcn, menu=None, text=None, tooltip=None):
+def register(action, category, fcn, menu=None, text=None, tooltip=None, in2025_menuid=None, id_2025=None):
     """
     Appends a menu item to one of the menus of the main menubar.
     If the action already exists, the menu is not added but the
@@ -116,9 +122,52 @@ def register(action, category, fcn, menu=None, text=None, tooltip=None):
         - creating a macro
         - assign the macro function if the macro is already there
         - create a menu item for the macro if it is not already there
+
+    For 2025 and above, menu items that need to be created are kept
+    in the global registered_items list.
     """
-    defined = macro_defined(action, category)
-    add_macro(action, category, text or action, tooltip or action, fcn)
-    if not defined and not menu is None:
-        add_menu_item(menu, action, category)
+    if (rt.maxversion())[7] >= 2025:
+        if in2025_menuid is not None and id_2025 is not None:
+            add_macro(action, category, text or action, tooltip or action, fcn)
+            registered_items.append((in2025_menuid, id_2025, category, action))
+    else:
+        defined = macro_defined(action, category)
+        add_macro(action, category, text or action, tooltip or action, fcn)
+        if not defined and not menu is None:
+            add_menu_item(menu, action, category)
 #pylint: enable=too-many-arguments
+
+# for 2025, pre-can a menu for the howtos
+def register_howtos_menu_2025(menumgr):
+    """Register the menu structure in the new menu system"""
+    menumgr = rt.callbacks.notificationparam()
+
+    scriptingmenu = "658724ec-de09-47dd-b723-918c59a28ad1"
+    scriptmenu = menumgr.getmenubyid(scriptingmenu)
+
+    python_development = scriptmenu.createsubmenu(
+        PYTHON_DEVELOPMENT,
+        "Python 3 Development")
+    python_development.createsubmenu(
+        BROWSE_DOCUMENTATION,
+        "Browse Documentation")
+    python_development.createsubmenu(
+        HOW_TO,
+        "How To")
+    python_development.createsubmenu(
+        OTHER_SAMPLES,
+        "Other Samples")
+    
+    # hook the registered items
+    for reg in registered_items:
+        (in2025_menuid, id_2025, category, action) = reg
+        scriptmenu = menumgr.getmenubyid(in2025_menuid)
+        if scriptmenu is not None:
+            try:
+                actionitem = scriptmenu.createaction(id_2025, 647394, f"{action}`{category}")
+            except Exception as e:
+                print(f"Could not create item {category}, {action} in menu {in2025_menuid} because {e}")
+        else:
+            print(f"Could not create item {category}, {action}, in missing menu {in2025_menuid}")
+
+
