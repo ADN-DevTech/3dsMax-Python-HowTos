@@ -35,7 +35,7 @@ The samples below are translations of [MAXScript How Tos](https://help.autodesk.
 can be found in the 3ds Max online documentation.
 
 The conversion from MaxScript to Python could have been more mechanical but we chose to implement
-the Python version in the best Python way known to us. An example of this is that we use PySide2
+the Python version in the best Python way known to us. An example of this is that we use PySide
 (Qt) for the UI as much as possible instead of using more traditional 3ds Max ui mechanisms.
 
 *How To?*

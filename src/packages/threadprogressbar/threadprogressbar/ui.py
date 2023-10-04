@@ -1,11 +1,11 @@
 """
-    PySide2 dialog that launches a worker and monitors its progress.
+    qtpy dialog that launches a worker and monitors its progress.
 """
 #pylint: disable=no-name-in-module
 #pylint: disable=too-few-public-methods
 import time
-from PySide2.QtWidgets import QWidget, QDialog, QLabel, QProgressBar, QVBoxLayout, QPushButton
-from PySide2.QtCore import QThread, Signal
+from qtpy.QtWidgets import QWidget, QDialog, QLabel, QProgressBar, QVBoxLayout, QPushButton
+from qtpy.QtCore import QThread, Signal
 from pymxs import runtime as rt
 
 MINRANGE = 1

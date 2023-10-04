@@ -1,8 +1,8 @@
 '''
-    Demonstrates how to create a QDialog with PySide2 and attach it to the 3ds Max main window.
+    Demonstrates how to create a QDialog with PySide and attach it to the 3ds Max main window.
 '''
 
-from PySide2.QtWidgets import QDialog, QLabel, QVBoxLayout, QPushButton
+from qtpy.QtWidgets import QDialog, QLabel, QVBoxLayout, QPushButton
 from pymxs import runtime as rt
 from qtmax import GetQMaxMainWindow
 
@@ -39,7 +39,7 @@ class PyMaxDialog(QDialog):
 
 def demo_simple_dialog():
     """
-    Entry point for QDialog demo making use of PySide2 and pymxs
+    Entry point for QDialog demo making use of PySide and pymxs
     """
     # reset 3ds Max
     rt.resetMaxFile(rt.Name('noPrompt'))

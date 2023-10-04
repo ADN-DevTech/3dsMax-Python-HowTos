@@ -6,8 +6,8 @@
 import sys
 import os
 import functools
-from PySide2.QtCore import QObject, Slot, Signal, QThread, QMutex, QWaitCondition, QTimer
-from PySide2.QtWidgets import QApplication
+from qtpy.QtCore import QObject, Slot, Signal, QThread, QMutex, QWaitCondition, QTimer
+from qtpy.QtWidgets import QApplication
 #pylint: disable=W0703,R0903
 
 class RunnableWaitablePayload():

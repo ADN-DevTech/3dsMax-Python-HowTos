@@ -13,7 +13,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     entry_points={'3dsMax': 'startup=mxstranslate:startup'},
     install_requires=[
-        'pygments'
+        'pygments',
+        'qtpy'
     ],    
     python_requires='>=3.7'
 )

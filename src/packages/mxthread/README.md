@@ -51,7 +51,7 @@ This sample can be saved in a "testmxthread.py" file and then run in 3dsMax.
 ```python
 from mxthread import on_main_thread, main_thread_print, run_on_main_thread
 from pymxs import runtime as rt
-from PySide2.QtCore import QThread
+from qtpy.QtCore import QThread
 
 
 class Worker(QThread):

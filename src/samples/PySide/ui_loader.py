@@ -1,10 +1,10 @@
 ﻿'''
- Demonstrates loading .ui files with PySide2
+ Demonstrates loading .ui files with PySide
 '''
 import os
-from PySide2.QtWidgets import QMainWindow
-from PySide2.QtCore import QFile
-from PySide2.QtUiTools import QUiLoader
+from qtpy.QtWidgets import QMainWindow
+from qtpy.QtCore import QFile
+from qtpy.QtUiTools import QUiLoader
 from pymxs import runtime as rt
 from qtmax import GetQMaxMainWindow
 

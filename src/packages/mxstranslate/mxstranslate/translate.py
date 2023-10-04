@@ -2,12 +2,12 @@
     Toolbar giving access to experimental MXS -> Python translation
 """
 #pylint: disable= import-error, invalid-name, too-few-public-methods
-from PySide2.QtWidgets import (QApplication, QWidget, QDockWidget,
+from qtpy.QtWidgets import (QApplication, QWidget, QDockWidget,
         QVBoxLayout, QLabel, QTextEdit, QStyle, QToolBar, QCommonStyle)
-from PySide2.QtGui import (QSyntaxHighlighter, QTextCharFormat,
+from qtpy.QtGui import (QSyntaxHighlighter, QTextCharFormat,
         QFont, Qt, QBrush, QColor, QKeyEvent)
-from PySide2 import QtCore
-from PySide2.QtCore import QMimeData, QEvent
+from qtpy import QtCore
+from qtpy.QtCore import QMimeData, QEvent
 from pygments.lexers.python import PythonLexer
 from pygments.token import Token
 from mxs2py import topy

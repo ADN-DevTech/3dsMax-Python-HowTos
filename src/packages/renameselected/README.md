@@ -6,13 +6,13 @@
 [Source Code](renameselected/__init__.py)
 
 *Goals:* 
-- learn how to create a dialog with PySide2
+- learn how to create a dialog with PySide
 - learn how to hook a Python function to a 3ds Max ui element
 
 ## Explanations
 
 This tutorial shows how to rename all selected objects using a base name,
-chosen in a PySide2 dialog.
+chosen in a PySide dialog.
 
 ## Using the tool
 
