@@ -74,7 +74,7 @@ installpystartup() {
     then
         cp "$script/src/pystartup/pystartup.ms" "$startuppath"
     else
-        cp "$script/src/adn-devtech-python-howtos" "$ProgramData/Autodesk/ApplicationPlugins"
+        cp -fr "$script/src/adn-devtech-python-howtos" "$ProgramData/Autodesk/ApplicationPlugins"
     fi
 }
 
