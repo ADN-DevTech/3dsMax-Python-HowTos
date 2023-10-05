@@ -34,7 +34,7 @@ def _python_startup():
 
 ```
 
-Then it integrates the samples to the new menu system of 2025:
+Then it integrates the samples into the new menu system of 2025:
 
 ```python
     # configure 2025 menus
@@ -56,7 +56,7 @@ Then it integrates the samples to the new menu system of 2025:
 ## Integration With the New Menu System
 
 The [menuhook](/src/menuhook/) code has been reworked to integrate menu items for the 
-various howtos to the new menu system:
+various howtos into the new menu system:
 
 ```python
 def register(action, category, fcn, menu=None, text=None, tooltip=None, in2025_menuid=None, id_2025=None):
@@ -64,7 +64,7 @@ def register(action, category, fcn, menu=None, text=None, tooltip=None, in2025_m
 
 Takes two new parameters: 
 - `in2025_menuid` : the guid of the containing menu
-- `id_2025i` : the guid of the item to create
+- `id_2025` : the guid of the item to create
 
 And stores the needed menu items in the `registered_items` list:
 

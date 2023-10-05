@@ -50,8 +50,18 @@ MAX_VERSION_TOPICS = {
          "Pymxs Online Documentation",
          "help.autodesk.com/view/MAXDEV/2024/ENU/?guid=MAXDEV_Python_using_pymxs_html",
          "44985F87-C175-4F3D-B70F-9FA0B6242AE1")
+        ],
+    2025: [
+        ("gettingstarted", 
+         "Getting Started With Python in 3ds Max",
+         "help.autodesk.com/view/MAXDEV/2025/ENU/?guid=MAXDEV_Python_about_the_3ds_max_python_api_html",
+         "64651C48-F4F1-42F9-8C8A-FF5D0AA031A2"),
+        ("pymxs", 
+         "Pymxs Online Documentation",
+         "help.autodesk.com/view/MAXDEV/2025/ENU/?guid=MAXDEV_Python_using_pymxs_html",
+         "44985F87-C175-4F3D-B70F-9FA0B6242AE1")
         ]
-    }
+ }
 
 def get_version_topics(version):
     """Get the version-dependent topics, defaulting on the latest

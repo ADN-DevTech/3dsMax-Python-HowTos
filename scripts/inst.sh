@@ -68,7 +68,7 @@ installpip() {
     fi
 }
 
-# install pystartup.ms or adn-dectech-python-howtos (plugin package) for 2025
+# install pystartup.ms or adn-devtech-python-howtos (plugin package) for 2025
 installpystartup() {
     if [ "$version" -lt "2025" ]
     then

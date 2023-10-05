@@ -32,7 +32,7 @@ automatically when 3ds Max starts.
 
 ### For 3dsMax 2025 and greater
 
-Starting with 2025, pystartup.ms is no longer used. Instead the 
+Starting with 2025, pystartup.ms is no longer needed. Instead the 
 [adn-devtech-python-howtos](/src/adn-devtech-python-howtos) directory is 
 copied to "C:\ProgramData\Autodesk\ApplicationPlugins". 
 
