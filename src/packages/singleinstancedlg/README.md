@@ -8,7 +8,7 @@ dialog
 
 ## Explanations
 
-The sample creates a custome PySide dialog and calls `setObjectName`
+The sample creates a custom PySide dialog and calls `setObjectName`
 on it with a unique name. The `show_dialog()` function only creates
 a new dialog if `findChild` cannot find the QDialog with the name
 specified in `setObjectName`. The dialog (either found or created) is
