@@ -66,6 +66,9 @@ installpip() {
             ./python.exe "$getpip/get-pip.py" --user
         fi
     fi
+    # update to the latest pip
+    ./python.exe -m pip install --upgrade pip
+    ./python.exe -m pip install wheel
 }
 
 # install pystartup.ms or adn-devtech-python-howtos (plugin package) for 2025
