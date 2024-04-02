@@ -135,7 +135,7 @@ def register(action, category, fcn, menu=None, text=None, tooltip=None, in2025_m
         add_macro(action, category, text or action, tooltip or action, fcn)
         if not defined and not menu is None:
             add_menu_item(menu, action, category)
-#pylint: enable=too-many-arguments, line-too-long 
+#pylint: enable=too-many-arguments, line-too-long
 
 # for 2025, pre-can a menu for the howtos
 def register_howtos_menu_2025(menumgr):
@@ -165,9 +165,9 @@ def register_howtos_menu_2025(menumgr):
         if scriptmenu is not None:
             try:
                 scriptmenu.createaction(id_2025, 647394, f"{action}`{category}")
-            #pylint: disable=line-too-long, broad-exception-caught
+#pylint: disable=line-too-long, broad-exception-caught
             except Exception as e:
                 print(f"Could not create item {category}, {action} in menu {in2025_menuid} because {e}")
-            #pylint: enable=line-too-long, broad-exception-caught
+#pylint: enable=line-too-long, broad-exception-caught
         else:
             print(f"Could not create item {category}, {action}, in missing menu {in2025_menuid}")
