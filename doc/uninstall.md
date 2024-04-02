@@ -16,6 +16,7 @@ needed to remove them are explained at the bottom of this page).
 
 ## Removing pystartup.ms (manual uninstall)
 
+### For 3dsMax before 2025
 After the installation, pystartup.ms will be copied to:
 
 "$HOME/AppData/Local/Autodesk/3dsMax/2022 - 64bit/ENU/scripts/startup"
@@ -28,6 +29,18 @@ It can simply be removed from there.
 
 By removing this file none of the HowTo packages will be started
 automatically when 3ds Max starts.
+
+### For 3dsMax 2025 and greater
+
+Starting with 2025, pystartup.ms is no longer needed. Instead the 
+[adn-devtech-python-howtos](/src/adn-devtech-python-howtos) directory is 
+copied to "C:\ProgramData\Autodesk\ApplicationPlugins". 
+
+It can be manually removed by doing (from gitbash):
+
+```bash
+rm -fr "$ProgramData/Autodesk/ApplicationPlugins/adn-devtech-python-howtos"
+```
 
 ## Removing pip (manual uninstall)
 

@@ -28,4 +28,6 @@ def startup():
         showdialog,
         menu=["&Scripting", "Python3 Development", "How To"],
         text="Rename all elements in selection",
-        tooltip="renameselected sample")
+        tooltip="renameselected sample",
+        in2025_menuid=menuhook.HOW_TO,
+        id_2025="163ACF54-313D-4B1B-8615-F6F979AE0FE7")

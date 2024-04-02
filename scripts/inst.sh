@@ -66,11 +66,19 @@ installpip() {
             ./python.exe "$getpip/get-pip.py" --user
         fi
     fi
+    # update to the latest pip
+    ./python.exe -m pip install --upgrade pip
+    ./python.exe -m pip install wheel
 }
 
-# install pystartup.ms
+# install pystartup.ms or adn-devtech-python-howtos (plugin package) for 2025
 installpystartup() {
-    cp "$script/src/pystartup/pystartup.ms" "$startuppath"
+    if [ "$version" -lt "2025" ]
+    then
+        cp "$script/src/pystartup/pystartup.ms" "$startuppath"
+    else
+        cp -fr "$script/src/adn-devtech-python-howtos" "$ProgramData/Autodesk/ApplicationPlugins"
+    fi
 }
 
 

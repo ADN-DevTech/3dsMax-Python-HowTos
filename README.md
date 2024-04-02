@@ -27,7 +27,7 @@ working as expected
 
 ### New content
 
-- Drop maxscript code on a rich text window to get a python translation [mxstranslate](/src/packages/mxstranslate/README.md) 
+- New with 3dsMax 2025: [Plugin Packages in 2025 and Integration With the New Menu System](/doc/pluginpackage.md)
 
 ### Samples
 
@@ -35,7 +35,7 @@ The samples below are translations of [MAXScript How Tos](https://help.autodesk.
 can be found in the 3ds Max online documentation.
 
 The conversion from MaxScript to Python could have been more mechanical but we chose to implement
-the Python version in the best Python way known to us. An example of this is that we use PySide2
+the Python version in the best Python way known to us. An example of this is that we use PySide
 (Qt) for the UI as much as possible instead of using more traditional 3ds Max ui mechanisms.
 
 *How To?*
@@ -56,6 +56,7 @@ the Python version in the best Python way known to us. An example of this is tha
 - Run code on thre main thread [mxthread](/src/packages/mxthread/README.md)
 - Automatically convert maxscript to python [mxs2py](/src/packages/mxs2py/README.md)
 - Use socketio from 3dsMax [socketioclient](/src/packages/socketioclient/README.md)
+- Drop maxscript code on a rich text window to get a python translation [mxstranslate](/src/packages/mxstranslate/README.md) 
 
 ## Python Samples
 

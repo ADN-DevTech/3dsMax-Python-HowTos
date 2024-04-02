@@ -1,9 +1,9 @@
 """
-    Provide a PySide2 dialog for the tool.
+    Provide a qtpy dialog for the tool.
 """
 #pylint: disable=no-name-in-module
 #pylint: disable=too-few-public-methods
-from PySide2.QtWidgets import QWidget, QDialog, QLabel, QLineEdit, QVBoxLayout, QPushButton
+from qtpy.QtWidgets import QWidget, QDialog, QLabel, QLineEdit, QVBoxLayout, QPushButton
 from pymxs import runtime as rt
 
 class PyMaxDialog(QDialog):

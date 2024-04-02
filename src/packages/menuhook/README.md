@@ -50,12 +50,12 @@ never be overridden.
 
 ## Q & A
 
-*Q:* Why not using PySide2 directly?
+*Q:* Why not using PySide directly?
 
 *A:* 3ds Max uses Qt for its menu and technically they can be inspected
-and modified during PySide2. But the Menu Manager inside 3ds Max owns the
+and modified during PySide. But the Menu Manager inside 3ds Max owns the
 menus and can regenerate them (using Qt) at any time during the execution
-of 3ds Max. And because of that any change made to the menus using PySide2
+of 3ds Max. And because of that any change made to the menus using PySide
 instead of the 3ds Max Menu Manager will be lost. In short: things will
 not behave as expected.
 

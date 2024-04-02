@@ -1,14 +1,14 @@
 '''
-    Demonstrates how to create a QWidget with PySide2 and attach it to the 3dsmax main window.
+    Demonstrates how to create a QWidget with PySide and attach it to the 3dsmax main window.
     Creates two types of dockable widgets, a QDockWidget and a QToolbar
 '''
 
 import os
 import ctypes
 
-from PySide2 import QtCore
-from PySide2 import QtGui
-from PySide2.QtWidgets import QMainWindow, QDockWidget, QToolButton, QToolBar, QAction
+from qtpy import QtCore
+from qtpy import QtGui
+from qtpy.QtWidgets import QMainWindow, QDockWidget, QToolButton, QToolBar, QAction
 
 from pymxs import runtime as rt
 from qtmax import GetQMaxMainWindow
@@ -46,7 +46,7 @@ def create_cylinder():
 
 def demo_docking_widgets():
     """
-    Demonstrates how to create a QWidget with PySide2 and attach it to the 3dsmax main window.
+    Demonstrates how to create a QWidget with PySide and attach it to the 3dsmax main window.
     Creates two types of dockable widgets, a QDockWidget and a QToolbar
     """
     # Retrieve 3ds Max Main Window QWdiget

@@ -1,7 +1,7 @@
 '''
 Demonstrates combining the mesh of two scene nodes
 '''
-from PySide2.QtWidgets import QVBoxLayout, QPushButton, QLabel, QDialog, QMessageBox
+from qtpy.QtWidgets import QVBoxLayout, QPushButton, QLabel, QDialog, QMessageBox
 from pymxs import runtime as rt # pylint: disable=import-error
 from qtmax import GetQMaxMainWindow
 

@@ -1,10 +1,10 @@
 """
-    PySide2 modeless dialog that will not be started more than once
+    qtpy modeless dialog that will not be started more than once
     at the same time
 """
 #pylint: disable=no-name-in-module
 #pylint: disable=too-few-public-methods
-from PySide2.QtWidgets import QWidget, QDialog, QVBoxLayout, QPushButton
+from qtpy.QtWidgets import QWidget, QDialog, QVBoxLayout, QPushButton
 from pymxs import runtime as rt
 
 MAIN_WINDOW = QWidget.find(rt.windows.getMAXHWND())
