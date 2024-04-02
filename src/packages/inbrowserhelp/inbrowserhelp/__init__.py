@@ -2,11 +2,11 @@
     inbrowserhelp example: inbrowserhelp sample
 """
 from sys import version_info
-from pymxs import runtime as rt
 import webbrowser
+from pymxs import runtime as rt
 import menuhook
 MAX_VERSION = rt.maxversion()[7]
-MAX_HELP = f"help.autodesk.com/view/MAXDEV"
+MAX_HELP = "help.autodesk.com/view/MAXDEV"
 
 PYTHON_VERSION = f"{version_info[0]}.{version_info[1]}"
 
@@ -112,4 +112,3 @@ def startup():
             tooltip=topic[1],
             in2025_menuid=menuhook.BROWSE_DOCUMENTATION,
             id_2025=topic[3])
-
